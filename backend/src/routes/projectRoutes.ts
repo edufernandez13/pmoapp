@@ -8,7 +8,7 @@ router.use(authMiddleware as any);
 
 router.get('/', getProjects as any);
 router.post('/', requireRole('Admin') as any, createProject as any);
-router.put('/:id', requireRole('Admin') as any, updateProject as any);
-router.delete('/:id', requireRole('Admin') as any, deleteProject as any);
+router.post('/:id/update', requireRole('Admin') as any, updateProject as any);
+router.post('/:id/delete', requireRole('Admin') as any, deleteProject as any);
 
 export default router;

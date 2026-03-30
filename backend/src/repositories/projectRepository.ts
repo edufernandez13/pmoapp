@@ -52,7 +52,11 @@ export const ProjectRepository = {
             const request = new sql.Request(transaction);
             request.input('id', sql.Int, id);
 
-            // Delete associated closures (ClosureResourceHours deletes via ON DELETE CASCADE)
+            // Fix manual para Azure SQL si la tabla fue creada previa a ON DELETE CASCADE
+            await request.query(`
+                DELETE FROM ClosureResourceHours 
+                WHERE closure_id IN (SELECT id FROM MonthlyClosures WHERE project_id = @id)
+            `);
             await request.query('DELETE FROM MonthlyClosures WHERE project_id = @id');
             await request.query('DELETE FROM Projects WHERE id = @id');
             

@@ -65,8 +65,8 @@ export const ApiService = {
             project_code: project.code,
             name: project.name
         };
-        const response = await fetch(`${API_BASE_URL}/projects/${id}`, {
-            method: 'PUT',
+        const response = await fetch(`${API_BASE_URL}/projects/${id}/update`, {
+            method: 'POST',
             headers: getHeaders(),
             body: JSON.stringify(payload)
         });
@@ -74,8 +74,8 @@ export const ApiService = {
     },
 
     deleteProject: async (id) => {
-        const response = await fetch(`${API_BASE_URL}/projects/${id}`, {
-            method: 'DELETE',
+        const response = await fetch(`${API_BASE_URL}/projects/${id}/delete`, {
+            method: 'POST',
             headers: getHeaders()
         });
         if (!response.ok) {
@@ -169,8 +169,8 @@ export const ApiService = {
     },
 
     deleteRate: async (resourceName, period) => {
-        const response = await fetch(`${API_BASE_URL}/rates?resourceName=${encodeURIComponent(resourceName)}&period=${toSqlDate(period)}`, {
-            method: 'DELETE',
+        const response = await fetch(`${API_BASE_URL}/rates/delete?resourceName=${encodeURIComponent(resourceName)}&period=${toSqlDate(period)}`, {
+            method: 'POST',
             headers: getHeaders()
         });
         if (!response.ok) {

@@ -9,6 +9,6 @@ router.use(authMiddleware as any);
 router.get('/all', getAllRates as any);
 router.get('/', getRates as any);
 router.post('/', requireRole('Admin', 'PMO') as any, saveRates as any);
-router.delete('/', requireRole('Admin', 'PMO') as any, deleteRate as any);
+router.post('/delete', requireRole('Admin', 'PMO') as any, deleteRate as any);
 
 export default router;
