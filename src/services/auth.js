@@ -26,9 +26,23 @@ const MOCK_USERS = [
 
 export const AuthService = {
     init: () => {
-        if (!localStorage.getItem(USERS_KEY)) {
-            localStorage.setItem(USERS_KEY, JSON.stringify(MOCK_USERS));
-        }
+        let existingUsers = [];
+        try {
+            existingUsers = JSON.parse(localStorage.getItem(USERS_KEY)) || [];
+        } catch(e) { /* ignore */ }
+        
+        // Add new mock users if they don't exist
+        MOCK_USERS.forEach(mock => {
+            if (!existingUsers.some(u => u.email === mock.email)) {
+                existingUsers.push(mock);
+            } else {
+                // Update properties just in case
+                const index = existingUsers.findIndex(u => u.email === mock.email);
+                existingUsers[index] = mock;
+            }
+        });
+        
+        localStorage.setItem(USERS_KEY, JSON.stringify(existingUsers));
     },
 
     login: (email, password) => {
