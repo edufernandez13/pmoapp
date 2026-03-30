@@ -48,3 +48,16 @@ export const saveRates = async (req: AuthRequest, res: Response) => {
         res.status(500).json({ message: 'Error saving rates', error });
     }
 };
+
+export const deleteRate = async (req: AuthRequest, res: Response) => {
+    try {
+        const { resourceName, period } = req.query;
+        if (!resourceName || !period) {
+            return res.status(400).json({ message: 'Missing required parameters: resourceName, period' });
+        }
+        await RateRepository.deleteRate(resourceName as string, period as string);
+        res.status(204).send();
+    } catch (error: any) {
+        res.status(500).json({ message: 'Error deleting rate', error: error.message || error });
+    }
+};

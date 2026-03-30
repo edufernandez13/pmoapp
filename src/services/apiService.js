@@ -160,6 +160,18 @@ export const ApiService = {
         return handleResponse(response);
     },
 
+    deleteRate: async (resourceName, period) => {
+        const response = await fetch(`${API_BASE_URL}/rates?resourceName=${encodeURIComponent(resourceName)}&period=${toSqlDate(period)}`, {
+            method: 'DELETE',
+            headers: getHeaders()
+        });
+        if (!response.ok) {
+            const error = await response.json().catch(() => ({ message: 'Unknown error' }));
+            throw new Error(error.message || `Request failed: ${response.status}`);
+        }
+        return true;
+    },
+
     // Closures (Replacing StorageService logic)
     getAllEntries: async (filters = {}) => {
         // This maps to getClosure logic. 

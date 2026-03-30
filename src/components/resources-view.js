@@ -31,6 +31,7 @@ export async function renderResources(container) {
                                 <th style="padding: 12px; color: #6b7280; text-align: right;">Tarifa Directa</th>
                                 <th style="padding: 12px; color: #6b7280; text-align: right;">Tarifa Indirecta</th>
                                 <th style="padding: 12px; color: #6b7280; text-align: right;">Tarifa Break Even</th>
+                                <th style="padding: 12px; color: #6b7280; text-align: center;">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -43,10 +44,16 @@ export async function renderResources(container) {
                                         <td style="padding: 12px; text-align: right;">${formatCurrency(p.directRate)}</td>
                                         <td style="padding: 12px; text-align: right;">${formatCurrency(p.indirectRate)}</td>
                                         <td style="padding: 12px; text-align: right;"><strong>${formatCurrency(beRate)}</strong></td>
+                                        <td style="padding: 12px; text-align: center;">
+                                            ${!isViewer ? `
+                                            <button class="btn-edit-rate" data-name="${p.name}" data-period="${p.period}" data-direct="${p.directRate}" data-indirect="${p.indirectRate}" style="background: none; border: none; cursor: pointer; font-size: 1.2rem;" title="Editar Tarifa">✏️</button>
+                                            <button class="btn-delete-rate" data-name="${p.name}" data-period="${p.period}" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; color: #dc2626;" title="Eliminar Registro">🗑️</button>
+                                            ` : ''}
+                                        </td>
                                     </tr>
                                 `;
                             }).join('')}
-                            ${professionals.length === 0 ? '<tr><td colspan="5" style="text-align: center; padding: 20px; color: #6b7280;">No hay profesionales registrados. Use "Nuevo Profesional" o "Importar Excel".</td></tr>' : ''}
+                            ${professionals.length === 0 ? '<tr><td colspan="6" style="text-align: center; padding: 20px; color: #6b7280;">No hay profesionales registrados. Use "Nuevo Profesional" o "Importar Excel".</td></tr>' : ''}
                         </tbody>
                     </table>
                 </div>
@@ -155,6 +162,66 @@ export async function renderResources(container) {
                 reader.readAsBinaryString(file);
             });
         }
+
+        const deleteRateBtns = document.querySelectorAll('.btn-delete-rate');
+        deleteRateBtns.forEach(btn => {
+            btn.addEventListener('click', async (e) => {
+                const btnEl = e.target.closest('button');
+                const name = btnEl.dataset.name;
+                const period = btnEl.dataset.period;
+                
+                if (confirm(`¿Está seguro de eliminar la tarifa de ${name} para el periodo ${period}?`)) {
+                    try {
+                        await ApiService.deleteRate(name, period);
+                        alert('Registro eliminado exitosamente.');
+                        ApiService.getAllRates().then(p => {
+                            professionals = p;
+                            render();
+                        });
+                    } catch (err) {
+                        alert('Error al eliminar: ' + err.message);
+                    }
+                }
+            });
+        });
+
+        const editRateBtns = document.querySelectorAll('.btn-edit-rate');
+        editRateBtns.forEach(btn => {
+            btn.addEventListener('click', async (e) => {
+                const btnEl = e.target.closest('button');
+                const name = btnEl.dataset.name;
+                const period = btnEl.dataset.period;
+                const currentDirect = btnEl.dataset.direct;
+                const currentIndirect = btnEl.dataset.indirect;
+                
+                const newDirect = prompt(`Editar Tarifa Directa para ${name} (${period}):`, currentDirect);
+                if (newDirect === null || newDirect.trim() === '') return;
+                
+                const newIndirect = prompt(`Editar Tarifa Indirecta para ${name} (${period}):`, currentIndirect);
+                if (newIndirect === null || newIndirect.trim() === '') return;
+                
+                if (isNaN(newDirect) || isNaN(newIndirect)) {
+                    alert('Las tarifas deben ser valores numéricos.');
+                    return;
+                }
+
+                try {
+                    await ApiService.saveProfessional({
+                        name: name,
+                        period: period,
+                        directRate: Number(newDirect),
+                        indirectRate: Number(newIndirect)
+                    });
+                    alert('Tarifa actualizada correctamente.');
+                    ApiService.getAllRates().then(p => {
+                        professionals = p;
+                        render();
+                    });
+                } catch (err) {
+                    alert('Error al actualizar: ' + err.message);
+                }
+            });
+        });
     };
 
     render();
