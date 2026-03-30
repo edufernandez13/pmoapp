@@ -579,11 +579,21 @@ export async function renderProjects(container) {
 
                     if (existingEntryIndex > -1) {
                          const existingEntryId = allEntries[existingEntryIndex].id;
-                         await ApiService.updateEntry(existingEntryId, entryData);
-                         allEntries[existingEntryIndex] = { ...allEntries[existingEntryIndex], ...entryData };
+                         try {
+                             await ApiService.updateEntry(existingEntryId, entryData);
+                             allEntries[existingEntryIndex] = { ...allEntries[existingEntryIndex], ...entryData };
+                         } catch (err) {
+                             errorCount++;
+                             errors.push(`Fila ${index + 2}: Error al actualizar - ${err.message}`);
+                         }
                     } else {
-                         const savedEntry = await ApiService.saveEntry(entryData);
-                         allEntries.push(savedEntry || entryData);
+                         try {
+                             const savedEntry = await ApiService.saveEntry(entryData);
+                             allEntries.push(savedEntry || entryData);
+                         } catch (err) {
+                             errorCount++;
+                             errors.push(`Fila ${index + 2}: Error al guardar - ${err.message}`);
+                         }
                     }
                 }
 
@@ -601,6 +611,9 @@ export async function renderProjects(container) {
                 // Refresh list sin recargar la página completa
                 renderProjects(container);
 
+                }).catch(err => {
+                    console.error("Excepción en promesa de importación:", err);
+                    alert("Ocurrió un error inesperado al importar datos: " + err.message);
                 }); // end of ApiService.getProjects().then
 
             } catch (err) {
