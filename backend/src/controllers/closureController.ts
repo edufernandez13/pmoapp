@@ -6,8 +6,7 @@ export const getClosure = async (req: AuthRequest, res: Response) => {
     try {
         const { projectCode, period } = req.query;
         if (!projectCode || !period) {
-            const closures = await ClosureRepository.getAllClosures();
-            return res.json(closures);
+            return res.status(400).json({ message: 'projectCode and period are required' });
         }
         const closure = await ClosureRepository.getByProjectAndPeriod(projectCode as string, period as string);
         if (!closure) {

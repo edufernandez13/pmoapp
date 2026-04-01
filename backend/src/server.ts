@@ -1,5 +1,4 @@
 import express from 'express';
-import path from 'path';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
@@ -17,9 +16,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
-app.use(helmet({
-    contentSecurityPolicy: false,
-}));
+app.use(helmet());
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
@@ -35,16 +32,6 @@ import { Request, Response } from "express";
 // ...
 app.get("/health", (req: Request, res: Response) => {
     res.status(200).json({ ok: true });
-});
-
-// Serve frontend static files
-// We use process.cwd() because Azure Linux mounts can break __dirname relative pathing
-const frontendPath = path.resolve(process.cwd());
-app.use(express.static(frontendPath));
-
-// Handle any other routes by serving the index.html
-app.use((req: Request, res: Response) => {
-    res.sendFile(path.join(frontendPath, 'index.html'));
 });
 
 

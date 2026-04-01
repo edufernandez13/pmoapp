@@ -11,12 +11,6 @@ const MOCK_USERS = [
         role: 'Administrador'
     },
     {
-        email: 'visualizar@pmo.com',
-        password: 'admin',
-        name: 'Visualizador',
-        role: 'Visualizador'
-    },
-    {
         email: 'user@pmo.com',
         password: 'user',
         name: 'Analista PMO',
@@ -26,49 +20,35 @@ const MOCK_USERS = [
 
 export const AuthService = {
     init: () => {
-        let existingUsers = [];
-        try {
-            existingUsers = JSON.parse(localStorage.getItem(USERS_KEY)) || [];
-        } catch(e) { /* ignore */ }
-        
-        // Add new mock users if they don't exist
-        MOCK_USERS.forEach(mock => {
-            if (!existingUsers.some(u => u.email === mock.email)) {
-                existingUsers.push(mock);
-            } else {
-                // Update properties just in case
-                const index = existingUsers.findIndex(u => u.email === mock.email);
-                existingUsers[index] = mock;
-            }
-        });
-        
-        localStorage.setItem(USERS_KEY, JSON.stringify(existingUsers));
+        if (!sessionStorage.getItem(USERS_KEY)) {
+            sessionStorage.setItem(USERS_KEY, JSON.stringify(MOCK_USERS));
+        }
     },
 
     login: (email, password) => {
-        const users = JSON.parse(localStorage.getItem(USERS_KEY)) || [];
+        const users = JSON.parse(sessionStorage.getItem(USERS_KEY)) || [];
         const user = users.find(u => u.email === email && u.password === password);
         
         if (user) {
             // Guardamos todo menos la contraseña
             const { password: _, ...userWithoutPass } = user;
-            localStorage.setItem(AUTH_KEY, JSON.stringify(userWithoutPass));
+            sessionStorage.setItem(AUTH_KEY, JSON.stringify(userWithoutPass));
             return userWithoutPass;
         }
         throw new Error('Credenciales incorrectas');
     },
 
     logout: () => {
-        localStorage.removeItem(AUTH_KEY);
+        sessionStorage.removeItem(AUTH_KEY);
     },
 
     getCurrentUser: () => {
-        const userStr = localStorage.getItem(AUTH_KEY);
+        const userStr = sessionStorage.getItem(AUTH_KEY);
         return userStr ? JSON.parse(userStr) : null;
     },
 
     recoverPassword: (email) => {
-        const users = JSON.parse(localStorage.getItem(USERS_KEY)) || [];
+        const users = JSON.parse(sessionStorage.getItem(USERS_KEY)) || [];
         const exists = users.some(u => u.email === email);
         
         if (exists) {

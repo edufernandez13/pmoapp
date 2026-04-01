@@ -1,11 +1,10 @@
-import { ApiService } from '../services/apiService.js';
+import { StorageService } from '../services/storage.js';
 import { AnalyticsService } from '../services/analytics.js';
 import { formatPercent, parsePeriodToMmmYy } from '../utils/format.js';
-import { AuthService } from '../services/auth.js';
 
-export async function renderProjects(container) {
-    let projects = await ApiService.getProjects();
-    const entries = await ApiService.getAllEntries();
+export function renderProjects(container) {
+    let projects = StorageService.getProjects();
+    const entries = StorageService.getAllEntries();
     
     // Sort projects by Proyecto_Codigo by default
     projects.sort((a, b) => a.code.localeCompare(b.code));
@@ -32,9 +31,15 @@ export async function renderProjects(container) {
 
     let currentFilter = 'Todos';
 
+    const normalizeCode = (code) => {
+        return String(code || '').trim().replace(/\s+/g, ' ').toUpperCase();
+    };
+
+    const normalizeText = (text) => {
+        return String(text || '').trim().replace(/\s+/g, ' ');
+    };
+
     const render = () => {
-        const user = AuthService.getCurrentUser() || {};
-        const isViewer = user.role === 'Visualizador';
         const filteredProjects = projects.filter(p => currentFilter === 'Todos' || p.status === currentFilter);
 
         const html = `
@@ -49,12 +54,10 @@ export async function renderProjects(container) {
                         </select>
                     </div>
                     <div style="display: flex; gap: 10px;">
-                        ${!isViewer ? `
                         <input type="file" id="excel-upload" accept=".xlsx, .xls" style="display: none;" />
                         <button id="btn-import-excel" class="btn-secondary">⬇️ Importar Excel</button>
-                        <button id="btn-clear-imports" class="btn-secondary" style="color: #b45309; border-color: #b45309;">🗑️ Limpiar Importaciones</button>
+                        <button id="btn-export-excel" class="btn-secondary" style="background-color: #0B8E84; color: white;">⬇️ Exportar Excel</button>
                         <button id="btn-new-project" class="btn-primary">+ Nuevo Proyecto</button>
-                        ` : ''}
                     </div>
                 </div>
 
@@ -80,7 +83,7 @@ export async function renderProjects(container) {
                                         <td style="padding: 12px;">${p.code}</td>
                                         <td style="padding: 12px;">${p.name}</td>
                                         <td style="padding: 12px;">
-                                            <select class="status-select form-input" data-id="${p.id}" style="width: 130px; padding: 6px; border-radius: 4px;" ${isViewer ? 'disabled' : ''}>
+                                            <select class="status-select form-input" data-id="${p.id}" style="width: 130px; padding: 6px; border-radius: 4px;">
                                                 <option value="Activo" ${p.status === 'Activo' ? 'selected' : ''}>Activo</option>
                                                 <option value="Finalizado" ${p.status === 'Finalizado' ? 'selected' : ''}>Finalizado</option>
                                             </select>
@@ -89,11 +92,8 @@ export async function renderProjects(container) {
                                             <strong style="color: ${color}; font-size: 1.1em;">${formatPercent(profitability)}</strong>
                                         </td>
                                         <td style="padding: 12px; text-align: center;">
-                                            <button class="btn-edit-registries" data-name="${p.name}" style="background: none; border: none; cursor: pointer; font-size: 1.2rem;" title="Ver Cierres de Mes">📅</button>
-                                            ${!isViewer ? `
-                                            <button class="btn-edit-project" data-id="${p.id}" data-code="${p.code}" data-name="${p.name}" style="background: none; border: none; cursor: pointer; font-size: 1.2rem;" title="Editar Proyecto">✏️</button>
+                                            <button class="btn-edit-project" data-name="${p.name}" style="background: none; border: none; cursor: pointer; font-size: 1.2rem;" title="Editar Registros">✏️</button>
                                             <button class="btn-delete-project" data-name="${p.name}" data-id="${p.id}" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; color: #dc2626;" title="Eliminar Proyecto">🗑️</button>
-                                            ` : ''}
                                         </td>
                                     </tr>
                                 `;
@@ -119,142 +119,54 @@ export async function renderProjects(container) {
 
         const btnNew = document.getElementById('btn-new-project');
         if (btnNew) {
-            btnNew.addEventListener('click', () => {
-                let modalContainer = document.getElementById('modal-container');
-                let modalOverlay = document.getElementById('modal-overlay');
-
-                if (!modalContainer || !modalOverlay) {
-                    modalOverlay = document.createElement('div');
-                    modalOverlay.id = 'modal-overlay';
-                    modalContainer = document.createElement('div');
-                    modalContainer.id = 'modal-container';
-                    document.body.appendChild(modalOverlay);
-                    document.body.appendChild(modalContainer);
-                }
-
-                modalOverlay.className = 'hidden';
-                modalOverlay.style.cssText = 'position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000;';
-                modalContainer.className = 'hidden';
-                modalContainer.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1001; background: transparent; width: 100%; display: flex; justify-content: center;';
-
-                const html = `
-                    <div class="modal-content" style="background: white; padding: 20px; border-radius: 8px; width: 90%; max-width: 400px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                        <h3 style="margin-bottom: 20px; color: var(--secondary);">Crear Nuevo Proyecto</h3>
-                        <div class="form-group" style="margin-bottom: 15px;">
-                            <label class="form-label" style="display:block; margin-bottom: 5px; font-weight: 500;">Código del Proyecto:</label>
-                            <input type="text" id="new-project-code" class="form-input" style="width: 100%; padding: 8px;" placeholder="Ej: PRJ-001" autocomplete="off" />
-                        </div>
-                        <div class="form-group" style="margin-bottom: 15px;">
-                            <label class="form-label" style="display:block; margin-bottom: 5px; font-weight: 500;">Nombre del Proyecto:</label>
-                            <input type="text" id="new-project-name" class="form-input" style="width: 100%; padding: 8px;" placeholder="Ej: Transformación Digital BM" autocomplete="off" />
-                        </div>
-                        <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
-                            <button id="btn-cancel-new" class="btn-secondary" style="padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">Cancelar</button>
-                            <button id="btn-save-new" class="btn-primary" style="padding: 8px 16px; background: #0B8E84; color: white; border: none; border-radius: 4px; cursor: pointer;">Crear Proyecto</button>
-                        </div>
-                    </div>
-                `;
-
-                modalContainer.innerHTML = html;
-                modalContainer.classList.remove('hidden');
-                modalOverlay.classList.remove('hidden');
-
-                document.getElementById('btn-cancel-new').addEventListener('click', () => {
-                    modalContainer.classList.add('hidden');
-                    modalOverlay.classList.add('hidden');
-                });
-
-                document.getElementById('btn-save-new').addEventListener('click', () => {
-                    const code = document.getElementById('new-project-code').value.trim();
-                    const name = document.getElementById('new-project-name').value.trim();
-
-                    if (!code) {
-                        alert("El código del proyecto es obligatorio.");
-                        return;
-                    }
-                    if (!name) {
-                        alert("El nombre del proyecto es obligatorio.");
-                        return;
-                    }
-
-                    const codeExists = projects.some(p => p.code.toLowerCase() === code.toLowerCase());
-                    if (codeExists) {
-                        alert("El código de proyecto '" + code + "' ya está en uso. Ingresa uno diferente.");
-                        return;
-                    }
-
-                    const newProject = { code, name, status: 'Activo' };
-                    ApiService.saveProject(newProject).then(() => {
-                        modalContainer.classList.add('hidden');
-                        modalOverlay.classList.add('hidden');
-                        ApiService.getProjects().then(p => {
-                            projects = p;
-                            render();
-                        });
-                    }).catch(err => alert("Error al crear proyecto: " + err.message));
-                });
-            });
+            btnNew.addEventListener('click', openNewProjectModal);
         }
 
         const selects = document.querySelectorAll('.status-select');
         selects.forEach(select => {
-            select.addEventListener('async change', async (e) => {
+            select.addEventListener('change', (e) => {
                 const id = e.target.getAttribute('data-id');
                 const newStatus = e.target.value;
-                const project = projects.find(p => p.id == id); // id from API might be a number
+                const project = projects.find(p => p.id === id);
                 if (project) {
                     project.status = newStatus;
                     try {
-                        // Normally we'd use an update endpoint, but for now we re-save
-                        await ApiService.saveProject(project); 
+                        StorageService.saveProject(project);
                     } catch (error) {
                         alert('Error al guardar el estado: ' + error.message);
-                        projects = await ApiService.getProjects();
+                        projects = StorageService.getProjects();
                         render();
                     }
                 }
             });
         });
 
-        const registryBtns = document.querySelectorAll('.btn-edit-registries');
-        registryBtns.forEach(btn => {
+        const editBtns = document.querySelectorAll('.btn-edit-project');
+        editBtns.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const projectName = e.target.closest('button').dataset.name;
                 openEditModal(projectName);
             });
         });
 
-        const editBtns = document.querySelectorAll('.btn-edit-project');
-        editBtns.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                const btnEl = e.target.closest('button');
-                const projectId = btnEl.dataset.id;
-                const projectCode = btnEl.dataset.code;
-                const projectName = btnEl.dataset.name;
-                openEditProjectModal(projectId, projectCode, projectName);
-            });
-        });
-
         const deleteBtns = document.querySelectorAll('.btn-delete-project');
         deleteBtns.forEach(btn => {
-            btn.addEventListener('click', async (e) => {
+            btn.addEventListener('click', (e) => {
                 const btnEl = e.target.closest('button');
                 const projectName = btnEl.dataset.name;
                 const projectId = btnEl.dataset.id;
                 
                 if (confirm(`¿Está seguro de que desea eliminar el proyecto "${projectName}"?`)) {
-                    const validation = prompt(`ADVERTENCIA: Esta acción eliminará el proyecto y todos sus registros de horas (cierres).\nPara confirmar de forma definitiva, escriba exactamente: ELIMINAR`);
-                    if (validation === 'ELIMINAR') {
-                        try {
-                            await ApiService.deleteProject(projectId);
-                            alert('Proyecto y registros eliminados exitosamente.');
-                            renderProjects(container);
-                        } catch(error) {
-                            alert('Error al eliminar proyecto: ' + error.message);
-                        }
-                    } else if (validation !== null) {
-                        alert('Palabra de validación incorrecta. Eliminación cancelada.');
-                    }
+                    const allProjects = StorageService.getProjects();
+                    const remaining = allProjects.filter(p => p.id !== projectId);
+                    sessionStorage.setItem('pmo_projects_v1', JSON.stringify(remaining));
+                    
+                    const allEntries = StorageService.getAllEntries();
+                    const remainingEntries = allEntries.filter(e => e.project !== projectName);
+                    sessionStorage.setItem('pmo_app_data_v1', JSON.stringify(remainingEntries));
+                    
+                    projects = remaining;
+                    render();
                 }
             });
         });
@@ -266,57 +178,90 @@ export async function renderProjects(container) {
             excelUpload.addEventListener('change', handleExcelUpload);
         }
 
-        const btnClearImports = document.getElementById('btn-clear-imports');
-        if (btnClearImports) {
-            btnClearImports.addEventListener('click', async () => {
-                const allEntries = await ApiService.getAllEntries();
-                const historicalEntries = allEntries.filter(e =>
-                    e.professionals && e.professionals.length === 1 &&
-                    (e.professionals[0].resourceName === 'Carga Histórica' || e.professionals[0].resourceName === 'Recurso Importado')
-                );
-
-                if (historicalEntries.length === 0) {
-                    alert('No hay registros de importaciones históricas para eliminar.');
+        const btnExportExcel = document.getElementById('btn-export-excel');
+        if (btnExportExcel) {
+            btnExportExcel.addEventListener('click', () => {
+                const filteredProjects = projects.filter(p => currentFilter === 'Todos' || p.status === currentFilter);
+                if (filteredProjects.length === 0) {
+                    alert('No hay proyectos para exportar con el filtro actual.');
                     return;
                 }
+                
+                const allEntries = StorageService.getAllEntries();
+                const exportData = [];
 
-                alert('Limpieza masiva requiere endpoint especial en SQL. Contacte a soporte.');
+                filteredProjects.forEach(project => {
+                    const projectEntries = allEntries.filter(e => e.project === project.name);
+                    
+                    if (projectEntries.length === 0) return;
+
+                    projectEntries.forEach(entry => {
+                        const internalCost = entry.professionals ? entry.professionals.reduce((sum, pro) => sum + (pro.hours * pro.rate), 0) : 0;
+                        const externalCost = entry.thirdPartyCosts || 0;
+                        const revenue = entry.revenue || 0;
+                        const margin = revenue - internalCost - externalCost;
+
+                        exportData.push({
+                            'Codigo_Proyecto': project.code,
+                            'Nombre_Proyecto': project.name,
+                            'Periodo': entry.month,
+                            'Jefe_Proyecto': project.manager || '',
+                            'Ingreso_CLP': revenue,
+                            'Costo_Interno_CLP': internalCost,
+                            'Costo_Externo_CLP': externalCost,
+                            'Margen_CLP': margin
+                        });
+                    });
+                });
+
+                if (exportData.length > 0) {
+                    const ws = XLSX.utils.json_to_sheet(exportData);
+                    const wb = XLSX.utils.book_new();
+                    XLSX.utils.book_append_sheet(wb, ws, "Proyectos");
+                    XLSX.writeFile(wb, "Exportacion_Proyectos.xlsx");
+                } else {
+                    alert('Los proyectos seleccionados no tienen registros que exportar.');
+                }
             });
         }
+
     };
 
-    const openEditProjectModal = (projectId, currentCode, currentName) => {
+    const openNewProjectModal = () => {
         let modalContainer = document.getElementById('modal-container');
         let modalOverlay = document.getElementById('modal-overlay');
 
         if (!modalContainer || !modalOverlay) {
             modalOverlay = document.createElement('div');
             modalOverlay.id = 'modal-overlay';
+            
             modalContainer = document.createElement('div');
             modalContainer.id = 'modal-container';
+            
             document.body.appendChild(modalOverlay);
             document.body.appendChild(modalContainer);
         }
 
         modalOverlay.className = 'hidden';
         modalOverlay.style.cssText = 'position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000;';
+        
         modalContainer.className = 'hidden';
         modalContainer.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1001; background: transparent; width: 100%; display: flex; justify-content: center;';
 
         const html = `
             <div class="modal-content" style="background: white; padding: 20px; border-radius: 8px; width: 90%; max-width: 400px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                <h3 style="margin-bottom: 20px; color: var(--secondary);">Editar Proyecto</h3>
+                <h3 style="margin-bottom: 20px; color: #4f46e5;">Nuevo Proyecto</h3>
                 <div class="form-group" style="margin-bottom: 15px;">
-                    <label class="form-label" style="display:block; margin-bottom: 5px; font-weight: 500;">Código del Proyecto:</label>
-                    <input type="text" id="edit-project-code" class="form-input" style="width: 100%; padding: 8px;" value="${currentCode}" autocomplete="off" />
+                    <label class="form-label" style="display:block; margin-bottom: 5px; font-weight: 500;">Código de Proyecto <span style="color:red;">*</span></label>
+                    <input type="text" id="new-project-code" class="form-input" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;" placeholder="Ej: PRJ-001">
                 </div>
                 <div class="form-group" style="margin-bottom: 15px;">
-                    <label class="form-label" style="display:block; margin-bottom: 5px; font-weight: 500;">Nombre del Proyecto:</label>
-                    <input type="text" id="edit-project-name" class="form-input" style="width: 100%; padding: 8px;" value="${currentName}" autocomplete="off" />
+                    <label class="form-label" style="display:block; margin-bottom: 5px; font-weight: 500;">Nombre de Proyecto <span style="color:red;">*</span></label>
+                    <input type="text" id="new-project-name" class="form-input" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;" placeholder="Ej: Implementación ERP">
                 </div>
                 <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
-                    <button id="btn-cancel-edit-proj" class="btn-secondary" style="padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">Cancelar</button>
-                    <button id="btn-save-edit-proj" class="btn-primary" style="padding: 8px 16px; background: #0B8E84; color: white; border: none; border-radius: 4px; cursor: pointer;">Actualizar Proyecto</button>
+                    <button id="btn-cancel-new" class="btn-secondary" style="padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">Cancelar</button>
+                    <button id="btn-save-new" class="btn-primary" style="padding: 8px 16px; background: #0B8E84; color: white; border: none; border-radius: 4px; cursor: pointer;">Guardar Proyecto</button>
                 </div>
             </div>
         `;
@@ -325,34 +270,49 @@ export async function renderProjects(container) {
         modalContainer.classList.remove('hidden');
         modalOverlay.classList.remove('hidden');
 
-        document.getElementById('btn-cancel-edit-proj').addEventListener('click', () => {
+        document.getElementById('btn-cancel-new').addEventListener('click', () => {
             modalContainer.classList.add('hidden');
             modalOverlay.classList.add('hidden');
         });
 
-        document.getElementById('btn-save-edit-proj').addEventListener('click', async () => {
-            const code = document.getElementById('edit-project-code').value.trim();
-            const name = document.getElementById('edit-project-name').value.trim();
+        document.getElementById('btn-save-new').addEventListener('click', () => {
+            const rawCodeInput = document.getElementById('new-project-code').value;
+            const codeInput = normalizeCode(rawCodeInput);
+            const rawNameInput = document.getElementById('new-project-name').value;
+            const nameInput = normalizeText(rawNameInput);
 
-            if (!code || !name) {
-                alert("Ambos campos son obligatorios.");
+            if (!codeInput) {
+                alert('El Código de Proyecto es obligatorio.');
+                return;
+            }
+            if (!nameInput) {
+                alert('El Nombre de Proyecto es obligatorio.');
                 return;
             }
 
-            try {
-                await ApiService.updateProject(projectId, { code, name });
-                modalContainer.classList.add('hidden');
-                modalOverlay.classList.add('hidden');
-                renderProjects(container);
-            } catch(err) {
-                alert("Error al actualizar proyecto: " + err.message);
+            const existingProject = projects.find(p => normalizeCode(p.code) === codeInput);
+            if (existingProject) {
+                alert('El código ingresado ya está registrado. Por favor, ingrese un código diferente.');
+                return;
             }
+
+            const newProject = {
+                code: codeInput,
+                name: nameInput,
+                status: 'Activo'
+            };
+
+            StorageService.saveProject(newProject);
+            projects = StorageService.getProjects(); // Refresh data
+            
+            modalContainer.classList.add('hidden');
+            modalOverlay.classList.add('hidden');
+            
+            render();
         });
     };
 
     const openEditModal = (projectName) => {
-        const user = AuthService.getCurrentUser() || {};
-        const isViewer = user.role === 'Visualizador';
         let modalContainer = document.getElementById('modal-container');
         let modalOverlay = document.getElementById('modal-overlay');
 
@@ -374,7 +334,7 @@ export async function renderProjects(container) {
         modalContainer.className = 'hidden';
         modalContainer.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1001; background: transparent; width: 100%; display: flex; justify-content: center;';
 
-        const projectEntries = entries.filter(e => e.project === projectName);
+        const projectEntries = StorageService.getEntriesByProject(projectName);
 
         if (projectEntries.length === 0) {
             alert('Este proyecto no tiene registros (Cierre de Mes) para editar.');
@@ -397,8 +357,8 @@ export async function renderProjects(container) {
                     <!-- Formulario dinámico inyectado aquí -->
                 </div>
                 <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
-                    <button id="btn-cancel-edit" class="btn-secondary" style="padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">${isViewer ? 'Cerrar' : 'Cancelar'}</button>
-                    ${!isViewer ? `<button id="btn-save-edit" class="btn-primary" style="padding: 8px 16px; background: #0B8E84; color: white; border: none; border-radius: 4px; cursor: pointer;">Guardar Cambios</button>` : ''}
+                    <button id="btn-cancel-edit" class="btn-secondary" style="padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">Cancelar</button>
+                    <button id="btn-save-edit" class="btn-primary" style="padding: 8px 16px; background: #0B8E84; color: white; border: none; border-radius: 4px; cursor: pointer;">Guardar Cambios</button>
                 </div>
             </div>
         `;
@@ -414,7 +374,7 @@ export async function renderProjects(container) {
             if (!entry) return;
 
             const isHistorical = entry.professionals && entry.professionals.length === 1 && 
-                               (entry.professionals[0].resourceName === 'Carga Histórica' || entry.professionals[0].resourceName === 'Recurso Importado');
+                               (entry.professionals[0].name === 'Carga Histórica' || entry.professionals[0].name === 'Recurso Importado');
 
             let professionalsHtml = '';
             if (isHistorical) {
@@ -433,8 +393,8 @@ export async function renderProjects(container) {
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 5px;">
                             ${entry.professionals.map((p, i) => `
                                 <div style="display: flex; align-items: center; gap: 10px;">
-                                    <span style="flex:1; font-size: 0.9em; color: #4b5563;">${p.resourceName || p.name}</span>
-                                    <input type="number" class="form-input edit-prof-hour" data-index="${i}" value="${p.hours}" style="width: 80px;" min="0" ${isViewer ? 'disabled' : ''}>
+                                    <span style="flex:1; font-size: 0.9em; color: #4b5563;">${p.name}</span>
+                                    <input type="number" class="form-input edit-prof-hour" data-index="${i}" value="${p.hours}" style="width: 80px;" min="0">
                                 </div>
                             `).join('')}
                         </div>
@@ -446,17 +406,17 @@ export async function renderProjects(container) {
                 <div class="form-row" style="margin-top: 15px;">
                     <div class="form-group">
                         <label class="form-label">Ingreso Mensual (CLP)</label>
-                        <input type="number" id="edit-revenue" class="form-input" value="${entry.revenue}" ${isViewer ? 'disabled' : ''}>
+                        <input type="number" id="edit-revenue" class="form-input" value="${entry.revenue}">
                     </div>
                     <div class="form-group">
                         <label class="form-label">Costos de Terceros</label>
-                        <input type="number" id="edit-third-costs" class="form-input" value="${entry.thirdPartyCosts}" ${isViewer ? 'disabled' : ''}>
+                        <input type="number" id="edit-third-costs" class="form-input" value="${entry.thirdPartyCosts}">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
                         <label class="form-label">Tipo de Registro</label>
-                        <select id="edit-type-record" class="form-input" ${isViewer ? 'disabled' : ''}>
+                        <select id="edit-type-record" class="form-input">
                             <option value="REAL" ${entry.tipoRegistro !== 'PROYECCION' ? 'selected' : ''}>Real</option>
                             <option value="PROYECCION" ${entry.tipoRegistro === 'PROYECCION' ? 'selected' : ''}>Proyección</option>
                         </select>
@@ -479,15 +439,13 @@ export async function renderProjects(container) {
             modalContainer.classList.add('hidden');
             modalOverlay.classList.add('hidden');
         });
-        
-        const saveBtn = document.getElementById('btn-save-edit');
-        if (saveBtn) {
-            saveBtn.addEventListener('click', () => {
+
+        document.getElementById('btn-save-edit').addEventListener('click', () => {
             const entryId = selectPeriod.value;
             const entry = projectEntries.find(e => e.id === entryId);
             
             const isHistorical = entry.professionals && entry.professionals.length === 1 && 
-                               (entry.professionals[0].resourceName === 'Carga Histórica' || entry.professionals[0].resourceName === 'Recurso Importado');
+                               (entry.professionals[0].name === 'Carga Histórica' || entry.professionals[0].name === 'Recurso Importado');
             
             let updatedPros = [...entry.professionals];
             
@@ -507,30 +465,19 @@ export async function renderProjects(container) {
             };
 
             try {
-                // Ensure we pass project and month so ApiService can upsert
-                updatedData.projectCode = project.code;
-                updatedData.month = entry.month;
-                updatedData.project = projectName;
-
-                // Ensure professionals have 'name' property as expected by ApiService.saveEntry logic if changed
-                updatedData.professionals = updatedData.professionals.map(p => ({
-                    name: p.resourceName || p.name,
-                    hours: p.hours
-                }));
-
-                ApiService.updateEntry(entryId, updatedData).then(() => {
-                    alert('Registro actualizado exitosamente.');
-                    modalContainer.classList.add('hidden');
-                    modalOverlay.classList.add('hidden');
-                    
-                    // Actualizar interfaz principal
-                    renderProjects(container);
-                });
+                StorageService.updateEntry(entryId, updatedData);
+                alert('Registro actualizado exitosamente.');
+                modalContainer.classList.add('hidden');
+                modalOverlay.classList.add('hidden');
+                
+                // Actualizar interfaz principal
+                const updatedEntries = StorageService.getAllEntries();
+                // Recalcular métricas si fuera necesario (render ya lo hace)
+                render();
             } catch (error) {
                 alert(error.message);
             }
         });
-        }
     };
 
     const handleExcelUpload = (e) => {
@@ -564,22 +511,28 @@ export async function renderProjects(container) {
                 let loadedReal = 0;
                 let loadedProj = 0;
                 let errorCount = 0;
-                let overwrittenCount = 0;
                 let errors = [];
 
-                ApiService.getProjects().then(async (currentProjects) => {
-                const allEntries = entries;
+                const currentProjects = StorageService.getProjects();
+                const allEntries = StorageService.getAllEntries();
                 const processedRows = new Set();
 
                 for (let index = 0; index < data.length; index++) {
                     const row = data[index];
-                    const rowCode = String(row['Codigo_Proyecto'] || '').trim();
-                    const rowName = String(row['Nombre_Proyecto'] || '').trim();
-                    const rowManager = String(row['Jefe_Proyecto'] || '').trim();
+                    const rawCode = String(row['Codigo_Proyecto'] || '');
+                    const rowCode = normalizeCode(rawCode);
+                    const rowName = normalizeText(row['Nombre_Proyecto']);
+                    const rowManager = normalizeText(row['Jefe_Proyecto']);
                     const rowStatus = 'Activo';
                     const rowPeriod = row['Periodo'];
                     const statusKey = Object.keys(row).find(k => String(k).trim().toLowerCase() === 'status');
-                    const rawStatus = statusKey ? row[statusKey] : 'REAL';
+                    const rawStatus = statusKey ? row[statusKey] : '';
+
+                    if (!rawStatus || String(rawStatus).trim() === '') {
+                        errorCount++;
+                        errors.push(`Fila ${index + 2}: La columna "Status" es obligatoria.`);
+                        continue;
+                    }
 
                     // Normalize accents and uppercase (e.g., 'Proyección' -> 'PROYECCION')
                     let importStatus = String(rawStatus).trim().toUpperCase();
@@ -624,13 +577,13 @@ export async function renderProjects(container) {
                     const uniqueKey = `${rowCode}_${parsedPeriod}_${importStatus}`;
                     if (processedRows.has(uniqueKey)) {
                         errorCount++;
-                        errors.push(`Fila ${index + 2}: Duplicado en el mismo archivo para Proyecto ${rowCode}, Periodo ${parsedPeriod} y Status ${importStatus}.`);
+                        errors.push(`Fila ${index + 2}: Registro duplicado: ya existe un proyecto con el mismo Código, Periodo y Status`);
                         continue;
                     }
                     processedRows.add(uniqueKey);
 
                     // Check if project exists, if not, create it
-                    let project = currentProjects.find(p => p.code === rowCode);
+                    let project = currentProjects.find(p => normalizeCode(p.code) === rowCode);
                     if (!project) {
                         project = {
                             code: rowCode,
@@ -638,21 +591,20 @@ export async function renderProjects(container) {
                             manager: rowManager,
                             status: rowStatus
                         };
-                        await ApiService.saveProject(project).catch(e => {
-                            errorCount++;
-                            errors.push(`Error al guardar proyecto ${rowCode}: ` + e.message);
-                        });
+                        StorageService.saveProject(project);
                         currentProjects.push(project); 
                     }
 
-                    const existingEntryIndex = allEntries.findIndex(e => e.project === project.name && e.month === parsedPeriod && e.tipoRegistro === importStatus);
+                    const existingEntryDuplicate = allEntries.some(e => {
+                        const pObj = currentProjects.find(cp => cp.name === e.project);
+                        const eCode = pObj ? normalizeCode(pObj.code) : '';
+                        return eCode === rowCode && e.month === parsedPeriod && (e.tipoRegistro || 'REAL') === importStatus;
+                    });
                     
-                    if (existingEntryIndex > -1) {
-                        const overwrite = window.confirm(`El registro ${importStatus} para el proyecto "${project.name}" (Código: ${rowCode}) en el periodo ${parsedPeriod} ya existe.\n\n¿Desea sobrescribirlo con los datos del Excel?\n\n¡Advertencia! Esto reemplazará las horas y tarifas de Cierre de Mes de este periodo.`);
-                        if (!overwrite) {
-                            continue;
-                        }
-                        overwrittenCount++;
+                    if (existingEntryDuplicate) {
+                        errorCount++;
+                        errors.push(`Fila ${index + 2}: Registro duplicado: ya existe un proyecto con el mismo Código, Periodo y Status`);
+                        continue;
                     }
 
                     if (importStatus === 'REAL') {
@@ -676,44 +628,26 @@ export async function renderProjects(container) {
                         professionals: [mockProfessional]
                     };
 
-                    if (existingEntryIndex > -1) {
-                         const existingEntryId = allEntries[existingEntryIndex].id;
-                         try {
-                             await ApiService.updateEntry(existingEntryId, entryData);
-                             allEntries[existingEntryIndex] = { ...allEntries[existingEntryIndex], ...entryData };
-                         } catch (err) {
-                             errorCount++;
-                             errors.push(`Fila ${index + 2}: Error al actualizar - ${err.message}`);
-                         }
-                    } else {
-                         try {
-                             const savedEntry = await ApiService.saveEntry(entryData);
-                             allEntries.push(savedEntry || entryData);
-                         } catch (err) {
-                             errorCount++;
-                             errors.push(`Fila ${index + 2}: Error al guardar - ${err.message}`);
-                         }
-                    }
+                    const savedEntry = StorageService.saveEntry(entryData);
+                    allEntries.push(savedEntry);
                 }
 
                 // Reset file input
                 e.target.value = '';
 
-                let message = `✅ Carga Exitosa:\n✔️ Cargados: ${loadedReal} REAL | ${loadedProj} PROYECCION\n🔄 ${overwrittenCount} registros sobrescritos.\n❌ ${errorCount} errores.`;
+                let message = `Importación Finalizada:\n✔️ Cargados: ${loadedReal} REAL | ${loadedProj} PROYECCION\n❌ ${errorCount} errores.`;
                 if (errors.length > 0) {
                     message += `\n\nDetalles de errores:\n` + errors.slice(0, 5).join('\n');
                     if (errors.length > 5) message += `\n...y ${errors.length - 5} más.`;
+                } else {
+                    message = 'Registro ingresado correctamente.\n\n' + message;
                 }
 
                 alert(message);
                 
-                // Refresh list sin recargar la página completa
-                renderProjects(container);
-
-                }).catch(err => {
-                    console.error("Excepción en promesa de importación:", err);
-                    alert("Ocurrió un error inesperado al importar datos: " + err.message);
-                }); // end of ApiService.getProjects().then
+                // Refresh list
+                projects = StorageService.getProjects();
+                render();
 
             } catch (err) {
                 console.error(err);

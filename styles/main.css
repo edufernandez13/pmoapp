@@ -247,36 +247,3 @@ body {
 .font-bold {
     font-weight: 700;
 }
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    #mobile-menu-btn {
-        display: block !important;
-    }
-    .sidebar {
-        position: fixed;
-        left: -260px;
-        top: 0;
-        bottom: 0;
-        z-index: 1050;
-        transition: left 0.3s ease;
-        box-shadow: 2px 0 10px rgba(0,0,0,0.2);
-    }
-    .sidebar.open {
-        left: 0;
-    }
-    .top-bar {
-        padding: 0 var(--spacing-md);
-    }
-    .top-bar h2 {
-        font-size: 1.1rem;
-    }
-    #content-area {
-        padding: var(--spacing-md);
-    }
-    .login-box {
-        width: 90%;
-        padding: var(--spacing-lg);
-        margin: auto;
-    }
-}

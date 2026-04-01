@@ -1,16 +1,16 @@
-import { ApiService } from '../services/apiService.js';
+import { StorageService } from '../services/storage.js';
 import { AnalyticsService } from '../services/analytics.js';
 import { formatCurrency, formatPercent, formatPeriod } from '../utils/format.js';
 
-export async function renderDashboard(container, options = {}) {
+export function renderDashboard(container, options = {}) {
     const { 
         projectFilter = 'all', 
         calcMode = 'accumulated', // 'accumulated' or 'punctual'
         showAllProjects = false 
     } = options;
 
-    const allProjects = await ApiService.getProjects();
-    const activeProjectNames = new Set(allProjects.filter(p => p.status === 'Activo' || p.status === 'ACTIVE').map(p => p.name));
+    const allProjects = StorageService.getProjects();
+    const activeProjectNames = new Set(allProjects.filter(p => p.status === 'Activo').map(p => p.name));
     
     const projectCodeMap = new Map();
     allProjects.forEach(p => {
@@ -24,7 +24,7 @@ export async function renderDashboard(container, options = {}) {
                (entry.professionals[0].name === 'Carga Histórica' || entry.professionals[0].name === 'Recurso Importado');
     };
 
-    let rawEntries = await ApiService.getAllEntries();
+    let rawEntries = StorageService.getAllEntries();
 
     // 1. Filter by Project Status (Active vs All)
     let filteredAllEntries = [...rawEntries];
@@ -43,14 +43,9 @@ export async function renderDashboard(container, options = {}) {
         return parseInt(y) * 12 + MONTHS_ORDER[m];
     };
 
-    // 2. Determine available projects for the dropdown filter and rankings
-    let filterSourceProjects = showAllProjects 
-        ? allProjects 
-        : allProjects.filter(p => p.status === 'Activo' || p.status === 'ACTIVE');
-    
-    const availableProjects = [...new Set(filterSourceProjects.map(p => p.name))].sort();
+    const availableProjects = [...new Set(filteredAllEntries.map(e => e.project))].sort();
 
-    // 3. Filter entries by Specific Project
+    // 2. Filter by Specific Project
     if (projectFilter !== 'all') {
         filteredAllEntries = filteredAllEntries.filter(e => e.project === projectFilter);
     }
@@ -81,19 +76,6 @@ export async function renderDashboard(container, options = {}) {
 
     // Consolidate REAL entries per project for KPIs and Tables
     const projectConsolidated = new Map();
-
-    // Initialize all available projects so they appear in the ranking even with 0 revenue
-    availableProjects.forEach(projName => {
-        projectConsolidated.set(projName, {
-            project: projName,
-            month: '', 
-            revenue: 0,
-            totalCost: 0,
-            margin: 0,
-            profitability: 0
-        });
-    });
-
     validRealEntries.forEach(entry => {
         const metrics = AnalyticsService.calculateMetrics(entry);
         if (!projectConsolidated.has(entry.project)) {
@@ -335,12 +317,13 @@ function initCharts(allEntries, calcMode) {
     let accumulatedProjRev = 0, accumulatedProjCost = 0;
 
     sortedPeriods.forEach((p, idx) => {
-        const metrics = periodsMap.get(p);
+        const originalMetrics = periodsMap.get(p);
+        let activeMetrics = { ...originalMetrics };
         
-        const originalRealRev = metrics.realRevenue;
-        const originalRealCost = metrics.realCost;
-        const originalProjRev = metrics.projRevenue;
-        const originalProjCost = metrics.projCost;
+        const originalRealRev = originalMetrics.realRevenue;
+        const originalRealCost = originalMetrics.realCost;
+        const originalProjRev = originalMetrics.projRevenue;
+        const originalProjCost = originalMetrics.projCost;
 
         if (calcMode === 'accumulated') {
             runningRealRev += originalRealRev;
@@ -359,30 +342,30 @@ function initCharts(allEntries, calcMode) {
                 accumulatedProjCost += originalProjCost;
             }
 
-            metrics.realRevenue = runningRealRev;
-            metrics.realCost = runningRealCost;
-            metrics.projRevenue = accumulatedProjRev;
-            metrics.projCost = accumulatedProjCost;
+            activeMetrics.realRevenue = runningRealRev;
+            activeMetrics.realCost = runningRealCost;
+            activeMetrics.projRevenue = accumulatedProjRev;
+            activeMetrics.projCost = accumulatedProjCost;
         }
 
-        const realMargin = metrics.realRevenue - metrics.realCost;
-        const realProfitPercent = metrics.realRevenue > 0 ? (realMargin / metrics.realRevenue) * 100 : null;
+        const realMargin = activeMetrics.realRevenue - activeMetrics.realCost;
+        const realProfitPercent = activeMetrics.realRevenue > 0 ? (realMargin / activeMetrics.realRevenue) * 100 : null;
 
-        const projMargin = metrics.projRevenue - metrics.projCost;
-        const projProfitPercent = metrics.projRevenue > 0 ? (projMargin / metrics.projRevenue) * 100 : null;
+        const projMargin = activeMetrics.projRevenue - activeMetrics.projCost;
+        const projProfitPercent = activeMetrics.projRevenue > 0 ? (projMargin / activeMetrics.projRevenue) * 100 : null;
 
         const hasReal = originalRealRev > 0 || originalRealCost > 0;
         const hasProj = originalProjRev > 0 || originalProjCost > 0;
         
-        costData.push(hasReal ? metrics.realCost : null);
+        costData.push(hasReal ? activeMetrics.realCost : null);
         marginData.push(hasReal ? realMargin : null);
         
         if (calcMode === 'accumulated') {
             const isProjActive = (firstProjIndex !== -1 && idx >= firstProjIndex);
-            projCostData.push(isProjActive ? metrics.projCost : null);
+            projCostData.push(isProjActive ? activeMetrics.projCost : null);
             projMarginData.push(isProjActive ? projMargin : null);
         } else {
-            projCostData.push(hasProj ? metrics.projCost : null);
+            projCostData.push(hasProj ? activeMetrics.projCost : null);
             projMarginData.push(hasProj ? projMargin : null);
         }
 
@@ -406,19 +389,19 @@ function initCharts(allEntries, calcMode) {
             }
         }
 
-        let totalRev = metrics.realRevenue + metrics.projRevenue;
+        let totalRev = activeMetrics.realRevenue + activeMetrics.projRevenue;
         let totalMargin = realMargin + projMargin;
         let combinedProfitDesc = totalRev > 0 ? (totalMargin / totalRev) * 100 : 0;
 
         tooltipData.push({
             period: formatPeriod(p),
-            realRev: metrics.realRevenue,
-            realCost: metrics.realCost,
+            realRev: activeMetrics.realRevenue,
+            realCost: activeMetrics.realCost,
             realMarg: realMargin,
             realProfit: realProfitPercent !== null ? realProfitPercent.toFixed(1) : 'N/A',
             rawRealProfit: realProfitPercent,
-            projRev: metrics.projRevenue,
-            projCost: metrics.projCost,
+            projRev: activeMetrics.projRevenue,
+            projCost: activeMetrics.projCost,
             projMarg: projMargin,
             projProfit: projProfitPercent !== null ? projProfitPercent.toFixed(1) : 'N/A',
             rawProjProfit: projProfitPercent,

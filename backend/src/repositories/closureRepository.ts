@@ -71,67 +71,6 @@ export const ClosureRepository = {
         return closure;
     },
 
-    getAllClosures: async () => {
-        const pool = getPool();
-        // Get all closures with project names
-        const closureResult = await pool.request()
-            .query(`
-        SELECT c.*, p.name as project_name 
-        FROM MonthlyClosures c
-        JOIN Projects p ON c.project_id = p.id
-      `);
-
-        if (closureResult.recordset.length === 0) return [];
-
-        const closures = closureResult.recordset;
-
-        // Get all resources for all closures
-        const resourcesResult = await pool.request()
-            .query(`
-        SELECT crh.*, r.resource_name, r.role
-        FROM ClosureResourceHours crh
-        JOIN Resources r ON crh.resource_id = r.id
-      `);
-
-        const resourcesByClosure = new Map();
-        resourcesResult.recordset.forEach(r => {
-            if (!resourcesByClosure.has(r.closure_id)) {
-                resourcesByClosure.set(r.closure_id, []);
-            }
-            resourcesByClosure.get(r.closure_id).push(r);
-        });
-
-        // Map resources to closures
-        const mappedClosures = closures.map((closure: any) => {
-            closure.resources = resourcesByClosure.get(closure.id) || [];
-            
-            // Calculate KPIs
-            let laborDirect = 0;
-            let laborIndirect = 0;
-
-            closure.resources.forEach((r: any) => {
-                laborDirect += r.hours * r.rate_snapshot_direct;
-                laborIndirect += r.hours * r.rate_snapshot_indirect;
-            });
-
-            const totalCost = laborDirect + laborIndirect + closure.third_party_costs;
-            const margin = closure.revenue - totalCost;
-            const profitability = closure.revenue > 0 ? (margin / closure.revenue) * 100 : 0;
-
-            closure.kpis = {
-                laborDirectCost: laborDirect,
-                laborIndirectCost: laborIndirect,
-                totalCost,
-                margin,
-                profitabilityPct: parseFloat(profitability.toFixed(2))
-            };
-
-            return closure;
-        });
-
-        return mappedClosures;
-    },
-
     saveDraft: async (projectCode: string, period: string, data: any, user: string) => {
         const pool = getPool();
         const transaction = new sql.Transaction(pool);

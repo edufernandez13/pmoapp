@@ -20,11 +20,10 @@ export const ResourceRepository = {
         const result = await pool.request()
             .input('resource_name', sql.VarChar, resource.resource_name)
             .input('role', sql.VarChar, resource.role)
-            .input('status', sql.VarChar, resource.status || 'ACTIVE')
             .query(`
-        INSERT INTO Resources (resource_name, role, status)
+        INSERT INTO Resources (resource_name, role)
         OUTPUT INSERTED.*
-        VALUES (@resource_name, @role, @status)
+        VALUES (@resource_name, @role)
       `);
         return result.recordset[0];
     },

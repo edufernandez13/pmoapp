@@ -16,27 +16,21 @@ const config: sql.config = {
 
 
 let pool: sql.ConnectionPool | null = null;
-let lastError: any = null;
 
 export const connectDB = async () => {
     try {
-        console.log("Connecting to SQL Server with config:", {
-            ...config,
-            password: config.password ? '***' : undefined
-        });
         pool = await sql.connect(config);
         console.log('Connected to Azure SQL Database');
         return pool;
-    } catch (err: any) {
+    } catch (err) {
         console.error('Database connection failed:', err);
-        lastError = err.message || err.toString();
         throw err;
     }
 };
 
 export const getPool = () => {
     if (!pool) {
-        throw new Error(`Database not connected. Reason: ${lastError || 'Unknown'}`);
+        throw new Error('Database not connected');
     }
     return pool;
 };

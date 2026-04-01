@@ -12,17 +12,6 @@ export interface Rate {
 }
 
 export const RateRepository = {
-    getAllRates: async () => {
-        const pool = getPool();
-        const result = await pool.request().query(`
-            SELECT r.id as resource_id, r.resource_name as name, rr.period, rr.direct_rate, rr.indirect_rate, rr.currency
-            FROM Resources r
-            JOIN ResourceMonthlyRates rr ON r.id = rr.resource_id
-            WHERE r.status = 'ACTIVE'
-        `);
-        return result.recordset;
-    },
-
     getByPeriod: async (period: string) => {
         const pool = getPool();
         const result = await pool.request()
@@ -92,34 +81,6 @@ export const RateRepository = {
             throw err;
         }
     },
-
-    deleteRate: async (resourceName: string, period: string) => {
-        const pool = getPool();
-        const transaction = new sql.Transaction(pool);
-
-        try {
-            await transaction.begin();
-
-            const resourceResult = await transaction.request()
-                .input('name', sql.VarChar, resourceName)
-                .query('SELECT id FROM Resources WHERE resource_name = @name');
-
-            if (resourceResult.recordset.length === 0) {
-                throw new Error(`Resource ${resourceName} not found`);
-            }
-            const resourceId = resourceResult.recordset[0].id;
-
-            await transaction.request()
-                .input('resource_id', sql.Int, resourceId)
-                .input('period', sql.Date, period)
-                .query('DELETE FROM ResourceMonthlyRates WHERE resource_id = @resource_id AND period = @period');
-
-            await transaction.commit();
-        } catch (err) {
-            await transaction.rollback();
-            throw err;
-        }
-    }
 
     // Batch upsert could be optimized but loop for now is safer for transaction logic simplicity in this context
 };

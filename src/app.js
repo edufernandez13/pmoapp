@@ -9,24 +9,6 @@ class App {
         this.container = document.getElementById('content-area');
         this.navBtns = document.querySelectorAll('.nav-btn');
         this.init();
-        this.setupInactivityTimeout();
-    }
-
-    setupInactivityTimeout() {
-        let inactivityTimer;
-        const resetTimer = () => {
-            clearTimeout(inactivityTimer);
-            inactivityTimer = setTimeout(() => {
-                AuthService.logout();
-                alert('Su sesión ha expirado por inactividad (5 minutos).');
-                window.location.reload();
-            }, 5 * 60 * 1000); // 5 minutos
-        };
-
-        ['mousemove', 'keydown', 'scroll', 'click'].forEach(evt => {
-            window.addEventListener(evt, resetTimer);
-        });
-        resetTimer();
     }
 
     init() {
@@ -43,12 +25,6 @@ class App {
                 // Active State
                 this.navBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-
-                // Close sidebar on mobile
-                const sidebar = document.querySelector('.sidebar');
-                if (sidebar && window.innerWidth <= 768) {
-                    sidebar.classList.remove('open');
-                }
             });
         });
 
@@ -60,15 +36,6 @@ class App {
                 // Update sidebar active state manually
                 this.navBtns.forEach(b => b.classList.remove('active'));
                 document.querySelector('[data-view="entry"]')?.classList.add('active');
-            });
-        }
-
-        // Mobile Menu Logic
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const sidebar = document.querySelector('.sidebar');
-        if (mobileMenuBtn && sidebar) {
-            mobileMenuBtn.addEventListener('click', () => {
-                sidebar.classList.toggle('open');
             });
         }
 
@@ -126,16 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
             loginContainer.classList.add('hidden');
             mainAppContainer.classList.remove('hidden');
             updateProfileUI(user);
-
-            // Viewer RBAC
-            if (user.role === 'Visualizador') {
-                const btnNewEntry = document.getElementById('btn-new-entry');
-                if (btnNewEntry) btnNewEntry.style.display = 'none';
-                
-                const navEntry = document.querySelector('[data-view="entry"]');
-                if (navEntry) navEntry.style.display = 'none';
-            }
-
             new App(); // Start the app
         } else {
             loginContainer.classList.remove('hidden');

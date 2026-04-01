@@ -1,24 +1,18 @@
-import { ApiService } from '../services/apiService.js';
+import { StorageService } from '../services/storage.js';
 import { formatCurrency, formatPeriod, parsePeriodToMmmYy } from '../utils/format.js';
-import { AuthService } from '../services/auth.js';
 
-export async function renderResources(container) {
-    let professionals = await ApiService.getAllRates();
+export function renderResources(container) {
+    let professionals = StorageService.getProfessionals();
 
     const render = () => {
-        const user = AuthService.getCurrentUser() || {};
-        const isViewer = user.role === 'Visualizador';
-        
         const html = `
             <div class="projects-container">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                     <h2 style="margin: 0; color: #111827;">Maestro de Profesionales</h2>
                     <div style="display: flex; gap: 10px;">
-                        ${!isViewer ? `
                         <input type="file" id="excel-upload" accept=".xlsx, .xls" style="display: none;" />
                         <button id="btn-import-excel" class="btn-secondary">📤 Importar Excel</button>
                         <button id="btn-new-pro" class="btn-primary">+ Nuevo Profesional</button>
-                        ` : ''}
                     </div>
                 </div>
 
@@ -45,10 +39,8 @@ export async function renderResources(container) {
                                         <td style="padding: 12px; text-align: right;">${formatCurrency(p.indirectRate)}</td>
                                         <td style="padding: 12px; text-align: right;"><strong>${formatCurrency(beRate)}</strong></td>
                                         <td style="padding: 12px; text-align: center;">
-                                            ${!isViewer ? `
-                                            <button class="btn-edit-rate" data-name="${p.name}" data-period="${p.period}" data-direct="${p.directRate}" data-indirect="${p.indirectRate}" style="background: none; border: none; cursor: pointer; font-size: 1.2rem;" title="Editar Tarifa">✏️</button>
-                                            <button class="btn-delete-rate" data-name="${p.name}" data-period="${p.period}" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; color: #dc2626;" title="Eliminar Registro">🗑️</button>
-                                            ` : ''}
+                                            <button class="btn-edit-pro" data-id="${p.id}" style="background: none; border: none; cursor: pointer; font-size: 1.2rem;" title="Editar Profesional">✏️</button>
+                                            <button class="btn-delete-pro" data-id="${p.id}" style="background: none; border: none; cursor: pointer; font-size: 1.2rem; color: #dc2626;" title="Eliminar Profesional">🗑️</button>
                                         </td>
                                     </tr>
                                 `;
@@ -83,17 +75,22 @@ export async function renderResources(container) {
                 const indirectRate = prompt('Tarifa Indirecta (CLP):');
                 if (!indirectRate || isNaN(indirectRate)) return;
 
-                ApiService.saveProfessional({
+                const exists = professionals.some(p => String(p.name).trim() === name.trim() && String(p.period).trim() === period.trim());
+                if (exists) {
+                    alert('Registro duplicado: ya existe un profesional con el mismo Nombre en ese Periodo');
+                    return;
+                }
+
+                StorageService.saveProfessional({
                     name: name.trim(),
                     period: period.trim(),
                     directRate: Number(directRate),
                     indirectRate: Number(indirectRate)
-                }).then(() => {
-                    ApiService.getAllRates().then(p => {
-                        professionals = p;
-                        render();
-                    });
-                }).catch(err => alert("Error al crear tarifa: " + err.message));
+                });
+                
+                alert('Registro ingresado correctamente');
+                professionals = StorageService.getProfessionals();
+                render();
             });
         }
 
@@ -125,15 +122,26 @@ export async function renderResources(container) {
                         // Expecting header row to be: Nombre | Periodo | Tarifa Directa | Tarifa Indirecta
                         if (json.length > 1) {
                             const newPros = [];
+                            let hasDuplicate = false;
                             // Skip header row (index 0)
                             for(let i = 1; i < json.length; i++) {
                                 const row = json[i];
                                 if (row && row.length >= 4 && row[0] && row[1]) {
+                                    const rawName = String(row[0]).trim();
                                     const rawPeriod = String(row[1]).trim();
                                     const parsedPeriod = parsePeriodToMmmYy(rawPeriod);
                                     if (parsedPeriod) {
+                                        const isDuplicateInFile = newPros.some(p => p.name === rawName && p.period === parsedPeriod);
+                                        const isDuplicateInDB = professionals.some(p => p.name === rawName && p.period === parsedPeriod);
+                                        
+                                        if (isDuplicateInFile || isDuplicateInDB) {
+                                            alert(`Fila ${i + 1}: Registro duplicado: ya existe un profesional con el mismo Nombre en ese Periodo`);
+                                            hasDuplicate = true;
+                                            break;
+                                        }
+
                                         newPros.push({
-                                            name: String(row[0]).trim(),
+                                            name: rawName,
                                             period: parsedPeriod,
                                             directRate: Number(row[2]) || 0,
                                             indirectRate: Number(row[3]) || 0
@@ -142,14 +150,16 @@ export async function renderResources(container) {
                                 }
                             }
                             
+                            if (hasDuplicate) {
+                                fileInput.value = '';
+                                return;
+                            }
+                            
                             if (newPros.length > 0) {
-                                ApiService.saveProfessionalsBulk(newPros).then(() => {
-                                    alert(`Se cargaron/actualizaron ${newPros.length} profesionales exitosamente.`);
-                                    ApiService.getAllRates().then(p => {
-                                        professionals = p;
-                                        render();
-                                    });
-                                }).catch(err => alert("Error en bulk: " + err.message));
+                                StorageService.saveProfessionalsBulk(newPros);
+                                alert(`Registro ingresado correctamente.\nSe cargaron/actualizaron ${newPros.length} profesionales exitosamente.`);
+                                professionals = StorageService.getProfessionals();
+                                render();
                             } else {
                                 alert('No se encontraron filas válidas en el Excel. Formato esperado: Nombre, Periodo, Tarifa Directa, Tarifa Indirecta.');
                             }
@@ -163,62 +173,64 @@ export async function renderResources(container) {
             });
         }
 
-        const deleteRateBtns = document.querySelectorAll('.btn-delete-rate');
-        deleteRateBtns.forEach(btn => {
-            btn.addEventListener('click', async (e) => {
-                const btnEl = e.target.closest('button');
-                const name = btnEl.dataset.name;
-                const period = btnEl.dataset.period;
+        const editBtns = document.querySelectorAll('.btn-edit-pro');
+        editBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const id = e.target.closest('button').dataset.id;
+                const pro = professionals.find(p => p.id === id);
+                if(!pro) return;
                 
-                if (confirm(`¿Está seguro de eliminar la tarifa de ${name} para el periodo ${period}?`)) {
-                    try {
-                        await ApiService.deleteRate(name, period);
-                        alert('Registro eliminado exitosamente.');
-                        ApiService.getAllRates().then(p => {
-                            professionals = p;
-                            render();
-                        });
-                    } catch (err) {
-                        alert('Error al eliminar: ' + err.message);
-                    }
+                const newName = prompt('Nombre del profesional:', pro.name);
+                if (newName === null) return;
+                
+                let newPeriod = prompt('Periodo (Ej: ene-25):', formatPeriod(pro.period));
+                if (newPeriod === null) return;
+                
+                const parsedPeriod = parsePeriodToMmmYy(newPeriod);
+                if (!parsedPeriod && newPeriod.trim() !== '') {
+                    alert('Formato de periodo inválido. Debe ser mmm-yy (ej: ene-25).');
+                    return;
+                } else if (!parsedPeriod) {
+                    return;
                 }
-            });
-        });
+                
+                const newDirectRate = prompt('Tarifa Directa (CLP):', pro.directRate);
+                if (newDirectRate === null || isNaN(newDirectRate) || newDirectRate.trim() === '') return;
+                
+                const newIndirectRate = prompt('Tarifa Indirecta (CLP):', pro.indirectRate);
+                if (newIndirectRate === null || isNaN(newIndirectRate) || newIndirectRate.trim() === '') return;
 
-        const editRateBtns = document.querySelectorAll('.btn-edit-rate');
-        editRateBtns.forEach(btn => {
-            btn.addEventListener('click', async (e) => {
-                const btnEl = e.target.closest('button');
-                const name = btnEl.dataset.name;
-                const period = btnEl.dataset.period;
-                const currentDirect = btnEl.dataset.direct;
-                const currentIndirect = btnEl.dataset.indirect;
-                
-                const newDirect = prompt(`Editar Tarifa Directa para ${name} (${period}):`, currentDirect);
-                if (newDirect === null || newDirect.trim() === '') return;
-                
-                const newIndirect = prompt(`Editar Tarifa Indirecta para ${name} (${period}):`, currentIndirect);
-                if (newIndirect === null || newIndirect.trim() === '') return;
-                
-                if (isNaN(newDirect) || isNaN(newIndirect)) {
-                    alert('Las tarifas deben ser valores numéricos.');
+                const exists = professionals.some(p => p.id !== pro.id && String(p.name).trim() === newName.trim() && p.period === parsedPeriod);
+                if (exists) {
+                    alert('Registro duplicado: ya existe un profesional con el mismo Nombre en ese Periodo');
                     return;
                 }
 
-                try {
-                    await ApiService.saveProfessional({
-                        name: name,
-                        period: period,
-                        directRate: Number(newDirect),
-                        indirectRate: Number(newIndirect)
-                    });
-                    alert('Tarifa actualizada correctamente.');
-                    ApiService.getAllRates().then(p => {
-                        professionals = p;
+                StorageService.saveProfessional({
+                    ...pro,
+                    name: newName.trim(),
+                    period: parsedPeriod,
+                    directRate: Number(newDirectRate),
+                    indirectRate: Number(newIndirectRate)
+                });
+                
+                professionals = StorageService.getProfessionals();
+                render();
+            });
+        });
+
+        const deleteBtns = document.querySelectorAll('.btn-delete-pro');
+        deleteBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const id = e.target.closest('button').dataset.id;
+                if(confirm('¿Estás seguro de eliminar este profesional?')) {
+                    try {
+                        StorageService.deleteProfessional(id);
+                        professionals = StorageService.getProfessionals();
                         render();
-                    });
-                } catch (err) {
-                    alert('Error al actualizar: ' + err.message);
+                    } catch(err) {
+                        alert(err.message);
+                    }
                 }
             });
         });

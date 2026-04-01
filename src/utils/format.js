@@ -58,14 +58,6 @@ export const parsePeriodToMmmYy = (period) => {
         if (month) return `${month}-${year}`;
     }
 
-    // Format: YYYY-MM-DD or ISO
-    match = strPeriod.match(/^(\d{4})-(\d{2})-\d{2}/);
-    if (match) {
-        const year = match[1].slice(-2);
-        const month = MONTHS_MAP[match[2]];
-        if (month) return `${month}-${year}`;
-    }
-
     // Format: mmm-yy, mmm yy, mmmmm yyyy (e.g. ene-25, enero 2025)
     match = strPeriod.match(/^([a-z]+)[-\s/.,]+(\d{2,4})$/);
     if (match) {
@@ -92,24 +84,4 @@ export const parsePeriodToMmmYy = (period) => {
 export const formatPeriod = (period) => {
     const parsed = parsePeriodToMmmYy(period);
     return parsed ? parsed : period;
-};
-
-const MONTHS_MAP_REVERSE = {
-    'ene': '01', 'feb': '02', 'mar': '03', 'abr': '04', 'may': '05', 'jun': '06',
-    'jul': '07', 'ago': '08', 'sep': '09', 'oct': '10', 'nov': '11', 'dic': '12'
-};
-
-export const toSqlDate = (period) => {
-    if (!period) return null;
-    const parsed = parsePeriodToMmmYy(period); // normalize to mmm-yy first
-    if (!parsed) return period;
-    const parts = parsed.split('-');
-    if (parts.length === 2) {
-        const monthNum = MONTHS_MAP_REVERSE[parts[0]];
-        const yearSub = parts[1];
-        if (monthNum && yearSub) {
-            return `20${yearSub}-${monthNum}-01`;
-        }
-    }
-    return period;
 };

@@ -1,10 +1,9 @@
-import { ApiService } from '../services/apiService.js';
+import { StorageService } from '../services/storage.js';
 import { parsePeriodToMmmYy, formatCurrency } from '../utils/format.js';
 
-export async function renderEntryForm(container) {
-    const projects = await ApiService.getProjects();
-    const activeProjects = projects.filter(p => p.status === 'Activo' || p.status === 'ACTIVE');
-    const allProfessionals = await ApiService.getAllRates();
+export function renderEntryForm(container) {
+    const activeProjects = StorageService.getProjects().filter(p => p.status === 'Activo');
+    const allProfessionals = StorageService.getProfessionals();
     const uniqueProNames = [...new Set(allProfessionals.map(p => p.name))].sort();
 
     const html = `
@@ -16,13 +15,12 @@ export async function renderEntryForm(container) {
                         <label class="form-label">Proyecto</label>
                         <select name="project" class="form-input" required>
                             <option value="" disabled selected>Seleccione un proyecto activo...</option>
-                            ${activeProjects.map(p => `<option value="${p.code}">${p.name} (${p.code})</option>`).join('')}
+                            ${activeProjects.map(p => `<option value="${p.name}">${p.name} (${p.code})</option>`).join('')}
                         </select>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Periodo (Mes/Año)</label>
-                        <input type="text" id="entry-month" class="form-input" placeholder="Seleccione un mes..." required style="cursor: pointer; background-color: #fff;">
-                        <input type="hidden" id="entry-month-hidden" name="month">
+                        <input type="month" id="entry-month" name="month" class="form-input" required>
                     </div>
                 </div>
 
@@ -70,29 +68,11 @@ export async function renderEntryForm(container) {
     const addBtn = document.getElementById('add-pro-btn');
     const form = document.getElementById('projectForm');
     const monthInput = document.getElementById('entry-month');
-    const monthHidden = document.getElementById('entry-month-hidden');
-
-    monthInput.addEventListener('focus', () => {
-        monthInput.type = 'month';
-        monthInput.value = monthHidden.value;
-        if (typeof monthInput.showPicker === 'function') {
-            try { monthInput.showPicker(); } catch (e) {}
-        }
-    });
-
-    monthInput.addEventListener('blur', () => {
-        monthInput.type = 'text';
-        if (monthHidden.value) {
-            monthInput.value = parsePeriodToMmmYy(monthHidden.value) || '';
-        } else {
-            monthInput.value = '';
-        }
-    });
 
     // Recalculates rate for a specific row
     const updateRowRate = (row) => {
-        const rawMonth = monthHidden.value; // format: 'YYYY-MM'
-        const month = rawMonth ? parsePeriodToMmmYy(rawMonth) : '';
+        const rawMonth = monthInput.value; // format: 'YYYY-MM'
+        const month = parsePeriodToMmmYy(rawMonth);
         const nameSelect = row.querySelector('[name="pro_name"]');
         const rateDisplayInput = row.querySelector('[name="pro_rate_display"]');
         const rateInput = row.querySelector('[name="pro_rate"]');
@@ -119,8 +99,7 @@ export async function renderEntryForm(container) {
     };
 
     // Recalculate all rows when global month changes
-    monthInput.addEventListener('change', (e) => {
-        monthHidden.value = e.target.value;
+    monthInput.addEventListener('change', () => {
         const rows = list.querySelectorAll('.list-item');
         rows.forEach(updateRowRate);
     });
@@ -173,20 +152,44 @@ export async function renderEntryForm(container) {
             }
         });
 
+        const parsedMonth = parsePeriodToMmmYy(formData.get('month'));
+        if (!parsedMonth) {
+            alert('El formato del periodo es inválido o faltante. Use mmm-yy (ej: ene-25).');
+            return;
+        }
+
+        const projectName = formData.get('project');
+        const tipoRegistro = formData.get('tipoRegistro') || 'REAL';
+
+        const projectObj = activeProjects.find(p => p.name === projectName);
+        const projectCode = projectObj ? String(projectObj.code).trim().toUpperCase() : '';
+
+        const allEntries = StorageService.getAllEntries();
+        const allProjects = StorageService.getProjects();
+        const codeMap = new Map(allProjects.map(p => [p.name, String(p.code).trim().toUpperCase()]));
+
+        const isDuplicate = allEntries.some(e => 
+            codeMap.get(e.project) === projectCode && 
+            e.month === parsedMonth && 
+            (e.tipoRegistro || 'REAL') === tipoRegistro
+        );
+
+        if (isDuplicate) {
+            alert('Registro duplicado: ya existe un proyecto con el mismo Código, Periodo y Status');
+            return;
+        }
+
         const entry = {
-            project: formData.get('project'),
-            month: parsePeriodToMmmYy(formData.get('month')),
+            project: projectName,
+            month: parsedMonth,
             revenue: Number(formData.get('revenue')),
             thirdPartyCosts: Number(formData.get('thirdPartyCosts')),
-            tipoRegistro: formData.get('tipoRegistro') || 'REAL',
+            tipoRegistro: tipoRegistro,
             professionals
         };
 
-        ApiService.saveEntry(entry).then(() => {
-            alert('Proyecto guardado exitosamente');
-            window.location.reload(); // Simple reload to go back to dashboard
-        }).catch((err) => {
-            alert('Error al guardar: ' + err.message);
-        });
+        StorageService.saveEntry(entry);
+        alert('Registro ingresado correctamente');
+        window.location.reload(); // Simple reload to go back to dashboard
     });
 }
