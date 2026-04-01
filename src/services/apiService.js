@@ -26,9 +26,27 @@ export const ApiService = {
         return handleResponse(response);
     },
 
+    createProject: async (projectData) => {
+        const response = await fetch(`${API_BASE_URL}/projects`, {
+            method: 'POST',
+            headers: getHeaders(),
+            body: JSON.stringify(projectData)
+        });
+        return handleResponse(response);
+    },
+
     // Resources
     getResources: async () => {
         const response = await fetch(`${API_BASE_URL}/resources`, { headers: getHeaders() });
+        return handleResponse(response);
+    },
+
+    createResource: async (resourceData) => {
+        const response = await fetch(`${API_BASE_URL}/resources`, {
+            method: 'POST',
+            headers: getHeaders(),
+            body: JSON.stringify(resourceData)
+        });
         return handleResponse(response);
     },
 

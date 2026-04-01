@@ -485,7 +485,7 @@ export function renderProjects(container) {
         if (!file) return;
 
         const reader = new FileReader();
-        reader.onload = (evt) => {
+        reader.onload = async (evt) => {
             try {
                 const bstr = evt.target.result;
                 const wb = XLSX.read(bstr, { type: 'binary' });
@@ -585,14 +585,24 @@ export function renderProjects(container) {
                     // Check if project exists, if not, create it
                     let project = currentProjects.find(p => normalizeCode(p.code) === rowCode);
                     if (!project) {
-                        project = {
-                            code: rowCode,
-                            name: rowName,
-                            manager: rowManager,
-                            status: rowStatus
-                        };
-                        StorageService.saveProject(project);
-                        currentProjects.push(project); 
+                        try {
+                            const newProject = await ApiService.createProject({
+                                project_code: rowCode,
+                                name: rowName
+                            });
+                            // Keep in local cache for immediate use in loop
+                            project = {
+                                code: rowCode,
+                                name: rowName,
+                                manager: rowManager,
+                                status: rowStatus
+                            };
+                            currentProjects.push(project);
+                        } catch (err) {
+                            errorCount++;
+                            errors.push(`Fila ${index + 2}: Error creando proyecto - ${err.message}`);
+                            continue;
+                        }
                     }
 
                     const existingEntryDuplicate = allEntries.some(e => {
@@ -618,18 +628,26 @@ export function renderProjects(container) {
                         hours: 1, 
                         rate: rowInternalCost 
                     };
+                    
+                    try {
+                        // Ensure "Carga Histórica" resource exists
+                        await ApiService.createResource({ resource_name: 'Carga Histórica', role: 'Genérico' });
+                        
+                        const entryData = {
+                            projectCode: rowCode,
+                            month: parsedPeriod,
+                            revenue: rowRevenue,
+                            thirdPartyCosts: rowExternalCost,
+                            tipoRegistro: importStatus,
+                            professionals: [mockProfessional]
+                        };
 
-                    const entryData = {
-                        project: project.name,
-                        month: parsedPeriod,
-                        revenue: rowRevenue,
-                        thirdPartyCosts: rowExternalCost,
-                        tipoRegistro: importStatus,
-                        professionals: [mockProfessional]
-                    };
-
-                    const savedEntry = StorageService.saveEntry(entryData);
-                    allEntries.push(savedEntry);
+                        const savedEntry = await ApiService.saveEntry(entryData);
+                        allEntries.push(savedEntry);
+                    } catch (err) {
+                        errorCount++;
+                        errors.push(`Fila ${index + 2}: Error guardando registro - ${err.message}`);
+                    }
                 }
 
                 // Reset file input

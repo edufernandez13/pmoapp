@@ -27,9 +27,16 @@ exports.ProjectRepository = {
             .input('project_code', mssql_1.default.VarChar, project.project_code)
             .input('name', mssql_1.default.VarChar, project.name)
             .query(`
-        INSERT INTO Projects (project_code, name)
-        OUTPUT INSERTED.*
-        VALUES (@project_code, @name)
+        IF NOT EXISTS (SELECT 1 FROM Projects WHERE project_code = @project_code)
+        BEGIN
+            INSERT INTO Projects (project_code, name)
+            OUTPUT INSERTED.*
+            VALUES (@project_code, @name)
+        END
+        ELSE
+        BEGIN
+            SELECT * FROM Projects WHERE project_code = @project_code
+        END
       `);
         return result.recordset[0];
     }),

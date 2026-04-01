@@ -21,9 +21,16 @@ export const ProjectRepository = {
             .input('project_code', sql.VarChar, project.project_code)
             .input('name', sql.VarChar, project.name)
             .query(`
-        INSERT INTO Projects (project_code, name)
-        OUTPUT INSERTED.*
-        VALUES (@project_code, @name)
+        IF NOT EXISTS (SELECT 1 FROM Projects WHERE project_code = @project_code)
+        BEGIN
+            INSERT INTO Projects (project_code, name)
+            OUTPUT INSERTED.*
+            VALUES (@project_code, @name)
+        END
+        ELSE
+        BEGIN
+            SELECT * FROM Projects WHERE project_code = @project_code
+        END
       `);
         return result.recordset[0];
     },

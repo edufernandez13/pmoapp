@@ -21,9 +21,16 @@ export const ResourceRepository = {
             .input('resource_name', sql.VarChar, resource.resource_name)
             .input('role', sql.VarChar, resource.role)
             .query(`
-        INSERT INTO Resources (resource_name, role)
-        OUTPUT INSERTED.*
-        VALUES (@resource_name, @role)
+        IF NOT EXISTS (SELECT 1 FROM Resources WHERE resource_name = @resource_name)
+        BEGIN
+            INSERT INTO Resources (resource_name, role)
+            OUTPUT INSERTED.*
+            VALUES (@resource_name, @role)
+        END
+        ELSE
+        BEGIN
+            SELECT * FROM Resources WHERE resource_name = @resource_name
+        END
       `);
         return result.recordset[0];
     },

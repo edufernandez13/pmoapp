@@ -156,10 +156,25 @@ export function renderResources(container) {
                             }
                             
                             if (newPros.length > 0) {
-                                StorageService.saveProfessionalsBulk(newPros);
-                                alert(`Registro ingresado correctamente.\nSe cargaron/actualizaron ${newPros.length} profesionales exitosamente.`);
-                                professionals = StorageService.getProfessionals();
-                                render();
+                                (async () => {
+                                    try {
+                                        for (const pro of newPros) {
+                                            await ApiService.createResource({ resource_name: pro.name, role: 'Profesional' });
+                                            // Ideally we should have a bulk save rates or iterate over them
+                                            await ApiService.saveRates(pro.period, [{
+                                                resourceName: pro.name,
+                                                directRate: pro.directRate,
+                                                indirectRate: pro.indirectRate
+                                            }]);
+                                        }
+                                        alert(`Registro ingresado correctamente.\nSe cargaron/actualizaron ${newPros.length} profesionales exitosamente.`);
+                                        // Refresh from API ideally, but for now fallback to StorageService just in case UI expects it, or fetch from API if we refactored render
+                                        professionals = StorageService.getProfessionals(); 
+                                        render();
+                                    } catch (apiErr) {
+                                         alert('Error al guardar en base de datos: ' + apiErr.message);
+                                    }
+                                })();
                             } else {
                                 alert('No se encontraron filas válidas en el Excel. Formato esperado: Nombre, Periodo, Tarifa Directa, Tarifa Indirecta.');
                             }
