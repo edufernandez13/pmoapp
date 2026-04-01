@@ -9,17 +9,31 @@ import resourceRoutes from './routes/resourceRoutes';
 import rateRoutes from './routes/rateRoutes';
 import closureRoutes from './routes/closureRoutes';
 
+import path from 'path';
+
 // Load environment variables
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const isProduction = process.env.NODE_ENV === 'production';
 
 // Middleware
-app.use(helmet());
-app.use(cors());
-app.use(morgan('dev'));
+app.use(helmet({
+    contentSecurityPolicy: false, // Opcional, dependiendo de si tus estáticos fallan por CSP
+}));
+app.use(cors({
+    origin: isProduction && process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN : '*'
+}));
+app.use(morgan(isProduction ? 'combined' : 'dev'));
 app.use(express.json());
+
+// Serve static frontend files (if deployed monolithically)
+const frontendRoot = path.join(__dirname, '../../');
+app.get('/', (req, res) => res.sendFile(path.join(frontendRoot, 'index.html')));
+app.use('/assets', express.static(path.join(frontendRoot, 'assets')));
+app.use('/styles', express.static(path.join(frontendRoot, 'styles')));
+app.use('/src', express.static(path.join(frontendRoot, 'src')));
 
 // Routes
 app.use('/api/projects', projectRoutes);
@@ -33,8 +47,6 @@ import { Request, Response } from "express";
 app.get("/health", (req: Request, res: Response) => {
     res.status(200).json({ ok: true });
 });
-
-
 // Start Server
 const startServer = async () => {
     try {

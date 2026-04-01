@@ -6,5 +6,5 @@ const auth_1 = require("../middleware/auth");
 const router = (0, express_1.Router)();
 router.use(auth_1.authMiddleware);
 router.get('/', rateController_1.getRates);
-router.post('/', (0, auth_1.requireRole)(['ADMIN', 'PMO']), rateController_1.saveRates);
+router.post('/', (0, auth_1.requireRole)('Admin', 'PMO'), rateController_1.saveRates);
 exports.default = router;

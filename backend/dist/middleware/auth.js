@@ -1,29 +1,32 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.requireRole = exports.authMiddleware = void 0;
-const authMiddleware = (req, res, next) => {
-    // Simulate authentication via Header for development
-    // In production, validate Entra ID JWT here
-    const simulatedRole = req.headers['x-user-role'];
-    const simulatedUser = req.headers['x-user-name'];
-    if (process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
-        req.user = {
-            id: 'mock-id',
-            name: simulatedUser || 'Dev User',
-            role: simulatedRole || 'ADMIN', // Default to ADMIN for dev convenience
-        };
-        return next();
-    }
-    // TODO: Add real JWT validation logic here
-    res.status(401).json({ message: 'Unauthorized' });
-};
 exports.authMiddleware = authMiddleware;
-const requireRole = (roles) => {
+exports.requireRole = requireRole;
+function authMiddleware(req, res, next) {
+    var _a;
+    // Simulación por headers (para desarrollo)
+    const simulatedRole = req.headers["x-user-role"];
+    const simulatedUser = req.headers["x-user-name"];
+    req.user = {
+        name: simulatedUser !== null && simulatedUser !== void 0 ? simulatedUser : "dev-user",
+        role: (_a = simulatedRole) !== null && _a !== void 0 ? _a : "Admin",
+    };
+    next();
+}
+/**
+ * Middleware para exigir rol (o alguno de varios roles).
+ * Uso: requireRole("Admin") o requireRole("PMO","Admin")
+ */
+function requireRole(...allowed) {
     return (req, res, next) => {
-        if (!req.user || !roles.includes(req.user.role)) {
-            return res.status(403).json({ message: 'Forbidden' });
+        var _a;
+        const role = (_a = req.user) === null || _a === void 0 ? void 0 : _a.role;
+        if (!role) {
+            return res.status(401).json({ error: "Unauthorized: missing role" });
+        }
+        if (!allowed.includes(role)) {
+            return res.status(403).json({ error: "Forbidden: insufficient role", role, allowed });
         }
         next();
     };
-};
-exports.requireRole = requireRole;
+}

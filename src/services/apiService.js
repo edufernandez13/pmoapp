@@ -1,7 +1,8 @@
 // src/services/apiService.js
 
-const API_BASE_URL = 'http://localhost:3000/api'; // Make this configurable via env if needed
-
+const API_BASE_URL = typeof process !== 'undefined' && process.env && process.env.NODE_ENV === 'production' 
+    ? '/api' 
+    : 'http://localhost:3000/api';
 // Helper to handle responses
 const handleResponse = async (response) => {
     if (!response.ok) {

@@ -6,5 +6,5 @@ const auth_1 = require("../middleware/auth");
 const router = (0, express_1.Router)();
 router.use(auth_1.authMiddleware);
 router.get('/', resourceController_1.getResources);
-router.post('/', (0, auth_1.requireRole)(['ADMIN', 'PMO']), resourceController_1.createResource);
+router.post('/', (0, auth_1.requireRole)('Admin', 'PMO'), resourceController_1.createResource);
 exports.default = router;

@@ -22,35 +22,47 @@ const projectRoutes_1 = __importDefault(require("./routes/projectRoutes"));
 const resourceRoutes_1 = __importDefault(require("./routes/resourceRoutes"));
 const rateRoutes_1 = __importDefault(require("./routes/rateRoutes"));
 const closureRoutes_1 = __importDefault(require("./routes/closureRoutes"));
+const path_1 = __importDefault(require("path"));
 // Load environment variables
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 3000;
+const isProduction = process.env.NODE_ENV === 'production';
 // Middleware
-app.use((0, helmet_1.default)());
-app.use((0, cors_1.default)());
-app.use((0, morgan_1.default)('dev'));
+app.use((0, helmet_1.default)({
+    contentSecurityPolicy: false, // Opcional, dependiendo de si tus estáticos fallan por CSP
+}));
+app.use((0, cors_1.default)({
+    origin: isProduction && process.env.CORS_ORIGIN ? process.env.CORS_ORIGIN : '*'
+}));
+app.use((0, morgan_1.default)(isProduction ? 'combined' : 'dev'));
 app.use(express_1.default.json());
+// Serve static frontend files (if deployed monolithically)
+const frontendRoot = path_1.default.join(__dirname, '../../');
+app.get('/', (req, res) => res.sendFile(path_1.default.join(frontendRoot, 'index.html')));
+app.use('/assets', express_1.default.static(path_1.default.join(frontendRoot, 'assets')));
+app.use('/styles', express_1.default.static(path_1.default.join(frontendRoot, 'styles')));
+app.use('/src', express_1.default.static(path_1.default.join(frontendRoot, 'src')));
 // Routes
 app.use('/api/projects', projectRoutes_1.default);
 app.use('/api/resources', resourceRoutes_1.default);
 app.use('/api/rates', rateRoutes_1.default);
 app.use('/api/closures', closureRoutes_1.default);
-// Health Check
-app.get('/health', (req, res) => {
-    res.json({ status: 'OK', timestamp: new Date() });
+// ...
+app.get("/health", (req, res) => {
+    res.status(200).json({ ok: true });
 });
 // Start Server
 const startServer = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         yield (0, db_1.connectDB)();
-        app.listen(PORT, () => {
-            console.log(`Server running on port ${PORT}`);
-        });
+        console.log("Database connected successfully");
     }
     catch (error) {
-        console.error('Failed to start server:', error);
-        process.exit(1);
+        console.warn("⚠️ Database not available. Running in DEV mode without DB.");
     }
+    app.listen(PORT, () => {
+        console.log(`Server running on port ${PORT}`);
+    });
 });
 startServer();
