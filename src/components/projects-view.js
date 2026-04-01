@@ -275,7 +275,7 @@ export function renderProjects(container) {
             modalOverlay.classList.add('hidden');
         });
 
-        document.getElementById('btn-save-new').addEventListener('click', () => {
+        document.getElementById('btn-save-new').addEventListener('click', async () => {
             const rawCodeInput = document.getElementById('new-project-code').value;
             const codeInput = normalizeCode(rawCodeInput);
             const rawNameInput = document.getElementById('new-project-name').value;
@@ -296,19 +296,31 @@ export function renderProjects(container) {
                 return;
             }
 
-            const newProject = {
-                code: codeInput,
-                name: nameInput,
-                status: 'Activo'
-            };
+            try {
+                // Call API first
+                const dbProject = await ApiService.createProject({
+                    project_code: codeInput,
+                    name: nameInput,
+                    status: 'ACTIVE'
+                });
 
-            StorageService.saveProject(newProject);
-            projects = StorageService.getProjects(); // Refresh data
-            
-            modalContainer.classList.add('hidden');
-            modalOverlay.classList.add('hidden');
-            
-            render();
+                const newProject = {
+                    id: String(dbProject.id), // Store DB id to avoid sync issues when editing status
+                    code: dbProject.project_code,
+                    name: dbProject.name,
+                    status: dbProject.status === 'INACTIVE' ? 'Finalizado' : 'Activo'
+                };
+
+                StorageService.saveProject(newProject);
+                projects = StorageService.getProjects(); // Refresh data
+                
+                modalContainer.classList.add('hidden');
+                modalOverlay.classList.add('hidden');
+                
+                render();
+            } catch (err) {
+                alert('Error al crear proyecto en servidor: ' + err.message);
+            }
         });
     };
 
@@ -588,15 +600,19 @@ export function renderProjects(container) {
                         try {
                             const newProject = await ApiService.createProject({
                                 project_code: rowCode,
-                                name: rowName
+                                name: rowName,
+                                manager: rowManager,
+                                status: rowStatus === 'Activo' ? 'ACTIVE' : 'INACTIVE'
                             });
                             // Keep in local cache for immediate use in loop
                             project = {
-                                code: rowCode,
-                                name: rowName,
-                                manager: rowManager,
-                                status: rowStatus
+                                id: String(newProject.id),
+                                code: newProject.project_code,
+                                name: newProject.name,
+                                manager: newProject.manager,
+                                status: newProject.status === 'INACTIVE' ? 'Finalizado' : 'Activo'
                             };
+                            StorageService.saveProject(project);
                             currentProjects.push(project);
                         } catch (err) {
                             errorCount++;

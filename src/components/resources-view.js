@@ -59,7 +59,7 @@ export function renderResources(container) {
         // Manual Add
         const btnNew = document.getElementById('btn-new-pro');
         if (btnNew) {
-            btnNew.addEventListener('click', () => {
+            btnNew.addEventListener('click', async () => {
                 const name = prompt('Nombre del profesional:');
                 if (!name) return;
                 let period = prompt('Periodo (Ej: ene-25):');
@@ -81,16 +81,29 @@ export function renderResources(container) {
                     return;
                 }
 
-                StorageService.saveProfessional({
-                    name: name.trim(),
-                    period: period.trim(),
-                    directRate: Number(directRate),
-                    indirectRate: Number(indirectRate)
-                });
-                
-                alert('Registro ingresado correctamente');
-                professionals = StorageService.getProfessionals();
-                render();
+                try {
+                    const dbResource = await ApiService.createResource({ resource_name: name.trim(), role: 'Profesional' });
+                    
+                    await ApiService.saveRates(period.trim(), [{
+                        resourceName: dbResource.resource_name,
+                        directRate: Number(directRate),
+                        indirectRate: Number(indirectRate)
+                    }]);
+
+                    StorageService.saveProfessional({
+                        id: String(dbResource.id),
+                        name: dbResource.resource_name,
+                        period: period.trim(),
+                        directRate: Number(directRate),
+                        indirectRate: Number(indirectRate)
+                    });
+                    
+                    alert('Registro ingresado correctamente');
+                    professionals = StorageService.getProfessionals();
+                    render();
+                } catch (err) {
+                    alert('Error al guardar en el servidor: ' + err.message);
+                }
             });
         }
 
@@ -158,15 +171,26 @@ export function renderResources(container) {
                             if (newPros.length > 0) {
                                 (async () => {
                                     try {
+                                        const mappedPros = [];
                                         for (const pro of newPros) {
-                                            await ApiService.createResource({ resource_name: pro.name, role: 'Profesional' });
+                                            const dbResource = await ApiService.createResource({ resource_name: pro.name, role: 'Profesional' });
                                             // Ideally we should have a bulk save rates or iterate over them
                                             await ApiService.saveRates(pro.period, [{
-                                                resourceName: pro.name,
+                                                resourceName: dbResource.resource_name,
                                                 directRate: pro.directRate,
                                                 indirectRate: pro.indirectRate
                                             }]);
+
+                                            mappedPros.push({
+                                                id: String(dbResource.id),
+                                                name: dbResource.resource_name,
+                                                period: pro.period,
+                                                directRate: pro.directRate,
+                                                indirectRate: pro.indirectRate
+                                            });
                                         }
+                                        StorageService.saveProfessionalsBulk(mappedPros);
+
                                         alert(`Registro ingresado correctamente.\nSe cargaron/actualizaron ${newPros.length} profesionales exitosamente.`);
                                         // Refresh from API ideally, but for now fallback to StorageService just in case UI expects it, or fetch from API if we refactored render
                                         professionals = StorageService.getProfessionals(); 

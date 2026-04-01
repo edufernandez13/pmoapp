@@ -23,19 +23,26 @@ exports.ProjectRepository = {
     }),
     create: (project) => __awaiter(void 0, void 0, void 0, function* () {
         const pool = (0, db_1.getPool)();
+        let status = project.status || 'ACTIVE';
+        let manager = project.manager || null;
         const result = yield pool.request()
             .input('project_code', mssql_1.default.VarChar, project.project_code)
             .input('name', mssql_1.default.VarChar, project.name)
+            .input('manager', mssql_1.default.VarChar, manager)
+            .input('status', mssql_1.default.VarChar, status)
             .query(`
         IF NOT EXISTS (SELECT 1 FROM Projects WHERE project_code = @project_code)
         BEGIN
-            INSERT INTO Projects (project_code, name)
+            INSERT INTO Projects (project_code, name, manager, status)
             OUTPUT INSERTED.*
-            VALUES (@project_code, @name)
+            VALUES (@project_code, @name, @manager, @status)
         END
         ELSE
         BEGIN
-            SELECT * FROM Projects WHERE project_code = @project_code
+            UPDATE Projects 
+            SET name = @name, manager = @manager, status = @status
+            OUTPUT INSERTED.*
+            WHERE project_code = @project_code
         END
       `);
         return result.recordset[0];

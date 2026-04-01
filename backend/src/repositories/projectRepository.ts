@@ -5,6 +5,7 @@ export interface Project {
     id?: number;
     project_code: string;
     name: string;
+    manager?: string;
     status: 'ACTIVE' | 'INACTIVE';
 }
 
@@ -17,19 +18,28 @@ export const ProjectRepository = {
 
     create: async (project: Project): Promise<Project> => {
         const pool = getPool();
+        
+        let status = project.status || 'ACTIVE';
+        let manager = project.manager || null;
+
         const result = await pool.request()
             .input('project_code', sql.VarChar, project.project_code)
             .input('name', sql.VarChar, project.name)
+            .input('manager', sql.VarChar, manager)
+            .input('status', sql.VarChar, status)
             .query(`
         IF NOT EXISTS (SELECT 1 FROM Projects WHERE project_code = @project_code)
         BEGIN
-            INSERT INTO Projects (project_code, name)
+            INSERT INTO Projects (project_code, name, manager, status)
             OUTPUT INSERTED.*
-            VALUES (@project_code, @name)
+            VALUES (@project_code, @name, @manager, @status)
         END
         ELSE
         BEGIN
-            SELECT * FROM Projects WHERE project_code = @project_code
+            UPDATE Projects 
+            SET name = @name, manager = @manager, status = @status
+            OUTPUT INSERTED.*
+            WHERE project_code = @project_code
         END
       `);
         return result.recordset[0];

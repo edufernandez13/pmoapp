@@ -7,6 +7,7 @@ BEGIN
         id INT IDENTITY(1,1) PRIMARY KEY,
         project_code VARCHAR(50) NOT NULL UNIQUE,
         name VARCHAR(255) NOT NULL,
+        manager VARCHAR(255),
         status VARCHAR(20) DEFAULT 'ACTIVE' CHECK (status IN ('ACTIVE', 'INACTIVE')),
         created_at DATETIME DEFAULT GETDATE(),
         updated_at DATETIME DEFAULT GETDATE()
