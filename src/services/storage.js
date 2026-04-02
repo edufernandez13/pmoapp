@@ -69,6 +69,10 @@ export const StorageService = {
         return entries;
     },
 
+    saveEntriesBulk: (entries) => {
+        sessionStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+    },
+
     getEntriesByProject: (projectName) => {
         const entries = StorageService.getAllEntries();
         return entries.filter(e => e.project === projectName);
@@ -126,6 +130,11 @@ export const StorageService = {
         }
         sessionStorage.setItem(PROJECT_STORAGE_KEY, JSON.stringify(projects));
         return project;
+    },
+
+    saveProjectsBulk: (projectsList) => {
+        // As a cache sync, we just replace the whole array exactly mimicking the backend
+        sessionStorage.setItem(PROJECT_STORAGE_KEY, JSON.stringify(projectsList));
     },
 
     getProfessionals: () => {

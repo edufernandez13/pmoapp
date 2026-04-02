@@ -5,6 +5,7 @@ const closureController_1 = require("../controllers/closureController");
 const auth_1 = require("../middleware/auth");
 const router = (0, express_1.Router)();
 router.use(auth_1.authMiddleware);
+router.get('/all', closureController_1.getAllClosures);
 router.get('/', closureController_1.getClosure);
 router.get('/:id/kpis', closureController_1.getClosureKPIs);
 router.post('/', (0, auth_1.requireRole)('Admin', 'PMO'), closureController_1.saveClosure);

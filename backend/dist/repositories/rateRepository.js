@@ -16,6 +16,17 @@ exports.RateRepository = void 0;
 const mssql_1 = __importDefault(require("mssql"));
 const db_1 = require("../db");
 exports.RateRepository = {
+    getAll: () => __awaiter(void 0, void 0, void 0, function* () {
+        const pool = (0, db_1.getPool)();
+        const result = yield pool.request()
+            .query(`
+        SELECT r.id as resource_id, r.resource_name, rr.period, rr.direct_rate, rr.indirect_rate, rr.currency
+        FROM Resources r
+        JOIN ResourceMonthlyRates rr ON r.id = rr.resource_id
+        WHERE r.status = 'ACTIVE'
+      `);
+        return result.recordset;
+    }),
     getByPeriod: (period) => __awaiter(void 0, void 0, void 0, function* () {
         const pool = (0, db_1.getPool)();
         const result = yield pool.request()

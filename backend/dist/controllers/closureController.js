@@ -9,8 +9,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getClosureKPIs = exports.unvalidateClosure = exports.validateClosure = exports.saveClosure = exports.getClosure = void 0;
+exports.getClosureKPIs = exports.unvalidateClosure = exports.validateClosure = exports.saveClosure = exports.getClosure = exports.getAllClosures = void 0;
 const closureRepository_1 = require("../repositories/closureRepository");
+const getAllClosures = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const closures = yield closureRepository_1.ClosureRepository.getAll();
+        res.json(closures);
+    }
+    catch (error) {
+        res.status(500).json({ message: 'Error fetching all closures', error });
+    }
+});
+exports.getAllClosures = getAllClosures;
 const getClosure = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { projectCode, period } = req.query;

@@ -9,8 +9,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.saveRates = exports.getRates = void 0;
+exports.saveRates = exports.getRates = exports.getAllRates = void 0;
 const rateRepository_1 = require("../repositories/rateRepository");
+const getAllRates = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const rates = yield rateRepository_1.RateRepository.getAll();
+        res.json(rates);
+    }
+    catch (error) {
+        res.status(500).json({ message: 'Error fetching all rates', error });
+    }
+});
+exports.getAllRates = getAllRates;
 const getRates = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { period } = req.query;

@@ -18,6 +18,58 @@ export interface Closure {
 }
 
 export const ClosureRepository = {
+    getAll: async () => {
+        const pool = getPool();
+        // Get all closure headers
+        const closuresResult = await pool.request()
+            .query(`
+        SELECT c.*, p.name as project_name, p.project_code 
+        FROM MonthlyClosures c
+        JOIN Projects p ON c.project_id = p.id
+      `);
+
+        if (closuresResult.recordset.length === 0) return [];
+
+        const closures = closuresResult.recordset;
+
+        // Get all closure hours
+        const resourcesResult = await pool.request()
+            .query(`
+        SELECT crh.*, r.resource_name, r.role
+        FROM ClosureResourceHours crh
+        JOIN Resources r ON crh.resource_id = r.id
+      `);
+
+        const allHours = resourcesResult.recordset;
+
+        closures.forEach(closure => {
+            const closureHours = allHours.filter(h => h.closure_id === closure.id);
+            closure.resources = closureHours;
+
+            let laborDirect = 0;
+            let laborIndirect = 0;
+
+            closureHours.forEach((r: any) => {
+                laborDirect += r.hours * r.rate_snapshot_direct;
+                laborIndirect += r.hours * r.rate_snapshot_indirect;
+            });
+
+            const totalCost = laborDirect + laborIndirect + closure.third_party_costs;
+            const margin = closure.revenue - totalCost;
+            const profitability = closure.revenue > 0 ? (margin / closure.revenue) * 100 : 0;
+
+            closure.kpis = {
+                laborDirectCost: laborDirect,
+                laborIndirectCost: laborIndirect,
+                totalCost,
+                margin,
+                profitabilityPct: parseFloat(profitability.toFixed(2))
+            };
+        });
+
+        return closures;
+    },
+
     getByProjectAndPeriod: async (projectCode: string, period: string) => {
         const pool = getPool();
         // Get Closure Header

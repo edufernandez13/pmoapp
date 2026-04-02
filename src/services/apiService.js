@@ -51,6 +51,11 @@ export const ApiService = {
     },
 
     // Rates
+    getAllRates: async () => {
+        const response = await fetch(`${API_BASE_URL}/rates/all`, { headers: getHeaders() });
+        return handleResponse(response);
+    },
+
     getRates: async (period) => {
         const response = await fetch(`${API_BASE_URL}/rates?period=${period}`, { headers: getHeaders() });
         return handleResponse(response);
@@ -65,27 +70,21 @@ export const ApiService = {
         return handleResponse(response);
     },
 
-    // Closures (Replacing StorageService logic)
+    // Closures
     getAllEntries: async (filters = {}) => {
-        // This maps to getClosure logic. 
-        // If the UI expects a list of all closures, we might need a new endpoint GET /closures/all or filtering by project/period loop.
-        // The original StorageService returned everything.
-        // For strict compatibility with the Prompt's "GET /closures?projectCode=...&period=..." design, 
-        // we might need to know what the UI expects.
-        // Assuming the UI calls this to load a specific view or list.
-        // If the UI needs a list, we should probably implement a list endpoint.
-        // For now, let's assume the UI passes filters projectCode and period, or we return an empty list if not valid.
-
         if (filters.projectCode && filters.month) {
             try {
                 const data = await ApiService.getClosure(filters.projectCode, filters.month);
-                return [data]; // Return as array to mimic getAllEntries behavior for a single match
+                return [data];
             } catch (e) {
                 if (e.message.includes('not found')) return [];
                 throw e;
             }
         }
-        return []; // TODO: Implement getAllClosures on backend if needed
+        
+        // Fetch ALL closures if no specific filter
+        const response = await fetch(`${API_BASE_URL}/closures/all`, { headers: getHeaders() });
+        return handleResponse(response);
     },
 
     getClosure: async (projectCode, period) => {

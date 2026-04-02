@@ -1,7 +1,25 @@
 import { StorageService } from '../services/storage.js';
+import { ApiService } from '../services/apiService.js';
 import { formatCurrency, formatPeriod, parsePeriodToMmmYy } from '../utils/format.js';
 
-export function renderResources(container) {
+export async function renderResources(container) {
+    container.innerHTML = '<div style="padding:20px; text-align:center;">Cargando datos desde el servidor...</div>';
+
+    try {
+        const ratesResult = await ApiService.getAllRates();
+        const mappedPros = ratesResult.map(rr => ({
+            id: String(rr.resource_id),
+            name: rr.resource_name,
+            period: rr.period,
+            directRate: Number(rr.direct_rate) || 0,
+            indirectRate: Number(rr.indirect_rate) || 0
+        }));
+
+        StorageService.saveProfessionalsBulk(mappedPros);
+    } catch (err) {
+        console.error('Error al sincronizar profesionales con el servidor:', err);
+    }
+
     let professionals = StorageService.getProfessionals();
 
     const render = () => {
