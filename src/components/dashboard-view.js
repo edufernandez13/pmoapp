@@ -83,7 +83,9 @@ export async function renderDashboard(container, options = {}) {
         return parseInt(y) * 12 + MONTHS_ORDER[m];
     };
 
-    const availableProjects = [...new Set(filteredAllEntries.map(e => e.project))].sort();
+    const availableProjects = showAllProjects 
+        ? allProjects.map(p => p.name).sort() 
+        : Array.from(activeProjectNames).sort();
 
     // 2. Filter by Specific Project
     if (projectFilter !== 'all') {
