@@ -83,5 +83,16 @@ export const parsePeriodToMmmYy = (period) => {
 
 export const formatPeriod = (period) => {
     const parsed = parsePeriodToMmmYy(period);
-    return parsed ? parsed : period;
+    if (parsed) {
+        const parts = parsed.split('-');
+        if (parts.length === 2) {
+            const m = parts[0];
+            const y = parts[1];
+            // Fix required by user: lowercased month "ene-2025"
+            const mmm = m.toLowerCase();
+            const yyyy = y.length === 2 ? '20' + y : y;
+            return `${mmm}-${yyyy}`;
+        }
+    }
+    return period;
 };
