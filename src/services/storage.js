@@ -175,20 +175,8 @@ export const StorageService = {
     },
 
     saveProfessionalsBulk: (prosList) => {
-        const currentPros = StorageService.getProfessionals();
-        const updatedPros = [...currentPros];
-        
-        prosList.forEach(newPro => {
-            // Uniqueness is defined by Name + Period combination
-            const existingIndex = updatedPros.findIndex(p => p.name === newPro.name && p.period === newPro.period);
-            if (existingIndex > -1) {
-                updatedPros[existingIndex] = { ...updatedPros[existingIndex], ...newPro };
-            } else {
-                updatedPros.push({ ...newPro, id: `pro_${Date.now()}_${Math.random().toString(36).substr(2, 5)}` });
-            }
-        });
-        
-        sessionStorage.setItem(PRO_STORAGE_KEY, JSON.stringify(updatedPros));
+        // Como sincronización estricta con Azure, reemplazamos todo el caché con lo recibido por la API
+        sessionStorage.setItem(PRO_STORAGE_KEY, JSON.stringify(prosList));
     },
 
     deleteProfessional: (proId) => {
