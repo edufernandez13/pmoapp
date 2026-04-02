@@ -247,3 +247,49 @@ body {
 .font-bold {
     font-weight: 700;
 }
+
+/* Base Responsive Rules */
+.mobile-menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--secondary);
+    cursor: pointer;
+    margin-right: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        height: 100vh;
+        z-index: 1000;
+        transition: left 0.3s ease;
+    }
+    .sidebar.open {
+        left: 0;
+    }
+    .mobile-menu-btn {
+        display: block;
+    }
+    .top-bar {
+        padding: 0 var(--spacing-md);
+    }
+    .top-bar h2 {
+        font-size: 1rem;
+    }
+    #content-area {
+        padding: var(--spacing-md);
+    }
+    .table-container {
+        overflow-x: auto;
+    }
+    .data-table {
+        min-width: 600px;
+    }
+}

@@ -17,6 +17,21 @@ class App {
         document.getElementById('current-date').textContent = new Date().toLocaleDateString('es-ES', dateOptions);
 
         // Navigation
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const sidebar = document.querySelector('.sidebar');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+        if (mobileMenuBtn && sidebar && sidebarOverlay) {
+            mobileMenuBtn.addEventListener('click', () => {
+                sidebar.classList.add('open');
+                sidebarOverlay.classList.remove('hidden');
+            });
+            sidebarOverlay.addEventListener('click', () => {
+                sidebar.classList.remove('open');
+                sidebarOverlay.classList.add('hidden');
+            });
+        }
+
         this.navBtns.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const view = btn.dataset.view;
@@ -25,6 +40,10 @@ class App {
                 // Active State
                 this.navBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
+
+                // Close sidebar on mobile
+                if (sidebar) sidebar.classList.remove('open');
+                if (sidebarOverlay) sidebarOverlay.classList.add('hidden');
             });
         });
 
@@ -80,6 +99,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const logoutBtn = document.getElementById('btn-logout');
     const forgotPasswordLink = document.getElementById('forgot-password');
 
+    const startInactivityTimer = () => {
+        let timeout;
+        const TIMEOUT_MS = 5 * 60 * 1000; // 5 minutos
+
+        const resetTimer = () => {
+            clearTimeout(timeout);
+            if (AuthService.getCurrentUser()) {
+                timeout = setTimeout(() => {
+                    AuthService.logout();
+                    alert('Por tu seguridad, tu sesión ha expirado por inactividad.');
+                    window.location.reload();
+                }, TIMEOUT_MS);
+            }
+        };
+
+        window.addEventListener('mousemove', resetTimer);
+        window.addEventListener('keydown', resetTimer);
+        window.addEventListener('click', resetTimer);
+        window.addEventListener('scroll', resetTimer);
+        window.addEventListener('touchstart', resetTimer);
+
+        resetTimer();
+    };
+
     const updateProfileUI = (user) => {
         if (!user) return;
         document.getElementById('user-display-name').textContent = user.name;
@@ -94,6 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
             mainAppContainer.classList.remove('hidden');
             updateProfileUI(user);
             new App(); // Start the app
+            startInactivityTimer(); // Iniciar temporizador de inactividad
         } else {
             loginContainer.classList.remove('hidden');
             mainAppContainer.classList.add('hidden');

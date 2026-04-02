@@ -86,7 +86,10 @@
         <!-- Main Content -->
         <main class="main-content">
             <header class="top-bar">
-                <h2 id="page-title">Dashboard Ejecutivo</h2>
+                <div style="display: flex; align-items: center;">
+                    <button id="mobile-menu-btn" class="mobile-menu-btn">☰</button>
+                    <h2 id="page-title">Dashboard Ejecutivo</h2>
+                </div>
                 <div class="actions">
                     <span id="current-date"></span>
 
@@ -102,6 +105,7 @@
     <!-- Modals or Overlays -->
     <div id="modal-overlay" class="hidden"></div>
     <div id="modal-container" class="hidden"></div>
+    <div id="sidebar-overlay" class="hidden" style="position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:999;"></div>
 
     <!-- Scripts -->
     <script src="./src/bundle.js?v=5"></script>
