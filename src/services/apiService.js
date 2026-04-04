@@ -1,8 +1,6 @@
 // src/services/apiService.js
 
-const API_BASE_URL = typeof process !== 'undefined' && process.env && process.env.NODE_ENV === 'production' 
-    ? '/api' 
-    : 'http://localhost:3000/api';
+const API_BASE_URL = 'https://pmoapp.azurewebsites.net/api'; // <--- URL DE TU BACKEND EN AZURE
 // Helper to handle responses
 const handleResponse = async (response) => {
     if (!response.ok) {
