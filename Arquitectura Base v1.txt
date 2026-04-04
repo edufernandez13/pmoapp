@@ -1,0 +1,17 @@
+# PMO Profitability Suite - Arquitectura Base
+
+**Versión:** 2.0 (Transición de Local a Cloud)
+
+## Resumen Arquitectónico
+La aplicación ha evolucionado de un modelo "Zero-Dependency" (donde toda la persistencia ocurría en el LocalStorage del navegador) a un modelo completo **Cliente-Servidor**.
+
+- **Frontend:** HTML, CSS, Vanilla JS (Empaquetado con Webpack).
+- **Backend:** Node.js (con Express), implementando una API RESTful.
+- **Base de Datos:** Azure SQL Database (instancia: `db_pmobm_bmining`).
+- **Despliegue:** Azure Web Apps.
+
+## Flujo de Datos
+1. Las interacciones en la UI consultan primero la caché temporal del navegador (`SessionStorage`) manejada por `StorageService.js` para respuestas rápidas.
+2. Todas las operaciones de Lectura/Escritura (Guardar/Eliminar proyectos, cierres de mes, recursos) son delegadas a `apiService.js`.
+3. `apiService.js` sincroniza directamente con el endpoint en producción (`https://pmoapp.azurewebsites.net/api`).
+4. El backend en Node.js procesa la lógica de negocio y almacena la información de forma segura en Azure SQL.
