@@ -17,6 +17,20 @@ export interface Closure {
     kpis?: any;
 }
 
+const parsePeriodToSqlDate = (periodStr: string): string => {
+    if (!periodStr) return periodStr;
+    const s = periodStr.trim().toLowerCase();
+    const match = s.match(/^([a-z]{3})[-\s/]+(\d{2,4})$/);
+    if (match) {
+        let year = parseInt(match[2]);
+        if (year < 100) year += 2000;
+        const monthIndexes: { [key: string]: string } = { 'ene': '01', 'feb': '02', 'mar': '03', 'abr': '04', 'may': '05', 'jun': '06', 'jul': '07', 'ago': '08', 'sep': '09', 'oct': '10', 'nov': '11', 'dic': '12', 'jan': '01', 'apr': '04', 'aug': '08', 'dec': '12' };
+        const m = monthIndexes[match[1]];
+        if (m) return `${year}-${m}-01`;
+    }
+    return periodStr;
+};
+
 export const ClosureRepository = {
     getAll: async () => {
         const pool = getPool();
@@ -75,7 +89,7 @@ export const ClosureRepository = {
         // Get Closure Header
         const closureResult = await pool.request()
             .input('project_code', sql.VarChar, projectCode)
-            .input('period', sql.Date, period)
+            .input('period', sql.Date, parsePeriodToSqlDate(period))
             .query(`
         SELECT c.*, p.name as project_name 
         FROM MonthlyClosures c
@@ -142,7 +156,7 @@ export const ClosureRepository = {
             // Check existence
             const checkRes = await transaction.request()
                 .input('project_id', sql.Int, projectId)
-                .input('period', sql.Date, period)
+                .input('period', sql.Date, parsePeriodToSqlDate(period))
                 .query('SELECT id, status FROM MonthlyClosures WHERE project_id = @project_id AND period = @period');
 
             let closureId;
@@ -167,7 +181,7 @@ export const ClosureRepository = {
             } else {
                 const insertRes = await transaction.request()
                     .input('project_id', sql.Int, projectId)
-                    .input('period', sql.Date, period)
+                    .input('period', sql.Date, parsePeriodToSqlDate(period))
                     .input('revenue', sql.Decimal(15, 2), data.revenue)
                     .input('tpc', sql.Decimal(15, 2), data.thirdPartyCosts)
                     .input('user', sql.VarChar, user)
@@ -188,7 +202,7 @@ export const ClosureRepository = {
                 // Find resource and Get Rate for Period
                 const rateRes = await transaction.request()
                     .input('name', sql.VarChar, line.resourceName)
-                    .input('period', sql.Date, period)
+                    .input('period', sql.Date, parsePeriodToSqlDate(period))
                     .query(`
                     SELECT r.id, COALESCE(rr.direct_rate, 0) as direct_rate, COALESCE(rr.indirect_rate, 0) as indirect_rate
                     FROM Resources r

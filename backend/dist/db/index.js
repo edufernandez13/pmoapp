@@ -25,6 +25,11 @@ const config = {
         encrypt: true, // Use this if you're on Azure.
         trustServerCertificate: true, // Change to false for production
     },
+    pool: {
+        max: 10,
+        min: 1, // Require at least 1 alive connection
+        idleTimeoutMillis: 30000 // Prevent Azure from silently dropping half-open sockets
+    }
 };
 let pool = null;
 const connectDB = () => __awaiter(void 0, void 0, void 0, function* () {

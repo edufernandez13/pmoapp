@@ -15,6 +15,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.RateRepository = void 0;
 const mssql_1 = __importDefault(require("mssql"));
 const db_1 = require("../db");
+const parsePeriodToSqlDate = (periodStr) => {
+    if (!periodStr)
+        return periodStr;
+    const s = periodStr.trim().toLowerCase();
+    const match = s.match(/^([a-z]{3})[-\s/]+(\d{2,4})$/);
+    if (match) {
+        let year = parseInt(match[2]);
+        if (year < 100)
+            year += 2000;
+        const monthIndexes = { 'ene': '01', 'feb': '02', 'mar': '03', 'abr': '04', 'may': '05', 'jun': '06', 'jul': '07', 'ago': '08', 'sep': '09', 'oct': '10', 'nov': '11', 'dic': '12', 'jan': '01', 'apr': '04', 'aug': '08', 'dec': '12' };
+        const m = monthIndexes[match[1]];
+        if (m)
+            return `${year}-${m}-01`;
+    }
+    return periodStr;
+};
 exports.RateRepository = {
     getAll: () => __awaiter(void 0, void 0, void 0, function* () {
         const pool = (0, db_1.getPool)();
@@ -30,7 +46,7 @@ exports.RateRepository = {
     getByPeriod: (period) => __awaiter(void 0, void 0, void 0, function* () {
         const pool = (0, db_1.getPool)();
         const result = yield pool.request()
-            .input('period', mssql_1.default.Date, period)
+            .input('period', mssql_1.default.Date, parsePeriodToSqlDate(period))
             .query(`
         SELECT r.id as resource_id, r.resource_name, rr.direct_rate, rr.indirect_rate, rr.currency
         FROM Resources r
@@ -56,13 +72,13 @@ exports.RateRepository = {
             // Check if exists
             const rateCheck = yield transaction.request()
                 .input('resource_id', mssql_1.default.Int, resourceId)
-                .input('period', mssql_1.default.Date, period)
+                .input('period', mssql_1.default.Date, parsePeriodToSqlDate(period))
                 .query('SELECT id FROM ResourceMonthlyRates WHERE resource_id = @resource_id AND period = @period');
             if (rateCheck.recordset.length > 0) {
                 // Update
                 yield transaction.request()
                     .input('resource_id', mssql_1.default.Int, resourceId)
-                    .input('period', mssql_1.default.Date, period)
+                    .input('period', mssql_1.default.Date, parsePeriodToSqlDate(period))
                     .input('direct', mssql_1.default.Decimal(10, 2), directRate)
                     .input('indirect', mssql_1.default.Decimal(10, 2), indirectRate)
                     .query(`
@@ -75,7 +91,7 @@ exports.RateRepository = {
                 // Insert
                 yield transaction.request()
                     .input('resource_id', mssql_1.default.Int, resourceId)
-                    .input('period', mssql_1.default.Date, period)
+                    .input('period', mssql_1.default.Date, parsePeriodToSqlDate(period))
                     .input('direct', mssql_1.default.Decimal(10, 2), directRate)
                     .input('indirect', mssql_1.default.Decimal(10, 2), indirectRate)
                     .query(`

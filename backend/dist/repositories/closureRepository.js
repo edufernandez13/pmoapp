@@ -15,6 +15,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ClosureRepository = void 0;
 const mssql_1 = __importDefault(require("mssql"));
 const db_1 = require("../db");
+const parsePeriodToSqlDate = (periodStr) => {
+    if (!periodStr)
+        return periodStr;
+    const s = periodStr.trim().toLowerCase();
+    const match = s.match(/^([a-z]{3})[-\s/]+(\d{2,4})$/);
+    if (match) {
+        let year = parseInt(match[2]);
+        if (year < 100)
+            year += 2000;
+        const monthIndexes = { 'ene': '01', 'feb': '02', 'mar': '03', 'abr': '04', 'may': '05', 'jun': '06', 'jul': '07', 'ago': '08', 'sep': '09', 'oct': '10', 'nov': '11', 'dic': '12', 'jan': '01', 'apr': '04', 'aug': '08', 'dec': '12' };
+        const m = monthIndexes[match[1]];
+        if (m)
+            return `${year}-${m}-01`;
+    }
+    return periodStr;
+};
 exports.ClosureRepository = {
     getAll: () => __awaiter(void 0, void 0, void 0, function* () {
         const pool = (0, db_1.getPool)();
@@ -63,7 +79,7 @@ exports.ClosureRepository = {
         // Get Closure Header
         const closureResult = yield pool.request()
             .input('project_code', mssql_1.default.VarChar, projectCode)
-            .input('period', mssql_1.default.Date, period)
+            .input('period', mssql_1.default.Date, parsePeriodToSqlDate(period))
             .query(`
         SELECT c.*, p.name as project_name 
         FROM MonthlyClosures c
@@ -118,7 +134,7 @@ exports.ClosureRepository = {
             // Check existence
             const checkRes = yield transaction.request()
                 .input('project_id', mssql_1.default.Int, projectId)
-                .input('period', mssql_1.default.Date, period)
+                .input('period', mssql_1.default.Date, parsePeriodToSqlDate(period))
                 .query('SELECT id, status FROM MonthlyClosures WHERE project_id = @project_id AND period = @period');
             let closureId;
             if (checkRes.recordset.length > 0) {
@@ -141,7 +157,7 @@ exports.ClosureRepository = {
             else {
                 const insertRes = yield transaction.request()
                     .input('project_id', mssql_1.default.Int, projectId)
-                    .input('period', mssql_1.default.Date, period)
+                    .input('period', mssql_1.default.Date, parsePeriodToSqlDate(period))
                     .input('revenue', mssql_1.default.Decimal(15, 2), data.revenue)
                     .input('tpc', mssql_1.default.Decimal(15, 2), data.thirdPartyCosts)
                     .input('user', mssql_1.default.VarChar, user)
@@ -160,7 +176,7 @@ exports.ClosureRepository = {
                 // Find resource and Get Rate for Period
                 const rateRes = yield transaction.request()
                     .input('name', mssql_1.default.VarChar, line.resourceName)
-                    .input('period', mssql_1.default.Date, period)
+                    .input('period', mssql_1.default.Date, parsePeriodToSqlDate(period))
                     .query(`
                     SELECT r.id, COALESCE(rr.direct_rate, 0) as direct_rate, COALESCE(rr.indirect_rate, 0) as indirect_rate
                     FROM Resources r
