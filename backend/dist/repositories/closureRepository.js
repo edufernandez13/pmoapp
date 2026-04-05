@@ -139,32 +139,33 @@ exports.ClosureRepository = {
             let closureId;
             if (checkRes.recordset.length > 0) {
                 const existing = checkRes.recordset[0];
-                if (existing.status === 'VALIDATED') {
-                    throw new Error('Cannot modify a VALIDATED closure. Unvalidate first.');
-                }
                 closureId = existing.id;
+                const finalStatus = data.status || 'DRAFT';
                 yield transaction.request()
                     .input('id', mssql_1.default.Int, closureId)
                     .input('revenue', mssql_1.default.Decimal(15, 2), data.revenue)
                     .input('tpc', mssql_1.default.Decimal(15, 2), data.thirdPartyCosts)
                     .input('user', mssql_1.default.VarChar, user)
+                    .input('status', mssql_1.default.VarChar, finalStatus)
                     .query(`
                     UPDATE MonthlyClosures 
-                    SET revenue = @revenue, third_party_costs = @tpc, updated_at = GETDATE() -- created_by ignored on update usually
+                    SET revenue = @revenue, third_party_costs = @tpc, status = @status, updated_at = GETDATE() -- created_by ignored on update usually
                     WHERE id = @id
                 `);
             }
             else {
+                const finalStatus = data.status || 'DRAFT';
                 const insertRes = yield transaction.request()
                     .input('project_id', mssql_1.default.Int, projectId)
                     .input('period', mssql_1.default.Date, parsePeriodToSqlDate(period))
                     .input('revenue', mssql_1.default.Decimal(15, 2), data.revenue)
                     .input('tpc', mssql_1.default.Decimal(15, 2), data.thirdPartyCosts)
                     .input('user', mssql_1.default.VarChar, user)
+                    .input('status', mssql_1.default.VarChar, finalStatus)
                     .query(`
                     INSERT INTO MonthlyClosures (project_id, period, status, revenue, third_party_costs, created_by)
                     OUTPUT INSERTED.id
-                    VALUES (@project_id, @period, 'DRAFT', @revenue, @tpc, @user)
+                    VALUES (@project_id, @period, @status, @revenue, @tpc, @user)
                 `);
                 closureId = insertRes.recordset[0].id;
             }

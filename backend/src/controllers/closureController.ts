@@ -29,7 +29,7 @@ export const getClosure = async (req: AuthRequest, res: Response) => {
 
 export const saveClosure = async (req: AuthRequest, res: Response) => {
     try {
-        const { projectCode, period, revenue, thirdPartyCosts, resources } = req.body;
+        const { projectCode, period, revenue, thirdPartyCosts, resources, status } = req.body;
         if (!projectCode || !period) {
             return res.status(400).json({ message: 'Missing required fields' });
         }
@@ -39,7 +39,7 @@ export const saveClosure = async (req: AuthRequest, res: Response) => {
         const result = await ClosureRepository.saveDraft(
             projectCode,
             period,
-            { revenue, thirdPartyCosts, resources },
+            { revenue, thirdPartyCosts, resources, status },
             req.user?.name || 'Unknown'
         );
         res.json(result);

@@ -112,7 +112,8 @@ export const ApiService = {
                 resourceName: p.name,
                 hours: p.hours
                 // rate is not sent, backend looks it up.
-            }))
+            })),
+            status: entry.tipoRegistro === 'REAL' ? 'VALIDATED' : 'DRAFT'
         };
 
         const response = await fetch(`${API_BASE_URL}/closures`, {

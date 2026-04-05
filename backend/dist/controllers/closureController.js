@@ -41,12 +41,12 @@ exports.getClosure = getClosure;
 const saveClosure = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _a;
     try {
-        const { projectCode, period, revenue, thirdPartyCosts, resources } = req.body;
+        const { projectCode, period, revenue, thirdPartyCosts, resources, status } = req.body;
         if (!projectCode || !period) {
             return res.status(400).json({ message: 'Missing required fields' });
         }
         // Validations could be stricter here
-        const result = yield closureRepository_1.ClosureRepository.saveDraft(projectCode, period, { revenue, thirdPartyCosts, resources }, ((_a = req.user) === null || _a === void 0 ? void 0 : _a.name) || 'Unknown');
+        const result = yield closureRepository_1.ClosureRepository.saveDraft(projectCode, period, { revenue, thirdPartyCosts, resources, status }, ((_a = req.user) === null || _a === void 0 ? void 0 : _a.name) || 'Unknown');
         res.json(result);
     }
     catch (error) {

@@ -163,32 +163,33 @@ export const ClosureRepository = {
 
             if (checkRes.recordset.length > 0) {
                 const existing = checkRes.recordset[0];
-                if (existing.status === 'VALIDATED') {
-                    throw new Error('Cannot modify a VALIDATED closure. Unvalidate first.');
-                }
                 closureId = existing.id;
+                const finalStatus = data.status || 'DRAFT';
 
                 await transaction.request()
                     .input('id', sql.Int, closureId)
                     .input('revenue', sql.Decimal(15, 2), data.revenue)
                     .input('tpc', sql.Decimal(15, 2), data.thirdPartyCosts)
                     .input('user', sql.VarChar, user)
+                    .input('status', sql.VarChar, finalStatus)
                     .query(`
                     UPDATE MonthlyClosures 
-                    SET revenue = @revenue, third_party_costs = @tpc, updated_at = GETDATE() -- created_by ignored on update usually
+                    SET revenue = @revenue, third_party_costs = @tpc, status = @status, updated_at = GETDATE() -- created_by ignored on update usually
                     WHERE id = @id
                 `);
             } else {
+                const finalStatus = data.status || 'DRAFT';
                 const insertRes = await transaction.request()
                     .input('project_id', sql.Int, projectId)
                     .input('period', sql.Date, parsePeriodToSqlDate(period))
                     .input('revenue', sql.Decimal(15, 2), data.revenue)
                     .input('tpc', sql.Decimal(15, 2), data.thirdPartyCosts)
                     .input('user', sql.VarChar, user)
+                    .input('status', sql.VarChar, finalStatus)
                     .query(`
                     INSERT INTO MonthlyClosures (project_id, period, status, revenue, third_party_costs, created_by)
                     OUTPUT INSERTED.id
-                    VALUES (@project_id, @period, 'DRAFT', @revenue, @tpc, @user)
+                    VALUES (@project_id, @period, @status, @revenue, @tpc, @user)
                 `);
                 closureId = insertRes.recordset[0].id;
             }
