@@ -36,8 +36,8 @@ BEGIN
         id INT IDENTITY(1,1) PRIMARY KEY,
         resource_id INT NOT NULL FOREIGN KEY REFERENCES Resources(id),
         period DATE NOT NULL, -- Stored as YYYY-MM-01
-        direct_rate DECIMAL(10, 2) NOT NULL CHECK (direct_rate >= 0),
-        indirect_rate DECIMAL(10, 2) NOT NULL CHECK (indirect_rate >= 0),
+        direct_rate DECIMAL(15, 2) NOT NULL CHECK (direct_rate >= 0),
+        indirect_rate DECIMAL(15, 2) NOT NULL CHECK (indirect_rate >= 0),
         currency VARCHAR(3) DEFAULT 'CLP',
         updated_at DATETIME DEFAULT GETDATE(),
         CONSTRAINT UQ_Resource_Period UNIQUE(resource_id, period)
@@ -82,8 +82,8 @@ BEGIN
         hours DECIMAL(10, 2) NOT NULL CHECK (hours >= 0),
         
         -- Freeze rates at the time of closure (from ResourceMonthlyRates)
-        rate_snapshot_direct DECIMAL(10, 2) NOT NULL,
-        rate_snapshot_indirect DECIMAL(10, 2) NOT NULL,
+        rate_snapshot_direct DECIMAL(15, 2) NOT NULL,
+        rate_snapshot_indirect DECIMAL(15, 2) NOT NULL,
         
         CONSTRAINT UQ_Closure_Resource UNIQUE(closure_id, resource_id)
     );

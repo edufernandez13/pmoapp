@@ -236,8 +236,8 @@ export const ClosureRepository = {
                     .input('closure_id', sql.Int, closureId)
                     .input('resource_id', sql.Int, resourceId)
                     .input('hours', sql.Decimal(10, 2), line.hours)
-                    .input('direct', sql.Decimal(10, 2), directRate)
-                    .input('indirect', sql.Decimal(10, 2), indirectRate)
+                    .input('direct', sql.Decimal(15, 2), directRate)
+                    .input('indirect', sql.Decimal(15, 2), indirectRate)
                     .query(`
                     INSERT INTO ClosureResourceHours (closure_id, resource_id, hours, rate_snapshot_direct, rate_snapshot_indirect)
                     VALUES (@closure_id, @resource_id, @hours, @direct, @indirect)
