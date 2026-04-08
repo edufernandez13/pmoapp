@@ -1,6 +1,9 @@
 // src/services/apiService.js
 
-const API_BASE_URL = 'https://pmoapp-avbhckasgjbfcag4.brazilsouth-01.azurewebsites.net/api';
+// const API_BASE_URL = 'https://pmoapp-avbhckasgjbfcag4.brazilsouth-01.azurewebsites.net/api';
+const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
+    ? 'http://localhost:3000/api' 
+    : 'https://pmoapp-avbhckasgjbfcag4.brazilsouth-01.azurewebsites.net/api';
 const handleResponse = async (response) => {
     if (!response.ok) {
         const payload = await response.json().catch(() => ({ message: 'Unknown error' }));
@@ -38,10 +41,19 @@ export const ApiService = {
     },
 
     updateProject: async (id, projectData) => {
-        const response = await fetch(`${API_BASE_URL}/projects/${id}`, {
-            method: 'PUT',
+        // The backend uses an UPSERT logic on POST /projects based on project_code
+        const response = await fetch(`${API_BASE_URL}/projects`, {
+            method: 'POST',
             headers: getHeaders(),
             body: JSON.stringify(projectData)
+        });
+        return handleResponse(response);
+    },
+
+    deleteProject: async (id) => {
+        const response = await fetch(`${API_BASE_URL}/projects/${id}`, {
+            method: 'DELETE',
+            headers: getHeaders()
         });
         return handleResponse(response);
     },
