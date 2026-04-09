@@ -1,4 +1,5 @@
 import { StorageService } from '../services/storage.js';
+import { ApiService } from '../services/apiService.js';
 import { parsePeriodToMmmYy, formatCurrency } from '../utils/format.js';
 
 export function renderEntryForm(container) {
@@ -172,7 +173,7 @@ export function renderEntryForm(container) {
 
     addBtn.addEventListener('click', addProfessionalRow);
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const formData = new FormData(form);
         const professionals = [];
@@ -224,6 +225,7 @@ export function renderEntryForm(container) {
 
         const entryData = {
             project: projectName,
+            projectCode: projectCode,
             month: parsedMonth,
             revenue: Number(formData.get('revenue')),
             thirdPartyCosts: Number(formData.get('thirdPartyCosts')),
@@ -231,20 +233,26 @@ export function renderEntryForm(container) {
             professionals
         };
 
-        if (existingEntry) {
-            if (tipoRegistro === 'REAL') {
-                alert('Registro duplicado: ya existe un proyecto con el mismo Código, Periodo y Status (REAL)');
-                return;
-            } else {
-                StorageService.updateEntry(existingEntry.id, entryData);
-                alert('Proyección actualizada correctamente');
-                window.location.reload();
-                return;
+        try {
+            if (existingEntry) {
+                if (tipoRegistro === 'REAL') {
+                    alert('Registro duplicado: ya existe un proyecto con el mismo Código, Periodo y Status (REAL)');
+                    return;
+                } else {
+                    StorageService.updateEntry(existingEntry.id, entryData);
+                    await ApiService.saveEntry(entryData);
+                    alert('Proyección actualizada correctamente');
+                    window.location.reload();
+                    return;
+                }
             }
-        }
 
-        StorageService.saveEntry(entryData);
-        alert('Registro ingresado correctamente');
-        window.location.reload(); // Simple reload to go back to dashboard
+            StorageService.saveEntry(entryData);
+            await ApiService.saveEntry(entryData);
+            alert('Registro ingresado correctamente');
+            window.location.reload(); // Simple reload to go back to dashboard
+        } catch (error) {
+            alert('Error guardando en el servidor: ' + error.message);
+        }
     });
 }
