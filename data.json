@@ -1,0 +1,4444 @@
+﻿[
+    {
+        "id":  1,
+        "project_id":  1,
+        "period":  "2023-05-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  4261969,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:16.153Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  1,
+                              "closure_id":  1,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  2274376,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  2274376,
+                     "laborIndirectCost":  0,
+                     "totalCost":  2274376,
+                     "margin":  1987593,
+                     "profitabilityPct":  46.64
+                 }
+    },
+    {
+        "id":  2,
+        "project_id":  1,
+        "period":  "2023-06-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  4264025,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:16.770Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  2,
+                              "closure_id":  2,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  1879146,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  1879146,
+                     "laborIndirectCost":  0,
+                     "totalCost":  1879146,
+                     "margin":  2384879,
+                     "profitabilityPct":  55.93
+                 }
+    },
+    {
+        "id":  3,
+        "project_id":  1,
+        "period":  "2023-07-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2132828,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:17.003Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  3,
+                              "closure_id":  3,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  2205954,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  2205954,
+                     "laborIndirectCost":  0,
+                     "totalCost":  2205954,
+                     "margin":  -73126,
+                     "profitabilityPct":  -3.43
+                 }
+    },
+    {
+        "id":  4,
+        "project_id":  1,
+        "period":  "2023-08-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2138062,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:17.483Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  4,
+                              "closure_id":  4,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  2233188,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  2233188,
+                     "laborIndirectCost":  0,
+                     "totalCost":  2233188,
+                     "margin":  -95126,
+                     "profitabilityPct":  -4.45
+                 }
+    },
+    {
+        "id":  5,
+        "project_id":  1,
+        "period":  "2023-09-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2158051,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:17.703Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  5,
+                              "closure_id":  5,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  626382,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  626382,
+                     "laborIndirectCost":  0,
+                     "totalCost":  626382,
+                     "margin":  1531669,
+                     "profitabilityPct":  70.97
+                 }
+    },
+    {
+        "id":  6,
+        "project_id":  1,
+        "period":  "2023-10-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2158051,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:17.923Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  6,
+                              "closure_id":  6,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  1047668,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  1047668,
+                     "laborIndirectCost":  0,
+                     "totalCost":  1047668,
+                     "margin":  1110383,
+                     "profitabilityPct":  51.45
+                 }
+    },
+    {
+        "id":  8,
+        "project_id":  1,
+        "period":  "2023-11-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2163060,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:18.540Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  8,
+                              "closure_id":  8,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  191640,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  191640,
+                     "laborIndirectCost":  0,
+                     "totalCost":  191640,
+                     "margin":  1971420,
+                     "profitabilityPct":  91.14
+                 }
+    },
+    {
+        "id":  10,
+        "project_id":  1,
+        "period":  "2023-12-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2178168,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:19.030Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  10,
+                              "closure_id":  10,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  898151,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  898151,
+                     "laborIndirectCost":  0,
+                     "totalCost":  898151,
+                     "margin":  1280017,
+                     "profitabilityPct":  58.77
+                 }
+    },
+    {
+        "id":  12,
+        "project_id":  1,
+        "period":  "2024-01-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2178168,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:19.543Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  12,
+                              "closure_id":  12,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  727382,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  727382,
+                     "laborIndirectCost":  0,
+                     "totalCost":  727382,
+                     "margin":  1450786,
+                     "profitabilityPct":  66.61
+                 }
+    },
+    {
+        "id":  14,
+        "project_id":  1,
+        "period":  "2024-02-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2181365,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:20.067Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  14,
+                              "closure_id":  14,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  782623,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  782623,
+                     "laborIndirectCost":  0,
+                     "totalCost":  782623,
+                     "margin":  1398742,
+                     "profitabilityPct":  64.12
+                 }
+    },
+    {
+        "id":  16,
+        "project_id":  1,
+        "period":  "2024-03-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  6751212,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:20.560Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  16,
+                              "closure_id":  16,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  3578879,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  3578879,
+                     "laborIndirectCost":  0,
+                     "totalCost":  3578879,
+                     "margin":  3172333,
+                     "profitabilityPct":  46.99
+                 }
+    },
+    {
+        "id":  18,
+        "project_id":  1,
+        "period":  "2024-04-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  3086948,
+        "third_party_costs":  882518,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:21.020Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  18,
+                              "closure_id":  18,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  954214,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  954214,
+                     "laborIndirectCost":  0,
+                     "totalCost":  1836732,
+                     "margin":  1250216,
+                     "profitabilityPct":  40.5
+                 }
+    },
+    {
+        "id":  20,
+        "project_id":  1,
+        "period":  "2024-05-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2216250,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:21.690Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  20,
+                              "closure_id":  20,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  743533,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  743533,
+                     "laborIndirectCost":  0,
+                     "totalCost":  743533,
+                     "margin":  1472717,
+                     "profitabilityPct":  66.45
+                 }
+    },
+    {
+        "id":  23,
+        "project_id":  1,
+        "period":  "2024-06-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2222160,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:22.737Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  23,
+                              "closure_id":  23,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  609907,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  609907,
+                     "laborIndirectCost":  0,
+                     "totalCost":  609907,
+                     "margin":  1612253,
+                     "profitabilityPct":  72.55
+                 }
+    },
+    {
+        "id":  26,
+        "project_id":  1,
+        "period":  "2024-07-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2222160,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:23.363Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  26,
+                              "closure_id":  26,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  1149432,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  1149432,
+                     "laborIndirectCost":  0,
+                     "totalCost":  1149432,
+                     "margin":  1072728,
+                     "profitabilityPct":  48.27
+                 }
+    },
+    {
+        "id":  29,
+        "project_id":  1,
+        "period":  "2024-08-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2233980,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:23.960Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  29,
+                              "closure_id":  29,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  768284,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  768284,
+                     "laborIndirectCost":  0,
+                     "totalCost":  768284,
+                     "margin":  1465696,
+                     "profitabilityPct":  65.61
+                 }
+    },
+    {
+        "id":  32,
+        "project_id":  1,
+        "period":  "2024-09-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2241072,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:24.663Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  32,
+                              "closure_id":  32,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  1016555,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  1016555,
+                     "laborIndirectCost":  0,
+                     "totalCost":  1016555,
+                     "margin":  1224517,
+                     "profitabilityPct":  54.64
+                 }
+    },
+    {
+        "id":  35,
+        "project_id":  1,
+        "period":  "2024-10-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2245800,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:25.393Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  35,
+                              "closure_id":  35,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  2002573,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  2002573,
+                     "laborIndirectCost":  0,
+                     "totalCost":  2002573,
+                     "margin":  243227,
+                     "profitabilityPct":  10.83
+                 }
+    },
+    {
+        "id":  38,
+        "project_id":  1,
+        "period":  "2024-11-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2257620,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:26.020Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  38,
+                              "closure_id":  38,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  913397,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  913397,
+                     "laborIndirectCost":  0,
+                     "totalCost":  913397,
+                     "margin":  1344223,
+                     "profitabilityPct":  59.54
+                 }
+    },
+    {
+        "id":  41,
+        "project_id":  1,
+        "period":  "2024-12-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2269440,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:26.920Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  41,
+                              "closure_id":  41,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  503340,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  503340,
+                     "laborIndirectCost":  0,
+                     "totalCost":  503340,
+                     "margin":  1766100,
+                     "profitabilityPct":  77.82
+                 }
+    },
+    {
+        "id":  44,
+        "project_id":  1,
+        "period":  "2025-01-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  1944192,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:27.597Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  44,
+                              "closure_id":  44,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  426726.23,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  426726.23,
+                     "laborIndirectCost":  0,
+                     "totalCost":  426726.23,
+                     "margin":  1517465.77,
+                     "profitabilityPct":  78.05
+                 }
+    },
+    {
+        "id":  47,
+        "project_id":  1,
+        "period":  "2025-02-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2293080,
+        "third_party_costs":  16051.56,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:28.200Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  47,
+                              "closure_id":  47,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  587596.32,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  587596.32,
+                     "laborIndirectCost":  0,
+                     "totalCost":  603647.88,
+                     "margin":  1689432.12,
+                     "profitabilityPct":  73.68
+                 }
+    },
+    {
+        "id":  49,
+        "project_id":  1,
+        "period":  "2025-03-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2304900,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:28.637Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  49,
+                              "closure_id":  49,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  582725.07,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  582725.07,
+                     "laborIndirectCost":  0,
+                     "totalCost":  582725.07,
+                     "margin":  1722174.9300000002,
+                     "profitabilityPct":  74.72
+                 }
+    },
+    {
+        "id":  52,
+        "project_id":  1,
+        "period":  "2025-04-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2316720,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:29.387Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  52,
+                              "closure_id":  52,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  854830.58,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  854830.58,
+                     "laborIndirectCost":  0,
+                     "totalCost":  854830.58,
+                     "margin":  1461889.42,
+                     "profitabilityPct":  63.1
+                 }
+    },
+    {
+        "id":  54,
+        "project_id":  1,
+        "period":  "2025-05-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  8067360,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:29.817Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  54,
+                              "closure_id":  54,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  5605243.93,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  5605243.93,
+                     "laborIndirectCost":  0,
+                     "totalCost":  5605243.93,
+                     "margin":  2462116.0700000003,
+                     "profitabilityPct":  30.52
+                 }
+    },
+    {
+        "id":  60,
+        "project_id":  1,
+        "period":  "2025-07-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2316720,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:31.040Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  60,
+                              "closure_id":  60,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  486060.04,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  486060.04,
+                     "laborIndirectCost":  0,
+                     "totalCost":  486060.04,
+                     "margin":  1830659.96,
+                     "profitabilityPct":  79.02
+                 }
+    },
+    {
+        "id":  57,
+        "project_id":  1,
+        "period":  "2025-06-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2319675,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:30.397Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  57,
+                              "closure_id":  57,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  1342599.29,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  1342599.29,
+                     "laborIndirectCost":  0,
+                     "totalCost":  1342599.29,
+                     "margin":  977075.71,
+                     "profitabilityPct":  42.12
+                 }
+    },
+    {
+        "id":  64,
+        "project_id":  1,
+        "period":  "2025-08-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2332913.4,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:32.300Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  64,
+                              "closure_id":  64,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  1632515.18,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  1632515.18,
+                     "laborIndirectCost":  0,
+                     "totalCost":  1632515.18,
+                     "margin":  700398.22,
+                     "profitabilityPct":  30.02
+                 }
+    },
+    {
+        "id":  66,
+        "project_id":  1,
+        "period":  "2025-09-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2333563.5,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:32.713Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  66,
+                              "closure_id":  66,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  1987144.16,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  1987144.16,
+                     "laborIndirectCost":  0,
+                     "totalCost":  1987144.16,
+                     "margin":  346419.3400000001,
+                     "profitabilityPct":  14.85
+                 }
+    },
+    {
+        "id":  70,
+        "project_id":  1,
+        "period":  "2025-10-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2342901.3,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:33.893Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  70,
+                              "closure_id":  70,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  2181728.14,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  2181728.14,
+                     "laborIndirectCost":  0,
+                     "totalCost":  2181728.14,
+                     "margin":  161173.15999999968,
+                     "profitabilityPct":  6.88
+                 }
+    },
+    {
+        "id":  74,
+        "project_id":  1,
+        "period":  "2025-11-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2342901.3,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:34.900Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  74,
+                              "closure_id":  74,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  1163240.23,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  1163240.23,
+                     "laborIndirectCost":  0,
+                     "totalCost":  1163240.23,
+                     "margin":  1179661.0699999998,
+                     "profitabilityPct":  50.35
+                 }
+    },
+    {
+        "id":  79,
+        "project_id":  1,
+        "period":  "2025-12-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2348279.4,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:36.480Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  79,
+                              "closure_id":  79,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  2544156,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  2544156,
+                     "laborIndirectCost":  0,
+                     "totalCost":  2544156,
+                     "margin":  -195876.6000000001,
+                     "profitabilityPct":  -8.34
+                 }
+    },
+    {
+        "id":  84,
+        "project_id":  1,
+        "period":  "2026-01-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2346624.6,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:37.830Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  84,
+                              "closure_id":  84,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  1022709.08,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  1022709.08,
+                     "laborIndirectCost":  0,
+                     "totalCost":  1022709.08,
+                     "margin":  1323915.52,
+                     "profitabilityPct":  56.42
+                 }
+    },
+    {
+        "id":  85,
+        "project_id":  1,
+        "period":  "2026-02-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2354603.1,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:38.090Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Purén Fase II",
+        "project_code":  "BM22-COD2-ING-ODS8",
+        "resources":  [
+                          {
+                              "id":  85,
+                              "closure_id":  85,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  3193945.92,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  3193945.92,
+                     "laborIndirectCost":  0,
+                     "totalCost":  3193945.92,
+                     "margin":  -839342.8199999998,
+                     "profitabilityPct":  -35.65
+                 }
+    },
+    {
+        "id":  80,
+        "project_id":  2,
+        "period":  "2025-12-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  97095666,
+        "third_party_costs":  3515296,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:36.677Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  80,
+                              "closure_id":  80,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  59586788.01,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  59586788.01,
+                     "laborIndirectCost":  0,
+                     "totalCost":  63102084.01,
+                     "margin":  33993581.99,
+                     "profitabilityPct":  35.01
+                 }
+    },
+    {
+        "id":  71,
+        "project_id":  2,
+        "period":  "2025-10-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  119382236.6,
+        "third_party_costs":  28172211.96,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:34.123Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  71,
+                              "closure_id":  71,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  87909840.05,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  87909840.05,
+                     "laborIndirectCost":  0,
+                     "totalCost":  116082052.00999999,
+                     "margin":  3300184.5900000036,
+                     "profitabilityPct":  2.76
+                 }
+    },
+    {
+        "id":  91,
+        "project_id":  2,
+        "period":  "2026-01-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  101080249.79,
+        "third_party_costs":  36473028.77,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:39.500Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  91,
+                              "closure_id":  91,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  57863975.55,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  57863975.55,
+                     "laborIndirectCost":  0,
+                     "totalCost":  94337004.32,
+                     "margin":  6743245.470000014,
+                     "profitabilityPct":  6.67
+                 }
+    },
+    {
+        "id":  92,
+        "project_id":  2,
+        "period":  "2026-02-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  81798351.76,
+        "third_party_costs":  5896534,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:39.700Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  92,
+                              "closure_id":  92,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  68075275.9,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  68075275.9,
+                     "laborIndirectCost":  0,
+                     "totalCost":  73971809.9,
+                     "margin":  7826541.859999999,
+                     "profitabilityPct":  9.57
+                 }
+    },
+    {
+        "id":  93,
+        "project_id":  2,
+        "period":  "2026-03-01T00:00:00.000Z",
+        "status":  "DRAFT",
+        "revenue":  81798351.76,
+        "third_party_costs":  5896534,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:39.917Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  93,
+                              "closure_id":  93,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  68075275.9,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  68075275.9,
+                     "laborIndirectCost":  0,
+                     "totalCost":  73971809.9,
+                     "margin":  7826541.859999999,
+                     "profitabilityPct":  9.57
+                 }
+    },
+    {
+        "id":  94,
+        "project_id":  2,
+        "period":  "2026-04-01T00:00:00.000Z",
+        "status":  "DRAFT",
+        "revenue":  81798351.76,
+        "third_party_costs":  5896534,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:40.250Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  94,
+                              "closure_id":  94,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  68075275.9,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  68075275.9,
+                     "laborIndirectCost":  0,
+                     "totalCost":  73971809.9,
+                     "margin":  7826541.859999999,
+                     "profitabilityPct":  9.57
+                 }
+    },
+    {
+        "id":  95,
+        "project_id":  2,
+        "period":  "2026-05-01T00:00:00.000Z",
+        "status":  "DRAFT",
+        "revenue":  81798351.76,
+        "third_party_costs":  5896534,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:40.443Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  95,
+                              "closure_id":  95,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  68075275.9,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  68075275.9,
+                     "laborIndirectCost":  0,
+                     "totalCost":  73971809.9,
+                     "margin":  7826541.859999999,
+                     "profitabilityPct":  9.57
+                 }
+    },
+    {
+        "id":  96,
+        "project_id":  2,
+        "period":  "2026-06-01T00:00:00.000Z",
+        "status":  "DRAFT",
+        "revenue":  81798351.76,
+        "third_party_costs":  5896534,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:40.647Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  96,
+                              "closure_id":  96,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  68075275.9,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  68075275.9,
+                     "laborIndirectCost":  0,
+                     "totalCost":  73971809.9,
+                     "margin":  7826541.859999999,
+                     "profitabilityPct":  9.57
+                 }
+    },
+    {
+        "id":  97,
+        "project_id":  2,
+        "period":  "2026-07-01T00:00:00.000Z",
+        "status":  "DRAFT",
+        "revenue":  81798351.76,
+        "third_party_costs":  5896534,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:40.840Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  97,
+                              "closure_id":  97,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  68075275.9,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  68075275.9,
+                     "laborIndirectCost":  0,
+                     "totalCost":  73971809.9,
+                     "margin":  7826541.859999999,
+                     "profitabilityPct":  9.57
+                 }
+    },
+    {
+        "id":  98,
+        "project_id":  2,
+        "period":  "2026-08-01T00:00:00.000Z",
+        "status":  "DRAFT",
+        "revenue":  81798351.76,
+        "third_party_costs":  5896534,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:41.077Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  98,
+                              "closure_id":  98,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  68075275.9,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  68075275.9,
+                     "laborIndirectCost":  0,
+                     "totalCost":  73971809.9,
+                     "margin":  7826541.859999999,
+                     "profitabilityPct":  9.57
+                 }
+    },
+    {
+        "id":  99,
+        "project_id":  2,
+        "period":  "2026-09-01T00:00:00.000Z",
+        "status":  "DRAFT",
+        "revenue":  81798351.76,
+        "third_party_costs":  5896534,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:41.340Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  99,
+                              "closure_id":  99,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  68075275.9,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  68075275.9,
+                     "laborIndirectCost":  0,
+                     "totalCost":  73971809.9,
+                     "margin":  7826541.859999999,
+                     "profitabilityPct":  9.57
+                 }
+    },
+    {
+        "id":  100,
+        "project_id":  2,
+        "period":  "2026-10-01T00:00:00.000Z",
+        "status":  "DRAFT",
+        "revenue":  81798351.76,
+        "third_party_costs":  5896534,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:41.537Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  100,
+                              "closure_id":  100,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  68075275.9,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  68075275.9,
+                     "laborIndirectCost":  0,
+                     "totalCost":  73971809.9,
+                     "margin":  7826541.859999999,
+                     "profitabilityPct":  9.57
+                 }
+    },
+    {
+        "id":  101,
+        "project_id":  2,
+        "period":  "2026-11-01T00:00:00.000Z",
+        "status":  "DRAFT",
+        "revenue":  81798351.76,
+        "third_party_costs":  5896534,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:41.760Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  101,
+                              "closure_id":  101,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  68075275.9,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  68075275.9,
+                     "laborIndirectCost":  0,
+                     "totalCost":  73971809.9,
+                     "margin":  7826541.859999999,
+                     "profitabilityPct":  9.57
+                 }
+    },
+    {
+        "id":  102,
+        "project_id":  2,
+        "period":  "2026-12-01T00:00:00.000Z",
+        "status":  "DRAFT",
+        "revenue":  81798351.76,
+        "third_party_costs":  5896534,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:41.973Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  102,
+                              "closure_id":  102,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  68075275.9,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  68075275.9,
+                     "laborIndirectCost":  0,
+                     "totalCost":  73971809.9,
+                     "margin":  7826541.859999999,
+                     "profitabilityPct":  9.57
+                 }
+    },
+    {
+        "id":  78,
+        "project_id":  2,
+        "period":  "2025-11-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  109372802,
+        "third_party_costs":  12645583.96,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:36.283Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  78,
+                              "closure_id":  78,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  54167440.7,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  54167440.7,
+                     "laborIndirectCost":  0,
+                     "totalCost":  66813024.660000004,
+                     "margin":  42559777.339999996,
+                     "profitabilityPct":  38.91
+                 }
+    },
+    {
+        "id":  67,
+        "project_id":  2,
+        "period":  "2025-09-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  208273019.83,
+        "third_party_costs":  14663989.84,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:33.063Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  67,
+                              "closure_id":  67,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  85645391.81,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  85645391.81,
+                     "laborIndirectCost":  0,
+                     "totalCost":  100309381.65,
+                     "margin":  107963638.18,
+                     "profitabilityPct":  51.84
+                 }
+    },
+    {
+        "id":  65,
+        "project_id":  2,
+        "period":  "2025-08-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  184015513.52,
+        "third_party_costs":  33464763.36,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:32.513Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  65,
+                              "closure_id":  65,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  133672450.26,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  133672450.26,
+                     "laborIndirectCost":  0,
+                     "totalCost":  167137213.62,
+                     "margin":  16878299.900000006,
+                     "profitabilityPct":  9.17
+                 }
+    },
+    {
+        "id":  58,
+        "project_id":  2,
+        "period":  "2025-06-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  233172232.77,
+        "third_party_costs":  49978629.79,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:30.613Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  58,
+                              "closure_id":  58,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  190881103.9,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  190881103.9,
+                     "laborIndirectCost":  0,
+                     "totalCost":  240859733.69,
+                     "margin":  -7687500.919999987,
+                     "profitabilityPct":  -3.3
+                 }
+    },
+    {
+        "id":  61,
+        "project_id":  2,
+        "period":  "2025-07-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  191481658.32,
+        "third_party_costs":  23081070.66,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:31.233Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  61,
+                              "closure_id":  61,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  162780805.29,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  162780805.29,
+                     "laborIndirectCost":  0,
+                     "totalCost":  185861875.95,
+                     "margin":  5619782.370000005,
+                     "profitabilityPct":  2.93
+                 }
+    },
+    {
+        "id":  55,
+        "project_id":  2,
+        "period":  "2025-05-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  283817695.8,
+        "third_party_costs":  50412102.16,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:30.017Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  55,
+                              "closure_id":  55,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  189880615.98,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  189880615.98,
+                     "laborIndirectCost":  0,
+                     "totalCost":  240292718.14,
+                     "margin":  43524977.660000026,
+                     "profitabilityPct":  15.34
+                 }
+    },
+    {
+        "id":  46,
+        "project_id":  2,
+        "period":  "2025-02-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  321544836.34,
+        "third_party_costs":  101234997.86,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:28.007Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  46,
+                              "closure_id":  46,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  170024434.39,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  170024434.39,
+                     "laborIndirectCost":  0,
+                     "totalCost":  271259432.25,
+                     "margin":  50285404.089999974,
+                     "profitabilityPct":  15.64
+                 }
+    },
+    {
+        "id":  51,
+        "project_id":  2,
+        "period":  "2025-04-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  313715800.65,
+        "third_party_costs":  79520692.99,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:29.180Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  51,
+                              "closure_id":  51,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  222070595.8,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  222070595.8,
+                     "laborIndirectCost":  0,
+                     "totalCost":  301591288.79,
+                     "margin":  12124511.859999955,
+                     "profitabilityPct":  3.86
+                 }
+    },
+    {
+        "id":  48,
+        "project_id":  2,
+        "period":  "2025-03-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  321409636.3,
+        "third_party_costs":  82750986.37,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:28.430Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  48,
+                              "closure_id":  48,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  199802426.94,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  199802426.94,
+                     "laborIndirectCost":  0,
+                     "totalCost":  282553413.31,
+                     "margin":  38856222.99000001,
+                     "profitabilityPct":  12.09
+                 }
+    },
+    {
+        "id":  40,
+        "project_id":  2,
+        "period":  "2024-12-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  411130011,
+        "third_party_costs":  225043405,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:26.630Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  40,
+                              "closure_id":  40,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  141823840,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  141823840,
+                     "laborIndirectCost":  0,
+                     "totalCost":  366867245,
+                     "margin":  44262766,
+                     "profitabilityPct":  10.77
+                 }
+    },
+    {
+        "id":  43,
+        "project_id":  2,
+        "period":  "2025-01-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  392135126,
+        "third_party_costs":  122522346,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:27.337Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  43,
+                              "closure_id":  43,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  158275117.53,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  158275117.53,
+                     "laborIndirectCost":  0,
+                     "totalCost":  280797463.53,
+                     "margin":  111337662.47000003,
+                     "profitabilityPct":  28.39
+                 }
+    },
+    {
+        "id":  34,
+        "project_id":  2,
+        "period":  "2024-10-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  385000000,
+        "third_party_costs":  170568887,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:25.180Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  34,
+                              "closure_id":  34,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  136590406,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  136590406,
+                     "laborIndirectCost":  0,
+                     "totalCost":  307159293,
+                     "margin":  77840707,
+                     "profitabilityPct":  20.22
+                 }
+    },
+    {
+        "id":  37,
+        "project_id":  2,
+        "period":  "2024-11-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  586790715.99,
+        "third_party_costs":  201486439,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:25.817Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  37,
+                              "closure_id":  37,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  170767709,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  170767709,
+                     "laborIndirectCost":  0,
+                     "totalCost":  372254148,
+                     "margin":  214536567.99,
+                     "profitabilityPct":  36.56
+                 }
+    },
+    {
+        "id":  28,
+        "project_id":  2,
+        "period":  "2024-08-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  512716118,
+        "third_party_costs":  236937168,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:23.767Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  28,
+                              "closure_id":  28,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  147873266,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  147873266,
+                     "laborIndirectCost":  0,
+                     "totalCost":  384810434,
+                     "margin":  127905684,
+                     "profitabilityPct":  24.95
+                 }
+    },
+    {
+        "id":  31,
+        "project_id":  2,
+        "period":  "2024-09-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  370616742,
+        "third_party_costs":  117030131,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:24.460Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  31,
+                              "closure_id":  31,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  113314690,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  113314690,
+                     "laborIndirectCost":  0,
+                     "totalCost":  230344821,
+                     "margin":  140271921,
+                     "profitabilityPct":  37.85
+                 }
+    },
+    {
+        "id":  22,
+        "project_id":  2,
+        "period":  "2024-06-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  385477325,
+        "third_party_costs":  83529675,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:22.487Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  22,
+                              "closure_id":  22,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  150216228,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  150216228,
+                     "laborIndirectCost":  0,
+                     "totalCost":  233745903,
+                     "margin":  151731422,
+                     "profitabilityPct":  39.36
+                 }
+    },
+    {
+        "id":  25,
+        "project_id":  2,
+        "period":  "2024-07-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  394930714,
+        "third_party_costs":  129302276,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:23.120Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  25,
+                              "closure_id":  25,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  169472367,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  169472367,
+                     "laborIndirectCost":  0,
+                     "totalCost":  298774643,
+                     "margin":  96156071,
+                     "profitabilityPct":  24.35
+                 }
+    },
+    {
+        "id":  19,
+        "project_id":  2,
+        "period":  "2024-05-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  229263272,
+        "third_party_costs":  70988304,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:21.247Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  19,
+                              "closure_id":  19,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  143733662,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  143733662,
+                     "laborIndirectCost":  0,
+                     "totalCost":  214721966,
+                     "margin":  14541306,
+                     "profitabilityPct":  6.34
+                 }
+    },
+    {
+        "id":  17,
+        "project_id":  2,
+        "period":  "2024-04-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  440782961,
+        "third_party_costs":  40610990,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:20.837Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  17,
+                              "closure_id":  17,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  96397381,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  96397381,
+                     "laborIndirectCost":  0,
+                     "totalCost":  137008371,
+                     "margin":  303774590,
+                     "profitabilityPct":  68.92
+                 }
+    },
+    {
+        "id":  15,
+        "project_id":  2,
+        "period":  "2024-03-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  164045691,
+        "third_party_costs":  60725060,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:20.303Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  15,
+                              "closure_id":  15,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  41378644,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  41378644,
+                     "laborIndirectCost":  0,
+                     "totalCost":  102103704,
+                     "margin":  61941987,
+                     "profitabilityPct":  37.76
+                 }
+    },
+    {
+        "id":  13,
+        "project_id":  2,
+        "period":  "2024-02-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  99176926,
+        "third_party_costs":  29765503,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:19.790Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  13,
+                              "closure_id":  13,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  46271624,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  46271624,
+                     "laborIndirectCost":  0,
+                     "totalCost":  76037127,
+                     "margin":  23139799,
+                     "profitabilityPct":  23.33
+                 }
+    },
+    {
+        "id":  11,
+        "project_id":  2,
+        "period":  "2024-01-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  82725680,
+        "third_party_costs":  31108472,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:19.250Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  11,
+                              "closure_id":  11,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  34683034,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  34683034,
+                     "laborIndirectCost":  0,
+                     "totalCost":  65791506,
+                     "margin":  16934174,
+                     "profitabilityPct":  20.47
+                 }
+    },
+    {
+        "id":  9,
+        "project_id":  2,
+        "period":  "2023-12-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  109594997,
+        "third_party_costs":  31832615,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:18.830Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  9,
+                              "closure_id":  9,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  32418155,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  32418155,
+                     "laborIndirectCost":  0,
+                     "totalCost":  64250770,
+                     "margin":  45344227,
+                     "profitabilityPct":  41.37
+                 }
+    },
+    {
+        "id":  7,
+        "project_id":  2,
+        "period":  "2023-11-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  114149042,
+        "third_party_costs":  37845556,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:18.230Z",
+        "project_name":  "Servicio de Ingeniería Pampa Norte Renovación",
+        "project_code":  "BM22-BHP58-ING2",
+        "resources":  [
+                          {
+                              "id":  7,
+                              "closure_id":  7,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  35439999,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  35439999,
+                     "laborIndirectCost":  0,
+                     "totalCost":  73285555,
+                     "margin":  40863487,
+                     "profitabilityPct":  35.8
+                 }
+    },
+    {
+        "id":  27,
+        "project_id":  3,
+        "period":  "2024-07-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  27540034,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:23.573Z",
+        "project_name":  "Servicio Planificación Minera",
+        "project_code":  "BM24-AMS15-IOP",
+        "resources":  [
+                          {
+                              "id":  27,
+                              "closure_id":  27,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  11798721,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  11798721,
+                     "laborIndirectCost":  0,
+                     "totalCost":  11798721,
+                     "margin":  15741313,
+                     "profitabilityPct":  57.16
+                 }
+    },
+    {
+        "id":  24,
+        "project_id":  3,
+        "period":  "2024-06-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  30600409,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:22.930Z",
+        "project_name":  "Servicio Planificación Minera",
+        "project_code":  "BM24-AMS15-IOP",
+        "resources":  [
+                          {
+                              "id":  24,
+                              "closure_id":  24,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  11878707.95,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  11878707.95,
+                     "laborIndirectCost":  0,
+                     "totalCost":  11878707.95,
+                     "margin":  18721701.05,
+                     "profitabilityPct":  61.18
+                 }
+    },
+    {
+        "id":  21,
+        "project_id":  3,
+        "period":  "2024-05-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  26252533,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:22.130Z",
+        "project_name":  "Servicio Planificación Minera",
+        "project_code":  "BM24-AMS15-IOP",
+        "resources":  [
+                          {
+                              "id":  21,
+                              "closure_id":  21,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  9984724,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  9984724,
+                     "laborIndirectCost":  0,
+                     "totalCost":  9984724,
+                     "margin":  16267809,
+                     "profitabilityPct":  61.97
+                 }
+    },
+    {
+        "id":  30,
+        "project_id":  3,
+        "period":  "2024-08-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  16778082,
+        "third_party_costs":  709888,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:24.187Z",
+        "project_name":  "Servicio Planificación Minera",
+        "project_code":  "BM24-AMS15-IOP",
+        "resources":  [
+                          {
+                              "id":  30,
+                              "closure_id":  30,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  6684463,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  6684463,
+                     "laborIndirectCost":  0,
+                     "totalCost":  7394351,
+                     "margin":  9383731,
+                     "profitabilityPct":  55.93
+                 }
+    },
+    {
+        "id":  36,
+        "project_id":  3,
+        "period":  "2024-10-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  4256000,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:25.613Z",
+        "project_name":  "Servicio Planificación Minera",
+        "project_code":  "BM24-AMS15-IOP",
+        "resources":  [
+                          {
+                              "id":  36,
+                              "closure_id":  36,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  1487772,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  1487772,
+                     "laborIndirectCost":  0,
+                     "totalCost":  1487772,
+                     "margin":  2768228,
+                     "profitabilityPct":  65.04
+                 }
+    },
+    {
+        "id":  33,
+        "project_id":  3,
+        "period":  "2024-09-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  1,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:24.980Z",
+        "project_name":  "Servicio Planificación Minera",
+        "project_code":  "BM24-AMS15-IOP",
+        "resources":  [
+                          {
+                              "id":  33,
+                              "closure_id":  33,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  7114871,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  7114871,
+                     "laborIndirectCost":  0,
+                     "totalCost":  7114871,
+                     "margin":  -7114870,
+                     "profitabilityPct":  -711487000
+                 }
+    },
+    {
+        "id":  39,
+        "project_id":  3,
+        "period":  "2024-11-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  4532048,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:26.220Z",
+        "project_name":  "Servicio Planificación Minera",
+        "project_code":  "BM24-AMS15-IOP",
+        "resources":  [
+                          {
+                              "id":  39,
+                              "closure_id":  39,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  3388752,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  3388752,
+                     "laborIndirectCost":  0,
+                     "totalCost":  3388752,
+                     "margin":  1143296,
+                     "profitabilityPct":  25.23
+                 }
+    },
+    {
+        "id":  42,
+        "project_id":  3,
+        "period":  "2024-12-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  13659758,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:27.133Z",
+        "project_name":  "Servicio Planificación Minera",
+        "project_code":  "BM24-AMS15-IOP",
+        "resources":  [
+                          {
+                              "id":  42,
+                              "closure_id":  42,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  7265208,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  7265208,
+                     "laborIndirectCost":  0,
+                     "totalCost":  7265208,
+                     "margin":  6394550,
+                     "profitabilityPct":  46.81
+                 }
+    },
+    {
+        "id":  45,
+        "project_id":  3,
+        "period":  "2025-01-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  2023680,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:27.790Z",
+        "project_name":  "Servicio Planificación Minera",
+        "project_code":  "BM24-AMS15-IOP",
+        "resources":  [
+                          {
+                              "id":  45,
+                              "closure_id":  45,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  2898896,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  2898896,
+                     "laborIndirectCost":  0,
+                     "totalCost":  2898896,
+                     "margin":  -875216,
+                     "profitabilityPct":  -43.25
+                 }
+    },
+    {
+        "id":  50,
+        "project_id":  4,
+        "period":  "2025-03-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  16896841.2,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:28.960Z",
+        "project_name":  "Diablillos",
+        "project_code":  "BM25-ABR04-ING",
+        "resources":  [
+                          {
+                              "id":  50,
+                              "closure_id":  50,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  6728949.46,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  6728949.46,
+                     "laborIndirectCost":  0,
+                     "totalCost":  6728949.46,
+                     "margin":  10167891.739999998,
+                     "profitabilityPct":  60.18
+                 }
+    },
+    {
+        "id":  56,
+        "project_id":  4,
+        "period":  "2025-05-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  31538598,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:30.207Z",
+        "project_name":  "Diablillos",
+        "project_code":  "BM25-ABR04-ING",
+        "resources":  [
+                          {
+                              "id":  56,
+                              "closure_id":  56,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  4557819.71,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  4557819.71,
+                     "laborIndirectCost":  0,
+                     "totalCost":  4557819.71,
+                     "margin":  26980778.29,
+                     "profitabilityPct":  85.55
+                 }
+    },
+    {
+        "id":  53,
+        "project_id":  4,
+        "period":  "2025-04-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  0,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:29.613Z",
+        "project_name":  "Diablillos",
+        "project_code":  "BM25-ABR04-ING",
+        "resources":  [
+                          {
+                              "id":  53,
+                              "closure_id":  53,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  1819140.96,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  1819140.96,
+                     "laborIndirectCost":  0,
+                     "totalCost":  1819140.96,
+                     "margin":  -1819140.96,
+                     "profitabilityPct":  0
+                 }
+    },
+    {
+        "id":  62,
+        "project_id":  4,
+        "period":  "2025-07-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  29731688,
+        "third_party_costs":  292397,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:31.663Z",
+        "project_name":  "Diablillos",
+        "project_code":  "BM25-ABR04-ING",
+        "resources":  [
+                          {
+                              "id":  62,
+                              "closure_id":  62,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  4091553.57,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  4091553.57,
+                     "laborIndirectCost":  0,
+                     "totalCost":  4383950.57,
+                     "margin":  25347737.43,
+                     "profitabilityPct":  85.25
+                 }
+    },
+    {
+        "id":  63,
+        "project_id":  4,
+        "period":  "2025-08-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  29682750,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:32.117Z",
+        "project_name":  "Diablillos",
+        "project_code":  "BM25-ABR04-ING",
+        "resources":  [
+                          {
+                              "id":  63,
+                              "closure_id":  63,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  6517905,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  6517905,
+                     "laborIndirectCost":  0,
+                     "totalCost":  6517905,
+                     "margin":  23164845,
+                     "profitabilityPct":  78.04
+                 }
+    },
+    {
+        "id":  59,
+        "project_id":  4,
+        "period":  "2025-06-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  0,
+        "third_party_costs":  584000,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:30.830Z",
+        "project_name":  "Diablillos",
+        "project_code":  "BM25-ABR04-ING",
+        "resources":  [
+                          {
+                              "id":  59,
+                              "closure_id":  59,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  3932600.14,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  3932600.14,
+                     "laborIndirectCost":  0,
+                     "totalCost":  4516600.140000001,
+                     "margin":  -4516600.140000001,
+                     "profitabilityPct":  0
+                 }
+    },
+    {
+        "id":  68,
+        "project_id":  4,
+        "period":  "2025-09-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  34757842,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:33.327Z",
+        "project_name":  "Diablillos",
+        "project_code":  "BM25-ABR04-ING",
+        "resources":  [
+                          {
+                              "id":  68,
+                              "closure_id":  68,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  9786924.7,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  9786924.7,
+                     "laborIndirectCost":  0,
+                     "totalCost":  9786924.7,
+                     "margin":  24970917.3,
+                     "profitabilityPct":  71.84
+                 }
+    },
+    {
+        "id":  103,
+        "project_id":  4,
+        "period":  "2026-01-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  0,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:42.167Z",
+        "project_name":  "Diablillos",
+        "project_code":  "BM25-ABR04-ING",
+        "resources":  [
+                          {
+                              "id":  103,
+                              "closure_id":  103,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  11637985.43,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  11637985.43,
+                     "laborIndirectCost":  0,
+                     "totalCost":  11637985.43,
+                     "margin":  -11637985.43,
+                     "profitabilityPct":  0
+                 }
+    },
+    {
+        "id":  72,
+        "project_id":  4,
+        "period":  "2025-10-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  30206110,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:34.337Z",
+        "project_name":  "Diablillos",
+        "project_code":  "BM25-ABR04-ING",
+        "resources":  [
+                          {
+                              "id":  72,
+                              "closure_id":  72,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  10721513.97,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  10721513.97,
+                     "laborIndirectCost":  0,
+                     "totalCost":  10721513.97,
+                     "margin":  19484596.03,
+                     "profitabilityPct":  64.51
+                 }
+    },
+    {
+        "id":  75,
+        "project_id":  4,
+        "period":  "2025-11-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  28651384.2,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:35.520Z",
+        "project_name":  "Diablillos",
+        "project_code":  "BM25-ABR04-ING",
+        "resources":  [
+                          {
+                              "id":  75,
+                              "closure_id":  75,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  8575637.98,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  8575637.98,
+                     "laborIndirectCost":  0,
+                     "totalCost":  8575637.98,
+                     "margin":  20075746.22,
+                     "profitabilityPct":  70.07
+                 }
+    },
+    {
+        "id":  81,
+        "project_id":  4,
+        "period":  "2025-12-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  26935156,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:36.897Z",
+        "project_name":  "Diablillos",
+        "project_code":  "BM25-ABR04-ING",
+        "resources":  [
+                          {
+                              "id":  81,
+                              "closure_id":  81,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  17384535.16,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  17384535.16,
+                     "laborIndirectCost":  0,
+                     "totalCost":  17384535.16,
+                     "margin":  9550620.84,
+                     "profitabilityPct":  35.46
+                 }
+    },
+    {
+        "id":  82,
+        "project_id":  5,
+        "period":  "2025-12-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  13523447.82,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:37.117Z",
+        "project_name":  "Generación Plan Minero Collahuasi",
+        "project_code":  "BM25-COL65-ING",
+        "resources":  [
+                          {
+                              "id":  82,
+                              "closure_id":  82,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  10535777.35,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  10535777.35,
+                     "laborIndirectCost":  0,
+                     "totalCost":  10535777.35,
+                     "margin":  2987670.4700000007,
+                     "profitabilityPct":  22.09
+                 }
+    },
+    {
+        "id":  76,
+        "project_id":  5,
+        "period":  "2025-11-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  8676971.59,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:35.760Z",
+        "project_name":  "Generación Plan Minero Collahuasi",
+        "project_code":  "BM25-COL65-ING",
+        "resources":  [
+                          {
+                              "id":  76,
+                              "closure_id":  76,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  6220056.58,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  6220056.58,
+                     "laborIndirectCost":  0,
+                     "totalCost":  6220056.58,
+                     "margin":  2456915.01,
+                     "profitabilityPct":  28.32
+                 }
+    },
+    {
+        "id":  73,
+        "project_id":  5,
+        "period":  "2025-10-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  20099300.13,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:34.617Z",
+        "project_name":  "Generación Plan Minero Collahuasi",
+        "project_code":  "BM25-COL65-ING",
+        "resources":  [
+                          {
+                              "id":  73,
+                              "closure_id":  73,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  15083253.51,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  15083253.51,
+                     "laborIndirectCost":  0,
+                     "totalCost":  15083253.51,
+                     "margin":  5016046.619999999,
+                     "profitabilityPct":  24.96
+                 }
+    },
+    {
+        "id":  109,
+        "project_id":  5,
+        "period":  "2026-01-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  17871192,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:43.493Z",
+        "project_name":  "Generación Plan Minero Collahuasi",
+        "project_code":  "BM25-COL65-ING",
+        "resources":  [
+                          {
+                              "id":  109,
+                              "closure_id":  109,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  11822496.62,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  11822496.62,
+                     "laborIndirectCost":  0,
+                     "totalCost":  11822496.62,
+                     "margin":  6048695.380000001,
+                     "profitabilityPct":  33.85
+                 }
+    },
+    {
+        "id":  110,
+        "project_id":  5,
+        "period":  "2026-02-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  13864668,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:43.683Z",
+        "project_name":  "Generación Plan Minero Collahuasi",
+        "project_code":  "BM25-COL65-ING",
+        "resources":  [
+                          {
+                              "id":  110,
+                              "closure_id":  110,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  10642573.18,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  10642573.18,
+                     "laborIndirectCost":  0,
+                     "totalCost":  10642573.18,
+                     "margin":  3222094.8200000003,
+                     "profitabilityPct":  23.24
+                 }
+    },
+    {
+        "id":  111,
+        "project_id":  5,
+        "period":  "2026-03-01T00:00:00.000Z",
+        "status":  "DRAFT",
+        "revenue":  17330835,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:44.043Z",
+        "project_name":  "Generación Plan Minero Collahuasi",
+        "project_code":  "BM25-COL65-ING",
+        "resources":  [
+                          {
+                              "id":  111,
+                              "closure_id":  111,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  14737147.17,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  14737147.17,
+                     "laborIndirectCost":  0,
+                     "totalCost":  14737147.17,
+                     "margin":  2593687.83,
+                     "profitabilityPct":  14.97
+                 }
+    },
+    {
+        "id":  69,
+        "project_id":  5,
+        "period":  "2025-09-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  16596791.4,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:33.643Z",
+        "project_name":  "Generación Plan Minero Collahuasi",
+        "project_code":  "BM25-COL65-ING",
+        "resources":  [
+                          {
+                              "id":  69,
+                              "closure_id":  69,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  9969022.98,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  9969022.98,
+                     "laborIndirectCost":  0,
+                     "totalCost":  9969022.98,
+                     "margin":  6627768.42,
+                     "profitabilityPct":  39.93
+                 }
+    },
+    {
+        "id":  117,
+        "project_id":  6,
+        "period":  "2026-01-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  41360000,
+        "third_party_costs":  6614911.91,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:45.427Z",
+        "project_name":  "Apoyo Resource Development Plan Glencore",
+        "project_code":  "BM25-GLE68-ING",
+        "resources":  [
+                          {
+                              "id":  117,
+                              "closure_id":  117,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  50598908.18,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  50598908.18,
+                     "laborIndirectCost":  0,
+                     "totalCost":  57213820.09,
+                     "margin":  -15853820.090000004,
+                     "profitabilityPct":  -38.33
+                 }
+    },
+    {
+        "id":  118,
+        "project_id":  6,
+        "period":  "2026-02-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  47838386,
+        "third_party_costs":  10214080,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:45.633Z",
+        "project_name":  "Apoyo Resource Development Plan Glencore",
+        "project_code":  "BM25-GLE68-ING",
+        "resources":  [
+                          {
+                              "id":  118,
+                              "closure_id":  118,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  47047259,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  47047259,
+                     "laborIndirectCost":  0,
+                     "totalCost":  57261339,
+                     "margin":  -9422953,
+                     "profitabilityPct":  -19.7
+                 }
+    },
+    {
+        "id":  119,
+        "project_id":  6,
+        "period":  "2026-03-01T00:00:00.000Z",
+        "status":  "DRAFT",
+        "revenue":  0,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:45.840Z",
+        "project_name":  "Apoyo Resource Development Plan Glencore",
+        "project_code":  "BM25-GLE68-ING",
+        "resources":  [
+                          {
+                              "id":  119,
+                              "closure_id":  119,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  36236500.74,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  36236500.74,
+                     "laborIndirectCost":  0,
+                     "totalCost":  36236500.74,
+                     "margin":  -36236500.74,
+                     "profitabilityPct":  0
+                 }
+    },
+    {
+        "id":  77,
+        "project_id":  6,
+        "period":  "2025-11-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  29040845,
+        "third_party_costs":  8066960.52,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:36.083Z",
+        "project_name":  "Apoyo Resource Development Plan Glencore",
+        "project_code":  "BM25-GLE68-ING",
+        "resources":  [
+                          {
+                              "id":  77,
+                              "closure_id":  77,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  19880828.48,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  19880828.48,
+                     "laborIndirectCost":  0,
+                     "totalCost":  27947789,
+                     "margin":  1093056,
+                     "profitabilityPct":  3.76
+                 }
+    },
+    {
+        "id":  83,
+        "project_id":  6,
+        "period":  "2025-12-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  29040845,
+        "third_party_costs":  1519208.34,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:37.340Z",
+        "project_name":  "Apoyo Resource Development Plan Glencore",
+        "project_code":  "BM25-GLE68-ING",
+        "resources":  [
+                          {
+                              "id":  83,
+                              "closure_id":  83,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  12982155.66,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  12982155.66,
+                     "laborIndirectCost":  0,
+                     "totalCost":  14501364,
+                     "margin":  14539481,
+                     "profitabilityPct":  50.07
+                 }
+    },
+    {
+        "id":  86,
+        "project_id":  7,
+        "period":  "2026-01-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  12702743.52,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:38.387Z",
+        "project_name":  "Servicio de Apoyo de Planificación Minera Corporativa",
+        "project_code":  "BM22-COD02-ING-ODS25",
+        "resources":  [
+                          {
+                              "id":  86,
+                              "closure_id":  86,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  14589745.07,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  14589745.07,
+                     "laborIndirectCost":  0,
+                     "totalCost":  14589745.07,
+                     "margin":  -1887001.5500000007,
+                     "profitabilityPct":  -14.86
+                 }
+    },
+    {
+        "id":  87,
+        "project_id":  7,
+        "period":  "2026-02-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  12745932.72,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:38.603Z",
+        "project_name":  "Servicio de Apoyo de Planificación Minera Corporativa",
+        "project_code":  "BM22-COD02-ING-ODS25",
+        "resources":  [
+                          {
+                              "id":  87,
+                              "closure_id":  87,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  15211586.55,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  15211586.55,
+                     "laborIndirectCost":  0,
+                     "totalCost":  15211586.55,
+                     "margin":  -2465653.83,
+                     "profitabilityPct":  -19.34
+                 }
+    },
+    {
+        "id":  88,
+        "project_id":  7,
+        "period":  "2026-03-01T00:00:00.000Z",
+        "status":  "DRAFT",
+        "revenue":  12702743.52,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:38.893Z",
+        "project_name":  "Servicio de Apoyo de Planificación Minera Corporativa",
+        "project_code":  "BM22-COD02-ING-ODS25",
+        "resources":  [
+                          {
+                              "id":  88,
+                              "closure_id":  88,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  14589745.07,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  14589745.07,
+                     "laborIndirectCost":  0,
+                     "totalCost":  14589745.07,
+                     "margin":  -1887001.5500000007,
+                     "profitabilityPct":  -14.86
+                 }
+    },
+    {
+        "id":  89,
+        "project_id":  7,
+        "period":  "2026-04-01T00:00:00.000Z",
+        "status":  "DRAFT",
+        "revenue":  12702743.52,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:39.107Z",
+        "project_name":  "Servicio de Apoyo de Planificación Minera Corporativa",
+        "project_code":  "BM22-COD02-ING-ODS25",
+        "resources":  [
+                          {
+                              "id":  89,
+                              "closure_id":  89,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  14589745.07,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  14589745.07,
+                     "laborIndirectCost":  0,
+                     "totalCost":  14589745.07,
+                     "margin":  -1887001.5500000007,
+                     "profitabilityPct":  -14.86
+                 }
+    },
+    {
+        "id":  90,
+        "project_id":  7,
+        "period":  "2026-05-01T00:00:00.000Z",
+        "status":  "DRAFT",
+        "revenue":  12702743.52,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:39.303Z",
+        "project_name":  "Servicio de Apoyo de Planificación Minera Corporativa",
+        "project_code":  "BM22-COD02-ING-ODS25",
+        "resources":  [
+                          {
+                              "id":  90,
+                              "closure_id":  90,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  14589745.07,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  14589745.07,
+                     "laborIndirectCost":  0,
+                     "totalCost":  14589745.07,
+                     "margin":  -1887001.5500000007,
+                     "profitabilityPct":  -14.86
+                 }
+    },
+    {
+        "id":  104,
+        "project_id":  8,
+        "period":  "2025-12-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  17316577.46,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:42.457Z",
+        "project_name":  "Revisión de Antecedentes Técnicos",
+        "project_code":  "BM25-ENA72-ING",
+        "resources":  [
+                          {
+                              "id":  104,
+                              "closure_id":  104,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  39937415.31,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  39937415.31,
+                     "laborIndirectCost":  0,
+                     "totalCost":  39937415.31,
+                     "margin":  -22620837.85,
+                     "profitabilityPct":  -130.63
+                 }
+    },
+    {
+        "id":  105,
+        "project_id":  8,
+        "period":  "2026-01-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  14513504.26,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:42.650Z",
+        "project_name":  "Revisión de Antecedentes Técnicos",
+        "project_code":  "BM25-ENA72-ING",
+        "resources":  [
+                          {
+                              "id":  105,
+                              "closure_id":  105,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  15938534.58,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  15938534.58,
+                     "laborIndirectCost":  0,
+                     "totalCost":  15938534.58,
+                     "margin":  -1425030.3200000003,
+                     "profitabilityPct":  -9.82
+                 }
+    },
+    {
+        "id":  106,
+        "project_id":  8,
+        "period":  "2026-02-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  35050807.7,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:42.870Z",
+        "project_name":  "Revisión de Antecedentes Técnicos",
+        "project_code":  "BM25-ENA72-ING",
+        "resources":  [
+                          {
+                              "id":  106,
+                              "closure_id":  106,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  23749971.41,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  23749971.41,
+                     "laborIndirectCost":  0,
+                     "totalCost":  23749971.41,
+                     "margin":  11300836.290000003,
+                     "profitabilityPct":  32.24
+                 }
+    },
+    {
+        "id":  107,
+        "project_id":  8,
+        "period":  "2026-03-01T00:00:00.000Z",
+        "status":  "DRAFT",
+        "revenue":  25153273.09,
+        "third_party_costs":  1825547.61,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:43.090Z",
+        "project_name":  "Revisión de Antecedentes Técnicos",
+        "project_code":  "BM25-ENA72-ING",
+        "resources":  [
+                          {
+                              "id":  107,
+                              "closure_id":  107,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  31075014.84,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  31075014.84,
+                     "laborIndirectCost":  0,
+                     "totalCost":  32900562.45,
+                     "margin":  -7747289.359999999,
+                     "profitabilityPct":  -30.8
+                 }
+    },
+    {
+        "id":  108,
+        "project_id":  8,
+        "period":  "2026-04-01T00:00:00.000Z",
+        "status":  "DRAFT",
+        "revenue":  33241939.08,
+        "third_party_costs":  29853400.8,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:43.290Z",
+        "project_name":  "Revisión de Antecedentes Técnicos",
+        "project_code":  "BM25-ENA72-ING",
+        "resources":  [
+                          {
+                              "id":  108,
+                              "closure_id":  108,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  4381481,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  4381481,
+                     "laborIndirectCost":  0,
+                     "totalCost":  34234881.8,
+                     "margin":  -992942.7199999988,
+                     "profitabilityPct":  -2.99
+                 }
+    },
+    {
+        "id":  112,
+        "project_id":  9,
+        "period":  "2025-12-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  16056150,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:44.340Z",
+        "project_name":  "Servicio de Monitoreo y Seguimiento para Proyectos de Innovación para la Superintendencia de Innovación Minera Los Pelambres",
+        "project_code":  "BM25-AMS40-ING",
+        "resources":  [
+                          {
+                              "id":  112,
+                              "closure_id":  112,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  30985692.84,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  30985692.84,
+                     "laborIndirectCost":  0,
+                     "totalCost":  30985692.84,
+                     "margin":  -14929542.84,
+                     "profitabilityPct":  -92.98
+                 }
+    },
+    {
+        "id":  113,
+        "project_id":  9,
+        "period":  "2026-01-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  19830033,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:44.530Z",
+        "project_name":  "Servicio de Monitoreo y Seguimiento para Proyectos de Innovación para la Superintendencia de Innovación Minera Los Pelambres",
+        "project_code":  "BM25-AMS40-ING",
+        "resources":  [
+                          {
+                              "id":  113,
+                              "closure_id":  113,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  20181417.58,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  20181417.58,
+                     "laborIndirectCost":  0,
+                     "totalCost":  20181417.58,
+                     "margin":  -351384.5799999982,
+                     "profitabilityPct":  -1.77
+                 }
+    },
+    {
+        "id":  114,
+        "project_id":  9,
+        "period":  "2026-02-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  10077562,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:44.733Z",
+        "project_name":  "Servicio de Monitoreo y Seguimiento para Proyectos de Innovación para la Superintendencia de Innovación Minera Los Pelambres",
+        "project_code":  "BM25-AMS40-ING",
+        "resources":  [
+                          {
+                              "id":  114,
+                              "closure_id":  114,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  17937718.46,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  17937718.46,
+                     "laborIndirectCost":  0,
+                     "totalCost":  17937718.46,
+                     "margin":  -7860156.460000001,
+                     "profitabilityPct":  -78
+                 }
+    },
+    {
+        "id":  115,
+        "project_id":  9,
+        "period":  "2026-03-01T00:00:00.000Z",
+        "status":  "DRAFT",
+        "revenue":  18178542.71,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:44.937Z",
+        "project_name":  "Servicio de Monitoreo y Seguimiento para Proyectos de Innovación para la Superintendencia de Innovación Minera Los Pelambres",
+        "project_code":  "BM25-AMS40-ING",
+        "resources":  [
+                          {
+                              "id":  115,
+                              "closure_id":  115,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  20873374.05,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  20873374.05,
+                     "laborIndirectCost":  0,
+                     "totalCost":  20873374.05,
+                     "margin":  -2694831.34,
+                     "profitabilityPct":  -14.82
+                 }
+    },
+    {
+        "id":  116,
+        "project_id":  9,
+        "period":  "2026-04-01T00:00:00.000Z",
+        "status":  "DRAFT",
+        "revenue":  51468382,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:45.237Z",
+        "project_name":  "Servicio de Monitoreo y Seguimiento para Proyectos de Innovación para la Superintendencia de Innovación Minera Los Pelambres",
+        "project_code":  "BM25-AMS40-ING",
+        "resources":  [
+                          {
+                              "id":  116,
+                              "closure_id":  116,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  13222461.1,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  13222461.1,
+                     "laborIndirectCost":  0,
+                     "totalCost":  13222461.1,
+                     "margin":  38245920.9,
+                     "profitabilityPct":  74.31
+                 }
+    },
+    {
+        "id":  120,
+        "project_id":  10,
+        "period":  "2026-01-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  3588237.56,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:46.150Z",
+        "project_name":  "Polly Plan Diseño Fase de V06.00",
+        "project_code":  "BM24-CMP31-ING-ODS18",
+        "resources":  [
+                          {
+                              "id":  120,
+                              "closure_id":  120,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  2191236.72,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  2191236.72,
+                     "laborIndirectCost":  0,
+                     "totalCost":  2191236.72,
+                     "margin":  1397000.8399999999,
+                     "profitabilityPct":  38.93
+                 }
+    },
+    {
+        "id":  121,
+        "project_id":  11,
+        "period":  "2026-01-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  11144677,
+        "third_party_costs":  3414972,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:46.480Z",
+        "project_name":  "Apoyo Plan de Cierre Mara",
+        "project_code":  "BM25-GLE88-ING",
+        "resources":  [
+                          {
+                              "id":  121,
+                              "closure_id":  121,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  3700651.93,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  3700651.93,
+                     "laborIndirectCost":  0,
+                     "totalCost":  7115623.93,
+                     "margin":  4029053.0700000003,
+                     "profitabilityPct":  36.15
+                 }
+    },
+    {
+        "id":  122,
+        "project_id":  11,
+        "period":  "2026-02-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  25675231,
+        "third_party_costs":  9541874,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:46.807Z",
+        "project_name":  "Apoyo Plan de Cierre Mara",
+        "project_code":  "BM25-GLE88-ING",
+        "resources":  [
+                          {
+                              "id":  122,
+                              "closure_id":  122,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  12431765,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  12431765,
+                     "laborIndirectCost":  0,
+                     "totalCost":  21973639,
+                     "margin":  3701592,
+                     "profitabilityPct":  14.42
+                 }
+    },
+    {
+        "id":  123,
+        "project_id":  11,
+        "period":  "2026-03-01T00:00:00.000Z",
+        "status":  "DRAFT",
+        "revenue":  22253892,
+        "third_party_costs":  6153132.65,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:47.017Z",
+        "project_name":  "Apoyo Plan de Cierre Mara",
+        "project_code":  "BM25-GLE88-ING",
+        "resources":  [
+                          {
+                              "id":  123,
+                              "closure_id":  123,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  10194504.85,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  10194504.85,
+                     "laborIndirectCost":  0,
+                     "totalCost":  16347637.5,
+                     "margin":  5906254.5,
+                     "profitabilityPct":  26.54
+                 }
+    },
+    {
+        "id":  124,
+        "project_id":  11,
+        "period":  "2026-04-01T00:00:00.000Z",
+        "status":  "DRAFT",
+        "revenue":  21499290,
+        "third_party_costs":  7651923.94,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:47.290Z",
+        "project_name":  "Apoyo Plan de Cierre Mara",
+        "project_code":  "BM25-GLE88-ING",
+        "resources":  [
+                          {
+                              "id":  124,
+                              "closure_id":  124,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  9088759.29,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  9088759.29,
+                     "laborIndirectCost":  0,
+                     "totalCost":  16740683.23,
+                     "margin":  4758606.77,
+                     "profitabilityPct":  22.13
+                 }
+    },
+    {
+        "id":  125,
+        "project_id":  11,
+        "period":  "2026-05-01T00:00:00.000Z",
+        "status":  "DRAFT",
+        "revenue":  21499290,
+        "third_party_costs":  5988820.66,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:47.487Z",
+        "project_name":  "Apoyo Plan de Cierre Mara",
+        "project_code":  "BM25-GLE88-ING",
+        "resources":  [
+                          {
+                              "id":  125,
+                              "closure_id":  125,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  7291912.8,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  7291912.8,
+                     "laborIndirectCost":  0,
+                     "totalCost":  13280733.46,
+                     "margin":  8218556.539999999,
+                     "profitabilityPct":  38.23
+                 }
+    },
+    {
+        "id":  126,
+        "project_id":  11,
+        "period":  "2026-06-01T00:00:00.000Z",
+        "status":  "DRAFT",
+        "revenue":  21499290,
+        "third_party_costs":  5877164.49,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:47.720Z",
+        "project_name":  "Apoyo Plan de Cierre Mara",
+        "project_code":  "BM25-GLE88-ING",
+        "resources":  [
+                          {
+                              "id":  126,
+                              "closure_id":  126,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  7057089.85,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  7057089.85,
+                     "laborIndirectCost":  0,
+                     "totalCost":  12934254.34,
+                     "margin":  8565035.66,
+                     "profitabilityPct":  39.84
+                 }
+    },
+    {
+        "id":  127,
+        "project_id":  11,
+        "period":  "2026-07-01T00:00:00.000Z",
+        "status":  "DRAFT",
+        "revenue":  12182932,
+        "third_party_costs":  4407873.37,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:47.927Z",
+        "project_name":  "Apoyo Plan de Cierre Mara",
+        "project_code":  "BM25-GLE88-ING",
+        "resources":  [
+                          {
+                              "id":  127,
+                              "closure_id":  127,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  5204758.78,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  5204758.78,
+                     "laborIndirectCost":  0,
+                     "totalCost":  9612632.15,
+                     "margin":  2570299.8499999996,
+                     "profitabilityPct":  21.1
+                 }
+    },
+    {
+        "id":  128,
+        "project_id":  12,
+        "period":  "2026-02-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  36266400,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:48.220Z",
+        "project_name":  "Inca de Oro Preliminary Underground Mine Study",
+        "project_code":  "BM26-PAN7-ING",
+        "resources":  [
+                          {
+                              "id":  128,
+                              "closure_id":  128,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  19408702.3,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  19408702.3,
+                     "laborIndirectCost":  0,
+                     "totalCost":  19408702.3,
+                     "margin":  16857697.7,
+                     "profitabilityPct":  46.48
+                 }
+    },
+    {
+        "id":  129,
+        "project_id":  13,
+        "period":  "2026-02-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  24814107.72,
+        "third_party_costs":  19615782.31,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:48.510Z",
+        "project_name":  "Resource Estimation Under JORC Code Flagship Minerals",
+        "project_code":  "BM25-FLM76-ING",
+        "resources":  [
+                          {
+                              "id":  129,
+                              "closure_id":  129,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  12928296.31,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  12928296.31,
+                     "laborIndirectCost":  0,
+                     "totalCost":  32544078.619999997,
+                     "margin":  -7729970.8999999985,
+                     "profitabilityPct":  -31.15
+                 }
+    },
+    {
+        "id":  130,
+        "project_id":  13,
+        "period":  "2026-03-01T00:00:00.000Z",
+        "status":  "DRAFT",
+        "revenue":  33061053.06,
+        "third_party_costs":  18241032.82,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:48.703Z",
+        "project_name":  "Resource Estimation Under JORC Code Flagship Minerals",
+        "project_code":  "BM25-FLM76-ING",
+        "resources":  [
+                          {
+                              "id":  130,
+                              "closure_id":  130,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  9825862.14,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  9825862.14,
+                     "laborIndirectCost":  0,
+                     "totalCost":  28066894.96,
+                     "margin":  4994158.099999998,
+                     "profitabilityPct":  15.11
+                 }
+    },
+    {
+        "id":  131,
+        "project_id":  13,
+        "period":  "2026-04-01T00:00:00.000Z",
+        "status":  "DRAFT",
+        "revenue":  33061053.06,
+        "third_party_costs":  17826746,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:48.910Z",
+        "project_name":  "Resource Estimation Under JORC Code Flagship Minerals",
+        "project_code":  "BM25-FLM76-ING",
+        "resources":  [
+                          {
+                              "id":  131,
+                              "closure_id":  131,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  15101865.43,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  15101865.43,
+                     "laborIndirectCost":  0,
+                     "totalCost":  32928611.43,
+                     "margin":  132441.62999999896,
+                     "profitabilityPct":  0.4
+                 }
+    },
+    {
+        "id":  132,
+        "project_id":  13,
+        "period":  "2026-05-01T00:00:00.000Z",
+        "status":  "DRAFT",
+        "revenue":  33061053.06,
+        "third_party_costs":  4422162.6,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:49.113Z",
+        "project_name":  "Resource Estimation Under JORC Code Flagship Minerals",
+        "project_code":  "BM25-FLM76-ING",
+        "resources":  [
+                          {
+                              "id":  132,
+                              "closure_id":  132,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  4229887.31,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  4229887.31,
+                     "laborIndirectCost":  0,
+                     "totalCost":  8652049.91,
+                     "margin":  24409003.15,
+                     "profitabilityPct":  73.83
+                 }
+    },
+    {
+        "id":  133,
+        "project_id":  14,
+        "period":  "2026-01-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  15789974.85,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-08T19:20:49.420Z",
+        "project_name":  "Apoyo Taller de Riesgos Camiones Híbridos MLP",
+        "project_code":  "BM25-TEL92-ING",
+        "resources":  [
+                          {
+                              "id":  133,
+                              "closure_id":  133,
+                              "resource_id":  1,
+                              "hours":  1,
+                              "rate_snapshot_direct":  14081715.11,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Carga Histórica",
+                              "role":  "Genérico"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  14081715.11,
+                     "laborIndirectCost":  0,
+                     "totalCost":  14081715.11,
+                     "margin":  1708259.7400000002,
+                     "profitabilityPct":  10.82
+                 }
+    },
+    {
+        "id":  134,
+        "project_id":  15,
+        "period":  "2026-03-01T00:00:00.000Z",
+        "status":  "VALIDATED",
+        "revenue":  3233496,
+        "third_party_costs":  0,
+        "created_by":  "Admin",
+        "validated_by":  null,
+        "validated_at":  null,
+        "updated_at":  "2026-04-09T16:06:18.923Z",
+        "project_name":  "Servicio de Apoyo a Pago Mensual Puren Fase II",
+        "project_code":  "BM22-COD02-ING-OD31",
+        "resources":  [
+                          {
+                              "id":  134,
+                              "closure_id":  134,
+                              "resource_id":  6,
+                              "hours":  10,
+                              "rate_snapshot_direct":  120961.75,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Benicio Fuentealba",
+                              "role":  "Profesional"
+                          },
+                          {
+                              "id":  136,
+                              "closure_id":  134,
+                              "resource_id":  40,
+                              "hours":  7,
+                              "rate_snapshot_direct":  52144.98,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Naresh Gulrajani",
+                              "role":  "Profesional"
+                          },
+                          {
+                              "id":  135,
+                              "closure_id":  134,
+                              "resource_id":  48,
+                              "hours":  34,
+                              "rate_snapshot_direct":  224482.99,
+                              "rate_snapshot_indirect":  0,
+                              "resource_name":  "Rodrigo  Poblete",
+                              "role":  "Profesional"
+                          }
+                      ],
+        "kpis":  {
+                     "laborDirectCost":  9207054.02,
+                     "laborIndirectCost":  0,
+                     "totalCost":  9207054.02,
+                     "margin":  -5973558.02,
+                     "profitabilityPct":  -184.74
+                 }
+    }
+]

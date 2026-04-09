@@ -131,16 +131,20 @@ exports.ClosureRepository = {
                 throw new Error('Project not found');
             const projectId = projRes.recordset[0].id;
             // 2. Upsert Closure Header
-            // Check existence
+            const finalStatus = data.status || 'DRAFT';
+            // Check existence including status to allow PROYECCION and REAL for the same month
             const checkRes = yield transaction.request()
                 .input('project_id', mssql_1.default.Int, projectId)
                 .input('period', mssql_1.default.Date, parsePeriodToSqlDate(period))
-                .query('SELECT id, status FROM MonthlyClosures WHERE project_id = @project_id AND period = @period');
+                .input('status', mssql_1.default.VarChar, finalStatus)
+                .query('SELECT id, status FROM MonthlyClosures WHERE project_id = @project_id AND period = @period AND status = @status');
             let closureId;
             if (checkRes.recordset.length > 0) {
                 const existing = checkRes.recordset[0];
+                if (finalStatus === 'VALIDATED') {
+                    throw new Error('Cannot overwrite a VALIDATED closure');
+                }
                 closureId = existing.id;
-                const finalStatus = data.status || 'DRAFT';
                 yield transaction.request()
                     .input('id', mssql_1.default.Int, closureId)
                     .input('revenue', mssql_1.default.Decimal(15, 2), data.revenue)

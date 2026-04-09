@@ -1,0 +1,1018 @@
+﻿[
+    {
+        "resource_id":  2,
+        "resource_name":  "Alejandro Abuid",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  32596.94,
+        "indirect_rate":  10213.68,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  2,
+        "resource_name":  "Alejandro Abuid",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  35169.15,
+        "indirect_rate":  13810.13,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  3,
+        "resource_name":  "Alejandro Palma",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  19997.21,
+        "indirect_rate":  8455.39,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  3,
+        "resource_name":  "Alejandro Palma",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  18534.65,
+        "indirect_rate":  6322.54,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  4,
+        "resource_name":  "Amilcar Chavez",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  8328.82,
+        "indirect_rate":  3498.51,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  4,
+        "resource_name":  "Amilcar Chavez",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  8986.04,
+        "indirect_rate":  4569.15,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  5,
+        "resource_name":  "Antonio Rabajille",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  35037.89,
+        "indirect_rate":  13763.8,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  5,
+        "resource_name":  "Antonio Rabajille",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  32475.27,
+        "indirect_rate":  10180.01,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  6,
+        "resource_name":  "Benicio Fuentealba",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  81910.26,
+        "indirect_rate":  23859.05,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  6,
+        "resource_name":  "Benicio Fuentealba",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  88373.77,
+        "indirect_rate":  32587.98,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  7,
+        "resource_name":  "Bruno González",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  13363.29,
+        "indirect_rate":  6114.04,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  7,
+        "resource_name":  "Bruno González",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  12385.92,
+        "indirect_rate":  4621.14,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  8,
+        "resource_name":  "Camila Astorga",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  34921.91,
+        "indirect_rate":  10857.02,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  8,
+        "resource_name":  "Camila Astorga",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  37677.58,
+        "indirect_rate":  14695.44,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  9,
+        "resource_name":  "Camila González",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  19276.39,
+        "indirect_rate":  8200.99,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  9,
+        "resource_name":  "Camila González",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  17866.55,
+        "indirect_rate":  6137.67,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  10,
+        "resource_name":  "Carlos Abarca",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  49895.45,
+        "indirect_rate":  15000.31,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  10,
+        "resource_name":  "Carlos Abarca",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  32299.61,
+        "indirect_rate":  12797.36,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  11,
+        "resource_name":  "Carlos Schumann",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  56434.89,
+        "indirect_rate":  21315.58,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  11,
+        "resource_name":  "Carlos Schumann",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  52307.33,
+        "indirect_rate":  15667.7,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  12,
+        "resource_name":  "Carolina Adán",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  21443.78,
+        "indirect_rate":  7127.51,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  12,
+        "resource_name":  "Carolina Adán",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  23135.9,
+        "indirect_rate":  9563.15,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  13,
+        "resource_name":  "Catalina Olivares",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  19089.73,
+        "indirect_rate":  8135.11,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  13,
+        "resource_name":  "Catalina Olivares",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  17693.54,
+        "indirect_rate":  6089.79,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  14,
+        "resource_name":  "Diego Ibáñez",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  54318.43,
+        "indirect_rate":  16224.18,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  14,
+        "resource_name":  "Diego Ibáñez",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  58604.68,
+        "indirect_rate":  22081.38,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  15,
+        "resource_name":  "Diego Plaza",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  29071.47,
+        "indirect_rate":  11658.03,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  15,
+        "resource_name":  "Diego Plaza",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  26945.23,
+        "indirect_rate":  8649.81,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  16,
+        "resource_name":  "Edgar Adam",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  170014.07,
+        "indirect_rate":  79975.11,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  16,
+        "resource_name":  "Edgar Adam",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  183429.81,
+        "indirect_rate":  93871.69,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  17,
+        "resource_name":  "Edison Ramírez",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  36857.52,
+        "indirect_rate":  14406.01,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  17,
+        "resource_name":  "Edison Ramírez",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  34161.82,
+        "indirect_rate":  10646.69,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  18,
+        "resource_name":  "Eduardo Fernández",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  35014.44,
+        "indirect_rate":  10882.62,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  19,
+        "resource_name":  "Enrique Gellona",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  60374.4,
+        "indirect_rate":  17899.91,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  19,
+        "resource_name":  "Enrique Gellona",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  65138.52,
+        "indirect_rate":  24387.42,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  20,
+        "resource_name":  "Ernesto Labbé",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  69187.21,
+        "indirect_rate":  25816.35,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  20,
+        "resource_name":  "Ernesto Labbé",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  64126.98,
+        "indirect_rate":  18938.28,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  21,
+        "resource_name":  "Esaú Méndez",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  38004.92,
+        "indirect_rate":  11710.11,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  21,
+        "resource_name":  "Esaú Méndez",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  41003.87,
+        "indirect_rate":  15869.41,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  22,
+        "resource_name":  "Felipe Rojas",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  95266.13,
+        "indirect_rate":  35020.55,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  22,
+        "resource_name":  "Felipe Rojas",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  88298.53,
+        "indirect_rate":  25626.73,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  23,
+        "resource_name":  "Francisco Castillo",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  117776.95,
+        "indirect_rate":  55402.62,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  23,
+        "resource_name":  "Francisco Castillo",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  127070.68,
+        "indirect_rate":  65029.45,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  24,
+        "resource_name":  "Francisco Soto",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  52248.37,
+        "indirect_rate":  19838.01,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  24,
+        "resource_name":  "Francisco Soto",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  48427.01,
+        "indirect_rate":  14593.98,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  25,
+        "resource_name":  "Gabriela Alarcon",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  16075.39,
+        "indirect_rate":  3836.59,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  25,
+        "resource_name":  "Gabriela Alarcon",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  17343.89,
+        "indirect_rate":  4360.99,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  26,
+        "resource_name":  "Guillermo Arce",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  35033.61,
+        "indirect_rate":  13762.29,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  26,
+        "resource_name":  "Guillermo Arce",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  32471.31,
+        "indirect_rate":  10178.92,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  27,
+        "resource_name":  "Hector Gallardo",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  6391.77,
+        "indirect_rate":  2962.51,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  28,
+        "resource_name":  "Homero Gonzalez",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  32973.51,
+        "indirect_rate":  10317.88,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  28,
+        "resource_name":  "Homero Gonzalez",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  35575.43,
+        "indirect_rate":  13953.52,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  29,
+        "resource_name":  "Ignacio Cornejo",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  31780.45,
+        "indirect_rate":  12614.13,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  29,
+        "resource_name":  "Ignacio Cornejo",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  29456.09,
+        "indirect_rate":  9344.58,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  30,
+        "resource_name":  "Jonathan Gálvez",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  23225.56,
+        "indirect_rate":  7620.55,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  30,
+        "resource_name":  "Jonathan Gálvez",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  25058.28,
+        "indirect_rate":  10241.63,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  31,
+        "resource_name":  "Jorge Andrades",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  37528.57,
+        "indirect_rate":  14642.85,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  31,
+        "resource_name":  "Jorge Andrades",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  34783.79,
+        "indirect_rate":  10818.8,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  32,
+        "resource_name":  "Jorge Cárcamo",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  45443.89,
+        "indirect_rate":  9362.6,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  32,
+        "resource_name":  "Jorge Cárcamo",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  49029.85,
+        "indirect_rate":  10847.2,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  33,
+        "resource_name":  "Jorge Contreras",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  81616.59,
+        "indirect_rate":  18636.72,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  33,
+        "resource_name":  "Jorge Contreras",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  75647.29,
+        "indirect_rate":  16006.71,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  34,
+        "resource_name":  "Juan Pedrero",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  49768.67,
+        "indirect_rate":  10176.35,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  34,
+        "resource_name":  "Juan Pedrero",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  53695.89,
+        "indirect_rate":  11802.36,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  35,
+        "resource_name":  "Leonardo Collante",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  35209.12,
+        "indirect_rate":  8018.05,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  35,
+        "resource_name":  "Leonardo Collante",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  32633.98,
+        "indirect_rate":  6952.27,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  36,
+        "resource_name":  "Luis Martinez",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  24976.9,
+        "indirect_rate":  8105.16,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  36,
+        "resource_name":  "Luis Martinez",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  26947.82,
+        "indirect_rate":  10908.52,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  37,
+        "resource_name":  "Luz Hip",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  74213.95,
+        "indirect_rate":  37979.59,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  37,
+        "resource_name":  "Luz Hip",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  68786.07,
+        "indirect_rate":  32357.17,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  38,
+        "resource_name":  "Marcela Valdes",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  24312.35,
+        "indirect_rate":  5386.46,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  38,
+        "resource_name":  "Marcela Valdes",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  26230.83,
+        "indirect_rate":  6180.17,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  39,
+        "resource_name":  "Miguel Trujillo",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  28796.72,
+        "indirect_rate":  11561.06,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  39,
+        "resource_name":  "Miguel Trujillo",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  26690.58,
+        "indirect_rate":  8579.34,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  40,
+        "resource_name":  "Naresh Gulrajani",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  34765.68,
+        "indirect_rate":  10813.79,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  40,
+        "resource_name":  "Naresh Gulrajani",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  37509.03,
+        "indirect_rate":  14635.95,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  41,
+        "resource_name":  "Natalia Vásquez",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  33661.75,
+        "indirect_rate":  13278.11,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  41,
+        "resource_name":  "Natalia Vásquez",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  31199.78,
+        "indirect_rate":  9827.08,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  42,
+        "resource_name":  "Norma Jerez",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  19405.54,
+        "indirect_rate":  6563.52,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  42,
+        "resource_name":  "Norma Jerez",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  20936.82,
+        "indirect_rate":  8787.02,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  43,
+        "resource_name":  "Pablo Araya",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  48535.46,
+        "indirect_rate":  18527.59,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  43,
+        "resource_name":  "Pablo Araya",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  44985.66,
+        "indirect_rate":  13641.73,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  44,
+        "resource_name":  "Paolo Weisser",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  39220.89,
+        "indirect_rate":  8191.67,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  44,
+        "resource_name":  "Paolo Weisser",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  42315.79,
+        "indirect_rate":  9472.81,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  45,
+        "resource_name":  "Carolina Araneda",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  29771.75,
+        "indirect_rate":  9431.93,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  46,
+        "resource_name":  "Patricio Lorca",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  11430.93,
+        "indirect_rate":  4356.88,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  46,
+        "resource_name":  "Patricio Lorca",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  12332.94,
+        "indirect_rate":  5750.39,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  47,
+        "resource_name":  "Ricardo Venegas",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  45310.75,
+        "indirect_rate":  17389.47,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  47,
+        "resource_name":  "Ricardo Venegas",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  41996.8,
+        "indirect_rate":  12814.69,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  48,
+        "resource_name":  "Rodrigo  Poblete",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  77673.57,
+        "indirect_rate":  22686.73,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  48,
+        "resource_name":  "Rodrigo  Poblete",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  184554.49,
+        "indirect_rate":  39928.5,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  49,
+        "resource_name":  "Rodrigo Valenzuela",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  19155.88,
+        "indirect_rate":  8158.46,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  49,
+        "resource_name":  "Rodrigo Valenzuela",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  17754.86,
+        "indirect_rate":  6106.76,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  50,
+        "resource_name":  "Sergio Silva",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  100757.29,
+        "indirect_rate":  29074.17,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  50,
+        "resource_name":  "Sergio Silva",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  108708.01,
+        "indirect_rate":  39764.68,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  51,
+        "resource_name":  "Sofia Tolosa",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  10691.15,
+        "indirect_rate":  5170.94,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  51,
+        "resource_name":  "Sofia Tolosa",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  9909.22,
+        "indirect_rate":  3935.81,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  52,
+        "resource_name":  "Sonia Castro",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  51221.98,
+        "indirect_rate":  15367.37,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  52,
+        "resource_name":  "Sonia Castro",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  55263.88,
+        "indirect_rate":  20902.29,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  53,
+        "resource_name":  "Víctor Valdés",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  43885.85,
+        "indirect_rate":  16886.57,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  53,
+        "resource_name":  "Víctor Valdés",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  40676.11,
+        "indirect_rate":  12449.25,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  54,
+        "resource_name":  "Victoria Silva",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  16547.1,
+        "indirect_rate":  5772.57,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  54,
+        "resource_name":  "Victoria Silva",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  17852.83,
+        "indirect_rate":  7698.56,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  55,
+        "resource_name":  "Evelyn Adam",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  66731.15,
+        "indirect_rate":  34150.21,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  55,
+        "resource_name":  "Evelyn Adam",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  61850.55,
+        "indirect_rate":  29094.68,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  56,
+        "resource_name":  "Amapola Manríquez",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  6695.11,
+        "indirect_rate":  3046.45,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  56,
+        "resource_name":  "Amapola Manríquez",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  9421.84,
+        "indirect_rate":  4722.96,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  57,
+        "resource_name":  "Emilio Sanchez",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  10695.06,
+        "indirect_rate":  5172.32,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  57,
+        "resource_name":  "Emilio Sanchez",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  9912.84,
+        "indirect_rate":  3936.82,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  58,
+        "resource_name":  "Fabriccio Rubilar",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  6372.54,
+        "indirect_rate":  2957.19,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  58,
+        "resource_name":  "Fabriccio Rubilar",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  6875.39,
+        "indirect_rate":  3824.22,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  59,
+        "resource_name":  "Héctor Miranda",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  19485.48,
+        "indirect_rate":  8274.78,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  59,
+        "resource_name":  "Héctor Miranda",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  18060.34,
+        "indirect_rate":  6191.29,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  60,
+        "resource_name":  "Ignacia Henríquez",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  10530.17,
+        "indirect_rate":  4107.64,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  60,
+        "resource_name":  "Ignacia Henríquez",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  11361.1,
+        "indirect_rate":  5407.4,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  61,
+        "resource_name":  "Leonardo Palavicino",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  22083.15,
+        "indirect_rate":  9191.6,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  61,
+        "resource_name":  "Leonardo Palavicino",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  20468.02,
+        "indirect_rate":  6857.52,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  62,
+        "resource_name":  "Máximo Ordenes",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  22866.38,
+        "indirect_rate":  7521.16,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  62,
+        "resource_name":  "Máximo Ordenes",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  24670.75,
+        "indirect_rate":  10104.86,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  63,
+        "resource_name":  "Tamara Aguilera",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  9418.39,
+        "indirect_rate":  4721.74,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  63,
+        "resource_name":  "Tamara Aguilera",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  8729.54,
+        "indirect_rate":  3609.39,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  64,
+        "resource_name":  "Claudia Garces",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  107943.01,
+        "indirect_rate":  50776.7,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  65,
+        "resource_name":  "Daniela Toledo",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  20310.84,
+        "indirect_rate":  6814.02,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  66,
+        "resource_name":  "Erika Araya",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  32703.92,
+        "indirect_rate":  10243.28,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  67,
+        "resource_name":  "Roberto Jerez",
+        "period":  "2026-02-01T00:00:00.000Z",
+        "direct_rate":  58381.9,
+        "indirect_rate":  17348.57,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  68,
+        "resource_name":  "Patricia Araneda",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  32121.03,
+        "indirect_rate":  12734.33,
+        "currency":  "CLP"
+    },
+    {
+        "resource_id":  69,
+        "resource_name":  "Rodrigo Báez",
+        "period":  "2026-03-01T00:00:00.000Z",
+        "direct_rate":  77769.94,
+        "indirect_rate":  28845.5,
+        "currency":  "CLP"
+    }
+]

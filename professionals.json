@@ -1,0 +1,554 @@
+﻿[
+    {
+        "id":  1,
+        "resource_name":  "Carga Histórica",
+        "role":  "Genérico",
+        "status":  "INACTIVE",
+        "created_at":  "2026-04-08T19:20:15.993Z",
+        "updated_at":  "2026-04-08T19:28:08.480Z"
+    },
+    {
+        "id":  2,
+        "resource_name":  "Alejandro Abuid",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:03.853Z",
+        "updated_at":  "2026-04-08T19:21:03.853Z"
+    },
+    {
+        "id":  3,
+        "resource_name":  "Alejandro Palma",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:04.470Z",
+        "updated_at":  "2026-04-08T19:21:04.470Z"
+    },
+    {
+        "id":  4,
+        "resource_name":  "Amilcar Chavez",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:04.810Z",
+        "updated_at":  "2026-04-08T19:21:04.810Z"
+    },
+    {
+        "id":  5,
+        "resource_name":  "Antonio Rabajille",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:05.307Z",
+        "updated_at":  "2026-04-08T19:21:05.307Z"
+    },
+    {
+        "id":  6,
+        "resource_name":  "Benicio Fuentealba",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:05.657Z",
+        "updated_at":  "2026-04-08T19:21:05.657Z"
+    },
+    {
+        "id":  7,
+        "resource_name":  "Bruno González",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:06.000Z",
+        "updated_at":  "2026-04-08T19:21:06.000Z"
+    },
+    {
+        "id":  8,
+        "resource_name":  "Camila Astorga",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:06.220Z",
+        "updated_at":  "2026-04-08T19:21:06.220Z"
+    },
+    {
+        "id":  9,
+        "resource_name":  "Camila González",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:06.420Z",
+        "updated_at":  "2026-04-08T19:21:06.420Z"
+    },
+    {
+        "id":  10,
+        "resource_name":  "Carlos Abarca",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:06.743Z",
+        "updated_at":  "2026-04-08T19:21:06.743Z"
+    },
+    {
+        "id":  11,
+        "resource_name":  "Carlos Schumann",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:07.070Z",
+        "updated_at":  "2026-04-08T19:21:07.070Z"
+    },
+    {
+        "id":  12,
+        "resource_name":  "Carolina Adán",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:07.307Z",
+        "updated_at":  "2026-04-08T19:21:07.307Z"
+    },
+    {
+        "id":  13,
+        "resource_name":  "Catalina Olivares",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:07.510Z",
+        "updated_at":  "2026-04-08T19:21:07.510Z"
+    },
+    {
+        "id":  14,
+        "resource_name":  "Diego Ibáñez",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:07.780Z",
+        "updated_at":  "2026-04-08T19:21:07.780Z"
+    },
+    {
+        "id":  15,
+        "resource_name":  "Diego Plaza",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:08.093Z",
+        "updated_at":  "2026-04-08T19:21:08.093Z"
+    },
+    {
+        "id":  16,
+        "resource_name":  "Edgar Adam",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:08.393Z",
+        "updated_at":  "2026-04-08T19:21:08.393Z"
+    },
+    {
+        "id":  17,
+        "resource_name":  "Edison Ramírez",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:08.723Z",
+        "updated_at":  "2026-04-08T19:21:08.723Z"
+    },
+    {
+        "id":  18,
+        "resource_name":  "Eduardo Fernández",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:08.937Z",
+        "updated_at":  "2026-04-08T19:21:08.937Z"
+    },
+    {
+        "id":  19,
+        "resource_name":  "Enrique Gellona",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:09.140Z",
+        "updated_at":  "2026-04-08T19:21:09.140Z"
+    },
+    {
+        "id":  20,
+        "resource_name":  "Ernesto Labbé",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:09.343Z",
+        "updated_at":  "2026-04-08T19:21:09.343Z"
+    },
+    {
+        "id":  21,
+        "resource_name":  "Esaú Méndez",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:09.530Z",
+        "updated_at":  "2026-04-08T19:21:09.530Z"
+    },
+    {
+        "id":  22,
+        "resource_name":  "Felipe Rojas",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:09.727Z",
+        "updated_at":  "2026-04-08T19:21:09.727Z"
+    },
+    {
+        "id":  23,
+        "resource_name":  "Francisco Castillo",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:09.917Z",
+        "updated_at":  "2026-04-08T19:21:09.917Z"
+    },
+    {
+        "id":  24,
+        "resource_name":  "Francisco Soto",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:10.107Z",
+        "updated_at":  "2026-04-08T19:21:10.107Z"
+    },
+    {
+        "id":  25,
+        "resource_name":  "Gabriela Alarcon",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:10.470Z",
+        "updated_at":  "2026-04-08T19:21:10.470Z"
+    },
+    {
+        "id":  26,
+        "resource_name":  "Guillermo Arce",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:10.720Z",
+        "updated_at":  "2026-04-08T19:21:10.720Z"
+    },
+    {
+        "id":  27,
+        "resource_name":  "Hector Gallardo",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:10.933Z",
+        "updated_at":  "2026-04-08T19:21:10.933Z"
+    },
+    {
+        "id":  28,
+        "resource_name":  "Homero Gonzalez",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:11.157Z",
+        "updated_at":  "2026-04-08T19:21:11.157Z"
+    },
+    {
+        "id":  29,
+        "resource_name":  "Ignacio Cornejo",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:11.370Z",
+        "updated_at":  "2026-04-08T19:21:11.370Z"
+    },
+    {
+        "id":  30,
+        "resource_name":  "Jonathan Gálvez",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:11.570Z",
+        "updated_at":  "2026-04-08T19:21:11.570Z"
+    },
+    {
+        "id":  31,
+        "resource_name":  "Jorge Andrades",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:11.797Z",
+        "updated_at":  "2026-04-08T19:21:11.797Z"
+    },
+    {
+        "id":  32,
+        "resource_name":  "Jorge Cárcamo",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:12.000Z",
+        "updated_at":  "2026-04-08T19:21:12.000Z"
+    },
+    {
+        "id":  33,
+        "resource_name":  "Jorge Contreras",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:12.213Z",
+        "updated_at":  "2026-04-08T19:21:12.213Z"
+    },
+    {
+        "id":  34,
+        "resource_name":  "Juan Pedrero",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:12.427Z",
+        "updated_at":  "2026-04-08T19:21:12.427Z"
+    },
+    {
+        "id":  35,
+        "resource_name":  "Leonardo Collante",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:12.647Z",
+        "updated_at":  "2026-04-08T19:21:12.647Z"
+    },
+    {
+        "id":  36,
+        "resource_name":  "Luis Martinez",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:12.993Z",
+        "updated_at":  "2026-04-08T19:21:12.993Z"
+    },
+    {
+        "id":  37,
+        "resource_name":  "Luz Hip",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:13.320Z",
+        "updated_at":  "2026-04-08T19:21:13.320Z"
+    },
+    {
+        "id":  38,
+        "resource_name":  "Marcela Valdes",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:13.540Z",
+        "updated_at":  "2026-04-08T19:21:13.540Z"
+    },
+    {
+        "id":  39,
+        "resource_name":  "Miguel Trujillo",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:13.823Z",
+        "updated_at":  "2026-04-08T19:21:13.823Z"
+    },
+    {
+        "id":  40,
+        "resource_name":  "Naresh Gulrajani",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:14.030Z",
+        "updated_at":  "2026-04-08T19:21:14.030Z"
+    },
+    {
+        "id":  41,
+        "resource_name":  "Natalia Vásquez",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:14.240Z",
+        "updated_at":  "2026-04-08T19:21:14.240Z"
+    },
+    {
+        "id":  42,
+        "resource_name":  "Norma Jerez",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:14.453Z",
+        "updated_at":  "2026-04-08T19:21:14.453Z"
+    },
+    {
+        "id":  43,
+        "resource_name":  "Pablo Araya",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:14.653Z",
+        "updated_at":  "2026-04-08T19:21:14.653Z"
+    },
+    {
+        "id":  44,
+        "resource_name":  "Paolo Weisser",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:14.870Z",
+        "updated_at":  "2026-04-08T19:21:14.870Z"
+    },
+    {
+        "id":  45,
+        "resource_name":  "Carolina Araneda",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:15.087Z",
+        "updated_at":  "2026-04-08T19:21:15.087Z"
+    },
+    {
+        "id":  46,
+        "resource_name":  "Patricio Lorca",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:15.323Z",
+        "updated_at":  "2026-04-08T19:21:15.323Z"
+    },
+    {
+        "id":  47,
+        "resource_name":  "Ricardo Venegas",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:15.540Z",
+        "updated_at":  "2026-04-08T19:21:15.540Z"
+    },
+    {
+        "id":  48,
+        "resource_name":  "Rodrigo  Poblete",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:15.727Z",
+        "updated_at":  "2026-04-08T19:21:15.727Z"
+    },
+    {
+        "id":  49,
+        "resource_name":  "Rodrigo Valenzuela",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:15.913Z",
+        "updated_at":  "2026-04-08T19:21:15.913Z"
+    },
+    {
+        "id":  50,
+        "resource_name":  "Sergio Silva",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:16.117Z",
+        "updated_at":  "2026-04-08T19:21:16.117Z"
+    },
+    {
+        "id":  51,
+        "resource_name":  "Sofia Tolosa",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:16.323Z",
+        "updated_at":  "2026-04-08T19:21:16.323Z"
+    },
+    {
+        "id":  52,
+        "resource_name":  "Sonia Castro",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:16.527Z",
+        "updated_at":  "2026-04-08T19:21:16.527Z"
+    },
+    {
+        "id":  53,
+        "resource_name":  "Víctor Valdés",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:16.753Z",
+        "updated_at":  "2026-04-08T19:21:16.753Z"
+    },
+    {
+        "id":  54,
+        "resource_name":  "Victoria Silva",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:16.960Z",
+        "updated_at":  "2026-04-08T19:21:16.960Z"
+    },
+    {
+        "id":  55,
+        "resource_name":  "Evelyn Adam",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:17.173Z",
+        "updated_at":  "2026-04-08T19:21:17.173Z"
+    },
+    {
+        "id":  56,
+        "resource_name":  "Amapola Manríquez",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:17.377Z",
+        "updated_at":  "2026-04-08T19:21:17.377Z"
+    },
+    {
+        "id":  57,
+        "resource_name":  "Emilio Sanchez",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:17.610Z",
+        "updated_at":  "2026-04-08T19:21:17.610Z"
+    },
+    {
+        "id":  58,
+        "resource_name":  "Fabriccio Rubilar",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:17.813Z",
+        "updated_at":  "2026-04-08T19:21:17.813Z"
+    },
+    {
+        "id":  59,
+        "resource_name":  "Héctor Miranda",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:18.010Z",
+        "updated_at":  "2026-04-08T19:21:18.010Z"
+    },
+    {
+        "id":  60,
+        "resource_name":  "Ignacia Henríquez",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:18.213Z",
+        "updated_at":  "2026-04-08T19:21:18.213Z"
+    },
+    {
+        "id":  61,
+        "resource_name":  "Leonardo Palavicino",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:18.533Z",
+        "updated_at":  "2026-04-08T19:21:18.533Z"
+    },
+    {
+        "id":  62,
+        "resource_name":  "Máximo Ordenes",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:18.730Z",
+        "updated_at":  "2026-04-08T19:21:18.730Z"
+    },
+    {
+        "id":  63,
+        "resource_name":  "Tamara Aguilera",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:19.110Z",
+        "updated_at":  "2026-04-08T19:21:19.110Z"
+    },
+    {
+        "id":  64,
+        "resource_name":  "Claudia Garces",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:19.320Z",
+        "updated_at":  "2026-04-08T19:21:19.320Z"
+    },
+    {
+        "id":  65,
+        "resource_name":  "Daniela Toledo",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:19.667Z",
+        "updated_at":  "2026-04-08T19:21:19.667Z"
+    },
+    {
+        "id":  66,
+        "resource_name":  "Erika Araya",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:19.900Z",
+        "updated_at":  "2026-04-08T19:21:19.900Z"
+    },
+    {
+        "id":  67,
+        "resource_name":  "Roberto Jerez",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:21:20.100Z",
+        "updated_at":  "2026-04-08T19:21:20.100Z"
+    },
+    {
+        "id":  68,
+        "resource_name":  "Patricia Araneda",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:50:56.907Z",
+        "updated_at":  "2026-04-08T19:50:56.907Z"
+    },
+    {
+        "id":  69,
+        "resource_name":  "Rodrigo Báez",
+        "role":  "Profesional",
+        "status":  "ACTIVE",
+        "created_at":  "2026-04-08T19:50:57.477Z",
+        "updated_at":  "2026-04-08T19:50:57.477Z"
+    }
+]

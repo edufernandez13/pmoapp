@@ -153,23 +153,25 @@ export const ClosureRepository = {
             const projectId = projRes.recordset[0].id;
 
             // 2. Upsert Closure Header
-            // Check existence
+            const finalStatus = data.status || 'DRAFT';
+
+            // Check existence including status to allow PROYECCION and REAL for the same month
             const checkRes = await transaction.request()
                 .input('project_id', sql.Int, projectId)
                 .input('period', sql.Date, parsePeriodToSqlDate(period))
-                .query('SELECT id, status FROM MonthlyClosures WHERE project_id = @project_id AND period = @period');
+                .input('status', sql.VarChar, finalStatus)
+                .query('SELECT id, status FROM MonthlyClosures WHERE project_id = @project_id AND period = @period AND status = @status');
 
             let closureId;
 
             if (checkRes.recordset.length > 0) {
                 const existing = checkRes.recordset[0];
                 
-                if (existing.status === 'VALIDATED') {
+                if (finalStatus === 'VALIDATED') {
                     throw new Error('Cannot overwrite a VALIDATED closure');
                 }
 
                 closureId = existing.id;
-                const finalStatus = data.status || 'DRAFT';
 
                 await transaction.request()
                     .input('id', sql.Int, closureId)
