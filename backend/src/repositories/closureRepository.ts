@@ -167,9 +167,7 @@ export const ClosureRepository = {
             if (checkRes.recordset.length > 0) {
                 const existing = checkRes.recordset[0];
                 
-                if (finalStatus === 'VALIDATED') {
-                    throw new Error('Cannot overwrite a VALIDATED closure');
-                }
+                // Permitir actualización de registros REAL (VALIDATED) modificados desde el listado
 
                 closureId = existing.id;
 
