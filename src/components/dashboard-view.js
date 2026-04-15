@@ -676,11 +676,12 @@ function initCharts(allEntries, calcMode) {
         },
         plugins: [customCanvasBackgroundColor],
         options: {
+            events: ['click'],
             responsive: true,
             maintainAspectRatio: false,
             interaction: {
                 mode: 'index',
-                intersect: false,
+                intersect: true,
             },
             plugins: { 
                 customCanvasBackgroundColor: {
