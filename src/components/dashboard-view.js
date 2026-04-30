@@ -212,7 +212,6 @@ export async function renderDashboard(container, options = {}) {
                 <div class="kpi-card">
                     <span class="kpi-title">Ingresos Totales</span>
                     <span class="kpi-value">${formatCurrency(totalRevenue)}</span>
-                    <span class="kpi-trend text-success">↑ vs mes anterior (sim)</span>
                 </div>
                 <div class="kpi-card ${avgProfitability < 20 ? 'warning' : 'success'}">
                     <span class="kpi-title">Rentabilidad Global</span>
