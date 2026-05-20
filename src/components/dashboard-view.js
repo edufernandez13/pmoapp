@@ -97,6 +97,20 @@ export async function renderDashboard(container, options = {}) {
         return parseInt(y) * 12 + MONTHS_ORDER[m];
     };
 
+    const getPeriodValueSafe = (periodStr) => {
+        if (!periodStr) return 0;
+        const [m, yStr] = periodStr.split('-');
+        let y = parseInt(yStr);
+        if (y < 100) y += 2000;
+        return y * 12 + MONTHS_ORDER[m];
+    };
+
+    const getIsoMonthValue = (isoString) => {
+        if (!isoString) return 0;
+        const [y, m] = isoString.split('-');
+        return parseInt(y) * 12 + (parseInt(m) - 1);
+    };
+
     const availableProjects = showAllProjects 
         ? allProjects.map(p => p.name).sort() 
         : Array.from(activeProjectNames).sort();
@@ -129,6 +143,18 @@ export async function renderDashboard(container, options = {}) {
 
     const validRealEntries = Array.from(realEntriesMap.values());
     const validProjEntries = Array.from(projEntriesMap.values());
+
+    const startVal = startDate ? getIsoMonthValue(startDate) : 0;
+    const endVal = endDate ? getIsoMonthValue(endDate) : Infinity;
+
+    const kpiRealEntries = validRealEntries.filter(e => {
+        const pv = getPeriodValueSafe(e.month);
+        return pv >= startVal && pv <= endVal;
+    });
+    const kpiProjEntries = validProjEntries.filter(e => {
+        const pv = getPeriodValueSafe(e.month);
+        return pv >= startVal && pv <= endVal;
+    });
 
     // Consolidate REAL entries per project for KPIs and Tables
     const projectConsolidated = new Map();
@@ -168,7 +194,7 @@ export async function renderDashboard(container, options = {}) {
     let kpiDeviationCLP = null;
     
     const devPeriodsMap = new Map();
-    [...validRealEntries, ...validProjEntries].forEach(entry => {
+    [...kpiRealEntries, ...kpiProjEntries].forEach(entry => {
         const d = AnalyticsService.calculateMetrics(entry);
         const tipoRegistro = entry.tipoRegistro || 'REAL';
 
@@ -292,6 +318,45 @@ export async function renderDashboard(container, options = {}) {
 
     kpiAvgProfitability = kpiTotalRevenue > 0 ? (kpiTotalMargin / kpiTotalRevenue) * 100 : 0;
     // --- END KPI INGRESOS Y RENTABILIDAD CALCULATION ---
+
+    // --- KPI EN RIESGO (<10%) RECALCULATION ---
+    const kpiProjectConsolidated = new Map();
+    kpiRealEntries.forEach(entry => {
+        const metrics = AnalyticsService.calculateMetrics(entry);
+        if (!kpiProjectConsolidated.has(entry.project)) {
+            kpiProjectConsolidated.set(entry.project, {
+                project: entry.project,
+                month: entry.month, 
+                revenue: metrics.revenue,
+                totalCost: metrics.totalCost,
+                margin: metrics.margin,
+                profitability: 0
+            });
+        } else {
+            const pData = kpiProjectConsolidated.get(entry.project);
+            if (calcMode === 'punctual') {
+                if (getPeriodValue(entry.month) > getPeriodValue(pData.month)) {
+                    pData.month = entry.month;
+                    pData.revenue = metrics.revenue;
+                    pData.totalCost = metrics.totalCost;
+                    pData.margin = metrics.margin;
+                }
+            } else {
+                pData.revenue += metrics.revenue;
+                pData.totalCost += metrics.totalCost;
+                pData.margin += metrics.margin;
+                if (getPeriodValue(entry.month) > getPeriodValue(pData.month)) {
+                    pData.month = entry.month;
+                }
+            }
+        }
+    });
+
+    const kpiProcessedData = Array.from(kpiProjectConsolidated.values()).map(pData => {
+        pData.profitability = pData.revenue > 0 ? (pData.margin / pData.revenue) * 100 : 0;
+        return pData;
+    });
+    // --- END KPI EN RIESGO (<10%) RECALCULATION ---
     // --- END KPI CALCULATION ---
 
     // Insights renderizados dinámicamente por initCharts para mantener consistencia 100% con la visualización
@@ -359,7 +424,7 @@ export async function renderDashboard(container, options = {}) {
                 </div>
                 <div class="kpi-card danger">
                     <span class="kpi-title">En Riesgo (<10%)</span>
-                    <span class="kpi-value">${processedData.filter(d => d.profitability < 10).length}</span>
+                    <span class="kpi-value">${kpiProcessedData.filter(d => d.profitability < 10).length}</span>
                 </div>
             </div>
 
@@ -429,27 +494,9 @@ export async function renderDashboard(container, options = {}) {
 
     container.innerHTML = html;
     
-    // Convert period to an absolute month value for comparison
-    const getPeriodValueSafe = (periodStr) => {
-        if (!periodStr) return 0;
-        const [m, yStr] = periodStr.split('-');
-        let y = parseInt(yStr);
-        if (y < 100) y += 2000;
-        return y * 12 + MONTHS_ORDER[m];
-    };
-
-    const getIsoMonthValue = (isoString) => {
-        if (!isoString) return 0;
-        const [y, m] = isoString.split('-');
-        return parseInt(y) * 12 + (parseInt(m) - 1);
-    };
-
     let chartEntries = [...validRealEntries, ...validProjEntries];
     
     if (startDate || endDate) {
-        let startVal = startDate ? getIsoMonthValue(startDate) : 0;
-        let endVal = endDate ? getIsoMonthValue(endDate) : Infinity;
-        
         chartEntries = chartEntries.filter(e => {
             const pv = getPeriodValueSafe(e.month);
             return pv >= startVal && pv <= endVal;
